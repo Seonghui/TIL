@@ -61,5 +61,6 @@ for (i = 0; i < cars.length; i++) {
 
 참고 자료
 -----
+[[공통] 마크다운 markdown 작성법](https://gist.github.com/ihoneymon/652be052a0727ad59601)
 [위키독스](https://wikidocs.net/1678)  
 [컴공녀의 개발 블로그](https://simhyejin.github.io/2016/06/30/Markdown-syntax/)
