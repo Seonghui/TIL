@@ -56,6 +56,6 @@ delete
 -----
 메모리에서 변수나 항목을 제거하는 연산자  
 
-참고 자료
+References
 -----
 [MDN](https://msdn.microsoft.com/ko-kr/library/ce57k8d5(v=vs.94).aspx)

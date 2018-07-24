@@ -1,6 +1,6 @@
-함수 호이스팅
+호이스팅
 ===
-# 함수 호이스팅
+# 호이스팅의 정의
 * hoist 의 사전적 정의는 '끌어올리다'.
 * 후선언된 변수나 함수가 해당 Scope에서 최상위로 끌어올려지는 것을 뜻한다. 그 덕에 뒤에서 선언된 함수들과 변수들을 그 전에 사용할 수 있다.
 * 여기서 끌어올려지는 것은 할당이 아니라 **선언**이다.
@@ -27,9 +27,26 @@ add(2,3);
 add(3,4);
 ```
   
-##예시 2
+## 예시 2
 ```javascript
-function returnX() {
-    
+function myFunc() {
+    console.log(x); //undefined
+    var x = 10;
+    console.log(x); //10
 }
+
+myFunc();
+```
+다른 언어의 경우에는 변수 x를 선언하지 않고 출력하면 오류 메세지를 출력한다.
+하지만 자바스크립트에서는 undefined라고 출력되고 그냥 넘어간다. var x;가 스코프의 최상단으로 끌어올려졌기 때문이다(호이스팅).
+작동 순서에 맞게 코드를 재구성하면 다음과 같다.
+```javascript
+function myFunc() {
+    var x;
+    console.log(x); //undefined
+    x = 10;
+    console.log(x); //10
+}
+
+myFunc();
 ```

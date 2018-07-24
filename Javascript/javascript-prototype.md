@@ -20,8 +20,8 @@
 * Prototype Link
     - 상위에서 물려받은 객체의 프로토타입에 대한 정보이다.
 
-참고 자료
+References
 -----
-[Medium 포스트](https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67)
-[insanehong님 블로그](http://insanehong.kr/post/javascript-prototype/)
-[Nextree 포스트](http://www.nextree.co.kr/p7323/)
+* [Medium 포스트](https://medium.com/@bluesh55/javascript-prototype-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-f8e67c286b67)
+* [insanehong님 블로그](http://insanehong.kr/post/javascript-prototype/)
+* [Nextree 포스트](http://www.nextree.co.kr/p7323/)
