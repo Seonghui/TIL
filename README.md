@@ -13,6 +13,7 @@
 * [인자와 매개변수](https://github.com/Seonghui/TIL/blob/master/Javascript/argument-parameter.md)
 * [호이스팅](https://github.com/Seonghui/TIL/blob/master/Javascript/hoisting.md)
 * [프로토타입](https://github.com/Seonghui/TIL/blob/master/Javascript/prototype.md)
+* [스코프](https://github.com/Seonghui/TIL/blob/master/Javascript/scope.md)
 
 ## Other TIL Collections
 Inspired by
