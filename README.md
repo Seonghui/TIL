@@ -14,7 +14,7 @@
 * [호이스팅](https://github.com/Seonghui/TIL/blob/master/Javascript/hoisting.md)
 * [프로토타입](https://github.com/Seonghui/TIL/blob/master/Javascript/prototype.md)
 * [스코프](https://github.com/Seonghui/TIL/blob/master/Javascript/scope.md)
-* [함수](https://github.com/Seonghui/TIL/blob/master/Javascript/Function.md)
+* [함수](https://github.com/Seonghui/TIL/blob/master/Javascript/function.md)
 
 ## Other TIL Collections
 Inspired by
