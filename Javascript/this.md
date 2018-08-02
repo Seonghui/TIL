@@ -86,7 +86,7 @@ var value = 100;
 var myObject = {
   value: 1,
   func1: function() {
-    var that = this;
+    var that = this; // 부모 함수의 this를 that으로 저장
 
     this.value += 1;
     console.log("func1() called. this.value : " + this.value);
