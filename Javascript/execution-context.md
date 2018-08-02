@@ -13,14 +13,14 @@
 2.  실질적으로는 함수 내부 정보를 담는 객체가 생성되고, 그 객체에는 함수 정보가 담김.(변수명, 함수명 등이 프로퍼티로 생성됨. )
 
 ```javascript
-console.log('This is global context');
+console.log("This is global context");
 
 function context1() {
-    console.log('This is context1’);
- }
+  console.log("This is context1");
+}
 
 function context2() {
-    context1();
-    console.log('This is context2');
+  context1();
+  console.log("This is context2");
 }
 ```
