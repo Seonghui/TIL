@@ -35,8 +35,8 @@ obj1.getName.call(obj2); //"FREE"
 
 # 3. call()과 apply()의 차이점
 동일하게 this 키워드가 가리키는 대상을 변경할 수 있게 해주지만, 인자를 전달하는 방식에 차이가 있다.
-* call: 
-* apply: 배열
+* call: 쉼표로 구분해서 전달
+* apply: 배열 형태로 전달
 
 ```javascript
 var myobj = {
