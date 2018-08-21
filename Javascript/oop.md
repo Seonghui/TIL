@@ -74,3 +74,91 @@ console.log(you.getName());
 ```
 이렇게도 사용 가능하다.
 
+# 2. 상속
+자바스크립트는 객체 프로토타입 체인을 사용해서 상속을 구현할 수 있다. 상속 구현 방식은 크게 두 가지로 구분할 수 있다.
+* 클래스 개념 없이 프로토타입으로 상속을 구현하는 방식
+* 클래스 기반 전통적인 상속 방식을 흉내내는 것
+
+## 2.1 프로토타입을 이용한 상속
+### 2.1.1 create_object()
+```javascript
+function create_object(o) {
+	function F() {}
+	F.prototype = o;
+	return new F();
+}
+```
+![pi](https://user-images.githubusercontent.com/16531837/44308758-5e0d1c80-a3f6-11e8-8fe7-98cf81c4b2e7.png)
+create_object() 함수는 인자로 들어온 객체를 부모로 하는 자식 객체를 생성하여 반환한다. 그림을 보면 새로운 빈 함수 객체 F를 만들고 F.prototype에 인자로 들어온 객체를 참조한다. 그리고 함수 객체 F를 생성자로 하는 새로운 객체를 만들어 반환한다.  
+이렇게 프로토타입의 특성을 활용하여 상속을 구현하는 것이 프로토타입 기반의 상속이다. (참고로 create_object() 함수는 ES5에서 Object.create() 함수로 제공된다. 여기서는 프로토타입 기반 상속의 이해를 돕고자 사용한 것이다.)
+### 2.1.2 create_object() 함수로 상속 구현하기
+부모 객체에 해당하는 person 객체와 이 객체를 프로토타입 체인으로 참조할 수 있는 자식 객체 student를 만들어서 사용하였다.
+```javascript
+var person = {
+	name : "zzoon",
+	getName : function() {
+		return this.name;
+	},
+	setName : function(arg) {
+		this.name = arg;
+	}
+};
+
+function create_object(o) {
+	function F() {};
+	F.prototype = o;
+	return new F();
+}
+
+var student = create_object(person);
+
+student.setName("me");
+console.log(student.getName());
+```
+![pi2](https://user-images.githubusercontent.com/16531837/44308856-1dae9e00-a3f8-11e8-8b55-ed1c1bea368d.png)
+### 2.1.3 extend() 함수로 메서드 추가하기
+얕은 복사를 사용하는 extend() 함수를 사용해서 stduent 객체를 확장시켰다.
+```javascript
+var person = {
+	name : "zzoon",
+	getName : function() {
+		return this.name;
+	},
+	setName : function(arg) {
+		this.name = arg;
+	}
+};
+
+function create_object(o) {
+	function F() {};
+	F.prototype = o;
+	return new F();
+}
+
+function extend(obj,prop) {
+	if ( !prop ) { prop = obj; obj = this; }
+	for ( var i in prop ) obj[i] = prop[i];
+	return obj;
+};
+
+var student = create_object(person);
+
+student.setName("me");
+console.log(student.getName());
+
+var added = {
+	setAge : function(age) {
+		this.age = age;
+	},
+	getAge : function() {
+		return this.age;
+	}
+};
+
+extend(student, added);
+
+student.setAge(25);
+console.log(student.getAge());
+
+```
+![pi3](https://user-images.githubusercontent.com/16531837/44308990-3455f480-a3fa-11e8-9702-a50465195178.png)
