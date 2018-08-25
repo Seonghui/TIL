@@ -162,3 +162,37 @@ console.log(student.getAge());
 
 ```
 ![pi3](https://user-images.githubusercontent.com/16531837/44308990-3455f480-a3fa-11e8-9702-a50465195178.png)
+
+## 2.2 클래스 기반의 상속
+클래스 기반의 상속이라고 하지만, 함수의 프로토타입을 적절하게 섞어서 상속을 구현해낸다. 다른 점이라고는 클래스의 역할을 하는 함수로 상속을 구현한다는 것이다.
+```javascript
+function Person(arg) {
+    this.name = arg;
+}
+
+Function.prototype.method = function(name, func) {
+    this.prototype[name] = func;
+}
+
+Person.method("setName", function(value) {
+    this.name = value;
+});
+Person.method("getName", function() {
+    return this.name;
+});
+
+function Student(arg) {
+}
+
+function F() {};
+F.prototype =Person.prototype;
+Student.prototype = new F();
+Student.prototype.constructor = Student;
+Student.super = Person.prototype;
+
+var me = new Student();
+me.setName("zzoon");
+console.log(me.getName());
+```
+빈 함수 F()를 생성하고 이 F()의 인스턴스를 Person.prototype과 Student 사이에 두었다. 그리고 이 인스턴스를 Student.prototype에 참조되게 한다.  
+즉 빈 함수(F)의 객체를 중간에 두어 Person의 인스턴스와 Student 의 인스턴스를 서로 독립적으로 만들었다. 이제 Person 함수 객체에서 this에 바인딩되는 것은 Studentd의 인스턴스가 접근할 수 없다.
