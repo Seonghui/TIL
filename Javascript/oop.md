@@ -196,3 +196,28 @@ console.log(me.getName());
 ```
 빈 함수 F()를 생성하고 이 F()의 인스턴스를 Person.prototype과 Student 사이에 두었다. 그리고 이 인스턴스를 Student.prototype에 참조되게 한다.  
 즉 빈 함수(F)의 객체를 중간에 두어 Person의 인스턴스와 Student 의 인스턴스를 서로 독립적으로 만들었다. 이제 Person 함수 객체에서 this에 바인딩되는 것은 Studentd의 인스턴스가 접근할 수 없다.
+
+# 3. 캡슐화
+캡슐화로 정보 은닉을 할 수 있다. 자바의 경우 public이나 private 멤버를 선언함으로써 해당 정보를 외부로 노출시킬지 여부를 결정하지만 자바스크립트는 이러한 키워드 자체를 지원하지 않는다.
+```javascript
+var Person = function(arg) { 
+	var name = arg ? arg : "zzoon" ;
+	
+	var Func = function() {}
+	Func.prototype = {
+		getName : function() {
+			return name;
+		},
+		setName : function(arg) {
+			name = arg;
+		}
+	};
+	
+	return Func;
+}();
+ 
+ 
+var me = new Person();
+console.log(me.getName());
+```
+클로저를 사용해서 name에 접금할 수 없다.
