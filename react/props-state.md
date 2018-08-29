@@ -7,6 +7,27 @@ props와 state
 * 자식 컴포넌트는 `props` 를 받기만 하고 직접 수정 불가능.
 * 디폴트값 설정 가능(defaultProps), 하지만 아직 정식으로 지원하지는 않음.
 
+## 1.1 defaultProps
+실수로 props를 빠뜨릴 때, 혹은 props 값이 없을 때 사용하는 값. 즉 기본값.
+```javascript
+import React, { Component } from 'react';
+
+class MyName extends Component {
+  static defaultProps = {
+    name: '기본이름'
+  }
+  render() {
+    return (
+      <div>
+        안녕하세요! 제 이름은 <b>{this.props.name}</b> 입니다.
+      </div>
+    );
+  }
+}
+
+export default MyName;
+```
+
 # 2. state
 * 유동적인 데이터. 컴포넌트 내부에서 선언하며 값 변경 가능. 초기값 설정이 필수.
 * `state` 는 그냥 사용하지 말 것. `this.setState` 사용하기.
