@@ -12,7 +12,7 @@ $ django-admin startproject mysite .
 $ python3 -m pip install django
 
 # 프로젝트 생성
-$ python3 -m django startporject mysite .
+$ python3 -m django startproject mysite .
 ```
 Django 1.9부터 `django-admin`대신 `python -m django` 사용 가능.
 
@@ -28,4 +28,9 @@ $ python manage.py migrate
 # 서버 실행
 ```
 $ python manage.py runserver
+```
+
+# 애플리케이션 만들기
+```
+$ python manage.py startapp <파일명>
 ```
