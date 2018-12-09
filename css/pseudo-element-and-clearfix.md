@@ -27,7 +27,7 @@
 }
 ```
 
-float을 적용한 요소의 부모 요소에 빈 컨텐츠를 넣고 float를 초기화(`float:clear`)를 해줌. 이때 내용이 빈 콘텐츠에 block 속성을 주어야 함. 예시에서는 `display:table`속성을 주었는데 `display: block` 속성을 주어도 됨. 아무튼 다시 말하자면 부모 요소에 clearfix 속성을 적용해 부모 요소 다음에 빈 block 속성의 컨텐츠를 집어넣는 것임.
+float을 적용한 요소의 부모 요소에 빈 컨텐츠를 넣고 float를 초기화(`clear: both`)를 해줌. 이때 내용이 빈 콘텐츠에 block 속성을 주어야 함. 예시에서는 `display:table`속성을 주었는데 `display: block` 속성을 주어도 됨. 아무튼 다시 말하자면 부모 요소에 clearfix 속성을 적용해 부모 요소 다음에 빈 block 속성의 컨텐츠를 집어넣는 것임.
 
 ![clearfix](https://i.imgur.com/aOAWSIy.png)
 
