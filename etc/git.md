@@ -6,8 +6,8 @@ Git
 * 인덱스(Index) : 준비 영역(staging area)
 * HEAD : 최종 확정본(commit)
 
-# 작업 흐름
-1. **작업 디렉토리(Working directory)**에서 `add` 명령어 실행으로 **인덱스(Index)** 변경된 파일 추가
+##  작업 흐름
+1. **작업 디렉토리(Working directory)** 에서 `add` 명령어 실행으로 **인덱스(Index)** 변경된 파일 추가
 2. `commit` 명령어로 **HEAD**에 반영
 3. **HEAD**에 반영된 변경 내용은 `push` 명령어로 발행 가능
 
@@ -103,7 +103,28 @@ $ git merge <가지 이름>
 # git diff <원래 가지> <비교 대상 가지>
 ```
 
+# 되돌리기
+## reset
+이력을 삭제하고 되돌리기. 옵션에는 hard, soft, mixed가 있음. 옵션의 기본값은 mixed.
+
+* hard: 돌아가려는 이력 이후의 모든 내용 삭제
+* sort: 돌아가려는 이력으로 돌아가기는 했지만, stage는 그대로 남아있음. commit 하기 직전의 상태로 돌아감.
+* mixed: soft랑 비슷. 하지만 staging area에 추가하기 전의 상태로 돌아감. (add 하기 전 상태)
+```
+# git reset <옵션> <돌아가고싶은 커밋>
+git revert --soft 2664ce8
+```
+
+## revert
+이력은 그대로 두고 되돌리기. 이력이 남기 때문에 어지간하면 revert를 쓰자.
+```
+# git revert <되돌릴 커밋> 
+git revert 2664ce8
+```
+
 
 ## 참고 자료
 
-[git - 간편 안내서](https://rogerdudler.github.io/git-guide/index.ko.html)
+* [git - 간편 안내서](https://rogerdudler.github.io/git-guide/index.ko.html)
+* [개발바보들](http://www.devpools.kr/2017/01/31/%EA%B0%9C%EB%B0%9C%EB%B0%94%EB%B3%B4%EB%93%A4-1%ED%99%94-git-back-to-the-future/)
+* [[초보용] Git 되돌리기( Reset, Revert )](https://medium.com/nonamedeveloper/%EC%B4%88%EB%B3%B4%EC%9A%A9-git-%EB%90%98%EB%8F%8C%EB%A6%AC%EA%B8%B0-reset-revert-d572b4cb0bd5)
