@@ -75,9 +75,13 @@ $ git checkout master
 ```
 
 ## 브랜치 삭제 (branch -d)
-"feature_x" 브랜치 삭제
+"feature_x" 브랜치 삭제. 그런데 원격 브랜치도 삭제를 해줘야 됨.
 ```
+# 로컬
 $ git branch -d feature_x
+
+# 원격 브랜치
+$ git push origin :feature_x
 ```
 
 ## 브랜치를 원격 저장소로 전송
@@ -121,7 +125,6 @@ git revert --soft 2664ce8
 # git revert <되돌릴 커밋> 
 git revert 2664ce8
 ```
-
 
 ## 참고 자료
 
