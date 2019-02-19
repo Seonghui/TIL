@@ -161,7 +161,7 @@ TeslaModelS.prototype = function() {
 
 # Observer Design Pattern
 * 애플리케이션이 한 부분이 변경될 때 다른 부분도 같이 변경되어야 하는 일이 있음. 앵귤러JS에서는 `$scope` 객체가 변경될때 이걸 다른 컴포넌트들에게 알리기 위해 이벤트를 트리거할 수 있음. observer 패턴은 이런 방식임. 만약 객체가 수정되면 dependent 객체들에게 변경되었다고 알려줌.
-* MVC 패턴도 example이 될 수 있음. 모델이 바뀌면 view도 없데이트됨. mvc 아키텍쳐의 장점은 종속성을 줄이기 위해 뷰와 모델을 분리하는 것임.
+* MVC 패턴도 example이 될 수 있음. 모델이 바뀌면 view도 업데이트됨. mvc 아키텍쳐의 장점은 종속성을 줄이기 위해 뷰와 모델을 분리하는 것임.
 * 단점
     * observer 수가 많아지면 성능이 저하됨
 
