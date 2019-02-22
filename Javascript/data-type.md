@@ -37,7 +37,7 @@ typeof arr; // object
 결론적으로는 버그임. typeof에서 null일 경우를 처리해줘야 하는데 처리를 안 해줘서 그냥 객체라고 출력하는 것임. 
 
 ## NaN은 숫자다
-NaN은 숫자형으로 정의되어있지만 숫자는 아니다. 그냥 스펙이 ECNAscript에 그렇게 정의되어있을 뿐...
+NaN은 숫자형으로 정의되어있지만 숫자는 아니다. 그냥 스펙이 ECMAscript에 그렇게 정의되어있을 뿐...
 
 # refs
 * https://codeburst.io/javascript-essentials-types-data-structures-3ac039f9877b
