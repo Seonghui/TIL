@@ -11,7 +11,7 @@
 해당 요소 끝난 다음에 content 속성 집어넣기
 
 ## before와 after의 공통 속성
-`content=""`를 무조권 가지고 있어야 됨. 콘텐츠 내용에는 문자열 이미지 등등등 다양하게 포함할 수 있음. 말로는 어려우니 [예시](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_content)를 보자.
+`content=""`를 무조건 가지고 있어야 됨. 콘텐츠 내용에는 문자열 이미지 등등등 다양하게 포함할 수 있음. 말로는 어려우니 [예시](https://www.w3schools.com/cssref/tryit.asp?filename=trycss_content)를 보자.
 
 
 # clearfix
