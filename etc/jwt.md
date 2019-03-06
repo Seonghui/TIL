@@ -59,7 +59,7 @@ Securely validates the token. 서명은 Base64url 인코딩을 사용해서 인�
 const token = base64urlEncoding(header) + '.' + base64urlEncoding(payload) + '.' + base64urlEncoding(signature)
 ```
 
-아래는 생성한 토근 예시. 이렇게 생성된 토큰은 HTML과 HTTP로 쉽게 전달
+아래는 생성한 토큰 예시. 이렇게 생성된 토큰은 HTML과 HTTP로 쉽게 전달
 ```
 eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dnZWRJbkFzIjoiYWRtaW4iLCJpYXQiOjE0MjI3Nzk2Mzh9.gzSraSYS8EXBxLN_oWnFSRgCzcmJmMjLiuyu5CSpyHI
 ```
