@@ -38,6 +38,48 @@
 * google이 페이지를 쉽게 찾을 수 있게 해준다.
 * google에게 선호하는 표준 URL을 알려줄 수 있다.
 
+# 이미지 최적화
+## alt 속성 활용하기
+* 이미지를 링크로 상용하는 경우 alt 속성의 텍스트는 텍스트 링크의 앵커 텍스트와 유사하게 처리됨
+
+# robot.txt
+* 검색에 노출이 필요하지 않은 부분을 robots.txt로 제어
+* 이름 변경 경 안 됨. 사이트의 루트 디렉토리에 있어야 됨
+* robot.txt를 보안 도구로 사용하지 말것. 트래픽을 조절하기 위한 규약임.
+* 가이드라인은 [여기](https://support.google.com/webmasters/answer/6062596?hl=ko&ref_topic=6061961)서
+
+## robot.txt 사용 예시
+* `/cgi-bin/`, `/tmp/`, `/~name/` 경로를 제외하고 허용
+```
+User-agent: *
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /~name/
+```
+
+* 사이트 전체 허용
+```
+User-agent: *
+Disallow:
+```
+
+* 검색엔진에서 사이트를 삭제하고 향후 어떤 검색봇도 접근하지 못하게 함
+```
+User-agent: *
+Disallow: /
+```
+
+* 특정 파일(gif) 차단
+```
+User-Agent: Googlebot
+Disallow: /*.gif$
+```
+
+* ?가 포함된 url 차단
+```
+User-agent: Googlebot
+Disallow: /*?
+```
 
 
 # ref
