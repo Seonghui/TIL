@@ -19,6 +19,12 @@
 
 ![검색 결과의 title과 description 사진](https://i.imgur.com/enXKj5s.png)
 
+# og 태그
+* 오픈그래프 태그(Open Graph)는 
+* sns에서 웹페이지 URL이 공유될 때 웹페이지의 주요 정보(제목, 이미지, 설명)가 표기되는 방식을 관리
+* sns 마다 설정방식이 다를 수도 있음
+* 페북에서 [디버거](https://developers.facebook.com/tools/debug/sharing/) 제공
+
 # URL 구조 개선
 * URL 아무렇게나 만들지 말자 (ex. folder/blah/hello)
 * URL을 잚 만들면 문서를 크롤링하기도 쉬워진다
