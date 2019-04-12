@@ -1,4 +1,5 @@
-# Google Analytics
+Google Analytics
+---
 
 # 생김새
 ```js
@@ -65,6 +66,36 @@ GA에는 아래와 같이 기록됨. source와 medium이 제일 중요
 | campaign | 특별히 진행하는 캠페인인가     | spring_5per_off | 기간 한정 실험할 때 (세일) |
 | term     | 어떤 단어로 검색해서 왔나 | 할인 | 검색어 | 
 | content  | 어떤 내용을 보고 왔나 | ad_type_a | a/b 성과 측정할 때
+
+
+# 일반 유저 인터렉션 트래킹하기
+## 현재 페이지의 경로를 포함해 보내기
+```
+ga('send', 'pageview', location.pathname);
+```
+
+## url 수정하기
+만약 이렇게 중간에 변하는 값이 들어가는 경우
+```
+/user/profile
+/user/account
+/user/notifications
+```
+
+이렇게 URL을 수정 가능함
+```
+if (document.location.pathname.indexOf('user/' + userID) > -1) {
+  var page = document.location.pathname.replace('user/' + userID, 'user');
+  ga('send', 'pageview', page);
+}
+```
+
+그럼 이렇게 보임
+```
+/user/profile
+/user/account
+/user/notifications
+```
 
 
 # refs
