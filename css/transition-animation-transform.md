@@ -24,7 +24,7 @@ Transition, animation and transform
 }
 ```
 
-# Transform
+# Animation
 * 이벤트 없이 효과 줄 수 있음
 * 축약 가능
 ```
