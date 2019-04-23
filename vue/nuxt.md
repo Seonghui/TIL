@@ -21,6 +21,14 @@ Request가 들어오면..
 ## nuxtServerInit
 nuxtServerInit이 Store에 정의되어 있으면 Nuxt.js는 컨텍스트 (서버 측에서만 해당)를 사용해 호출해야 함. 서버의 데이터를 클라이언트에게 직접 주고 싶을때 유용.
 
+* nuxtServerInit은 vuex 액션 메소드
+* nuxt 라이프 사이클에서 nuxtServerInit 메소드가 맨 처음에 호출
+* dispatch 메소드가 호출한 대부분의 action 메소드들은 두 개의 인자를 가짐. 첫번째는 vuex의 context이고, 나머지 하나는 dispatch 메소드에 의해 전달된 값임.
+* fetch나 asyncData처럼 context를 인자로 가짐
+* 따라서 nuxtServerInit은 두 개의 context를 가지고 있는데, 하나는 vuex context이고 나머지 하나는 nuxt context임. 
+
+![nuxtServerInit example](https://cdn-images-1.medium.com/max/2400/1*IA4-YufZJRGEFz6t03x0FQ.png)
+
 ## middleware
 * 미들웨어는 미리 정의된 함수임.
 * 특정 페이지나 전체 페이지에 적용 가능
@@ -68,6 +76,18 @@ nuxt.config.js에서 router 프로퍼티를 추가하고 그 안에 미들웨어
 * **자동으로** 호출됨. 따라서 백엔드 데이터에서 초기 데이터를 가져올 수 있는 역할을 할 수 있음.
 * this를 가지지 않음. 왜냐면 validate 메소드 이후에 호출되지만 vue는 렌더링되지 않았기 때문임. 다시 말해서 asyncData 메소드가 호출될 때 뷰 컴포넌트는 생성되지도 않은 상태임. 결과적으로 asyncData의 this는 컴포넌트의 인스턴스 정보를 get해주지 않을 것임.
 * 대박적으로 중요한건 asyncData 메소드는 반환하는 결과가 vue의 data와 머지된다는 것임. 그래서 asyncData 메서드에서 반환한 속성을 템플릿에 직접 표시할 수 잇음.
+
+### fetch()
+만약 데이터를 vuex로 완전히 핸들링하고 싶으면 어떻게 초기값을 얻을 수 있을까? 뷰에서는 created 메소드(lifecycle)를 사용하면 된다. 그런데 넉스트에서는 fetch, nuxtServerInit 메소드 두 가지 옵션이 있음. 이 두 메소드 자동으로 호출되지만 실행 시점이 다름. nuxtServerInit은 위에 적어놓은거 볼것.
+
+* fetch 메소드는 pages 파일에 인스톨된다. 
+* 미들웨어나 asyncData처럼, fetch 메소드는 context를 인자로 받는다.
+* Context.params and context.query는 URL에 전달한 fetch 메소드 접근 권한을 부여
+* 따라서 url을 통해 전달된 데이터를 기반으로 fetch 실행
+* 예를 들자면, URL에 ID를 전달할 수 있는데 fetch 메소드는 이 ID를 백엔드에 보내고 그에 맞게 데이터베이스를 조회할 수 있음
+* 이렇게 조회한 데이터는 Context.store.commit()을 사용해 vuex로 보냄. Context.store.commit()는 fetch 메소드가 vuex mutaion 메소드를 트리거할 수 있게 허용함. mutation 메소드는 vuex의 state 프로퍼티를 set하는 메소드임.
+
+![fetch example](https://cdn-images-1.medium.com/max/2400/1*I7kDWwx2gUYMPlada-DCjQ.png)
 
 
 ## Render
