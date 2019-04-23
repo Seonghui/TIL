@@ -63,6 +63,12 @@ nuxt.config.js에서 router 프로퍼티를 추가하고 그 안에 미들웨어
 * 리턴값으로 true, false를 가지며 true일 경우 _id.vue 파일은 정상적으로 로드되지만 false의 경우 미리 정의되어있는 에러 페이지로 이동한다.
 
 ## asyncData() & Fetch() - Pages & children
+### asyncData
+* validate() 처럼 asyncData 도 context를 전달인자로 받음. 
+* **자동으로** 호출됨. 따라서 백엔드 데이터에서 초기 데이터를 가져올 수 있는 역할을 할 수 있음.
+* this를 가지지 않음. 왜냐면 validate 메소드 이후에 호출되지만 vue는 렌더링되지 않았기 때문임. 다시 말해서 asyncData 메소드가 호출될 때 뷰 컴포넌트는 생성되지도 않은 상태임. 결과적으로 asyncData의 this는 컴포넌트의 인스턴스 정보를 get해주지 않을 것임.
+* 대박적으로 중요한건 asyncData 메소드는 반환하는 결과가 vue의 data와 머지된다는 것임. 그래서 asyncData 메서드에서 반환한 속성을 템플릿에 직접 표시할 수 잇음.
+
 
 ## Render
 
@@ -70,7 +76,31 @@ nuxt.config.js에서 router 프로퍼티를 추가하고 그 안에 미들웨어
 ## Plugin
 plugin config 파일 있는 곳임. 플러그인은 js file을 config로 파일로 요구함.
 
-플러그인은 plugin폴더에 config 파일을 만들고 그걸 nuxt.config.js 파일에 등록해야 함. nuxt.config.js 파일에 등록된 컴포넌트는 글로벌 컴포넌트로 생성이 되는데, 여기서의 글로벌이라는 단어의 의미는 전체 next program을 의미함. 따라서 어느 파일에서나 이 플러그인을 사용할 수 있음. 그런데 여기서 문제가 생기는데, pages 디렉토리의 모든 .vue 파일은 독립적인 SPA임. 만약 pages 디렉토리에 .vue 파일이 2개면 이 nuxt program은 2개의 SPA들로 구성되어있다는 것을 의미함. 결과적으로 우리가 이 프로그램을 output(?)할 때, 플러그인은 2번이나 bundled 될 것임. (이게 뭔소리야... 배포파일 만들 때 2번 불러온다는 건가) 아무튼 이렇게 중복이슈 발생하는데 이거 해결하려면 nuxt.confug.js의 build 프로퍼티에 vender라는 새로운 프로퍼티를 추가하면 됨. vendor에는 플러그인 이름이 들어감.
+플러그인은 plugin폴더에 config 파일을 만들고 그걸 nuxt.config.js 파일에 등록해야 함. nuxt.config.js 파일에 등록된 컴포넌트는 글로벌 컴포넌트로 생성이 되는데, 여기서의 글로벌이라는 단어의 의미는 전체 next program을 의미함. 따라서 어느 파일에서나 이 플러그인을 사용할 수 있음. 그런데 여기서 문제가 생기는데, pages 디렉토리의 모든 .vue 파일은 독립적인 SPA임. 만약 pages 디렉토리에 .vue 파일이 2개면 이 nuxt program은 2개의 SPA들로 구성되어있다는 것을 의미함. 결과적으로 우리가 이 프로그램을 output(?)할 때, 플러그인은 2번이나 bundled 될 것임. (이게 뭔소리야... 배포파일 만들 때 2번 불러온다는 건가) 아무튼 이렇게 중복이슈 발생하는데 이거 해결하려면 nuxt.confug.js의 build 프로퍼티에 vendor라는 새로운 프로퍼티를 추가하면 됨. vendor에는 플러그인 이름이 들어감.
+
+## assets과 static 폴더의 차이
+둘 다 이미지, 비디오, 오디오, css, font file 같은 static files을 다루는 건 맞지만 둘은 미묘하게 다름.
+
+### assets
+* url loader가 관리. nuxt 프로그램 내에서 절대 경로를 통해 에셋 파일에 접근 가능. 
+* nuxt 2.0부터 물결표와 에셋 사이 슬래시 제거 가능. 
+* 프로젝트 루트 디렉토리에 직접적으로 bundled. 따라서 /filename으로 접근 가능
+* 아래 예시는 url loader는 번들 파일에 해시 코드를 제공해서 고유 이름을 유지함.
+
+![assets](https://cdn-images-1.medium.com/max/1600/1*pC7nh2HJv2f0yRsrgS47dQ.png)
+
+### static files
+* 프로젝트 루트 디렉토리에 직접적으로 bundled됨
+* /filename 으로 접근 가능
+* full url로 접근하면 static file을 assets file과 똑같이 취급할 수 있음. 그 말은 이 static file을 url loader가 핸들링한다는 것임
+* 따라서 항상 static file은 /filename으로 접근해야 함.
+
+# VueX
+![VueX](https://cdn-images-1.medium.com/max/2400/1*W3bW7zCgCXHNjte--wcggw.png)
+* VueX 설정은 store 폴더 안에 있어야함.
+* 설정 파일의 이름은 무조건 index.js
+* VueX 설정 파일은 4가지 파트로 되어있음: VueX 패키지 임포트, 설정 오브젝트 준비, 스토어 메소드의 인스턴스화, export 스토어 메소드
+* vuex 설정 파일은 여느 설정파일이랑 비슷하지만, 직접적으로 store 메소드를 export하지 않는다는 점이 다름. 익명 함수가 리턴한것을 export해야됨. 이건 [링크](https://cdn-images-1.medium.com/max/2400/1*YsrgYP6dM97op4sDsBWhkA.png)로 보자
 
 # Refs
 https://nuxtjs.org/guide/
