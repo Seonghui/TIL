@@ -20,7 +20,7 @@ SVG(Scalable Vector Graphics) 최적화하기
 ```
 
 ## background-image
-* base64 인코딩을 하면 다운로드하는동안 나머지 스타일 로딩을 차단해서 사용하기 좋지 않다는데 아직 이게 무슨 말인지 모르갰다.
+* base64 인코딩을 하면 다운로드하는동안 나머지 스타일 로딩을 차단해서 사용하기 좋지 않다.
 * 패스 못 봄
 * 조작 기능을 제한
 * 애니메이션 불가능
@@ -28,6 +28,10 @@ SVG(Scalable Vector Graphics) 최적화하기
 .logo {
   background-image: url(bblogo.svg);
 }
+```
+```
+<!-- base64 인코딩으로 변환한 SVG -->
+<img alt="" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDo etc">
 ```
 
 ## object
@@ -49,5 +53,6 @@ HTTP 요청은 저장되지만 캐시되지 않음. 조작 가능.
 iframe, embed는 사용하지 않는 것이 좋음
 
 # refs
-https://css-tricks.com/using-svg/
-https://svgontheweb.com/ko
+* https://css-tricks.com/using-svg/
+* https://svgontheweb.com/ko
+* https://css-tricks.com/lodge/svg/09-svg-data-uris/
