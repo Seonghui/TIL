@@ -5,7 +5,9 @@
 따라서 모달이 활성화되었을 때, html과 body를 fix 시키고 현재 창의 스크롤 높이만큼 top 값을 주면 됨.
 여기서 top 값을 주지 않을 경우 모달이 활성화되었을 때 스크롤이 알아서 최상단으로 이동하기 때문에 별로 좋지 않음.
 
+
 # jQuery 예시
+> This explaination might not working well.
 
 * scss
     - locked 클래스에 아래 속성을 주고, 모달이 활성화되었을 때 html에 locked 클래스를 추가하기.

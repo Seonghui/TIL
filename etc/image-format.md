@@ -1,4 +1,4 @@
-image format
+웹에서 자주 쓰이는 이미지 형식 정리
 ---
 
 ![이미지 포맷](https://i.stack.imgur.com/Ow8RZ.png)

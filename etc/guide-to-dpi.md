@@ -1,4 +1,4 @@
-DPI and PPI
+DPI와 PPI의 개념
 ---
 
 # 기본 용어
