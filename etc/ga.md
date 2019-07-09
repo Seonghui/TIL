@@ -38,6 +38,7 @@ ga('clientTracker.send', 'pageview');
 * 사용자의 단위는 세션 단위로 확인됨
 * 30분간 연속적인 활동이 있으면 단 하나의 세션으로 취급, 외에는 분리
 * 다른 경로로 다시 들어오게 되면 분리 (네이버 광고 클릭해 들어왔다 30분 안에 다음 광고 타고 클릭해 들어오면 2개의 세션으로 처리)
+* 날짜가 변경되면 분리 (첫 번째 세션은 8월 14일 오후 11시 59분 59초에 완료되고, 두 번째 세션이 8월 15일 오전 12시 정각에 시작)
 
 # UTM (Urchin Traffic Monitor)
 * 주소 자체가 출처를 담는 체계
@@ -99,5 +100,6 @@ if (document.location.pathname.indexOf('user/' + userID) > -1) {
 
 
 # refs
-https://www.slideshare.net/yongho/ga-47277482
-https://developers.google.com/analytics/devguides/collection/analyticsjs/
+- https://www.slideshare.net/yongho/ga-47277482
+- https://developers.google.com/analytics/devguides/collection/analyticsjs/
+- https://support.google.com/analytics/answer/2731565?hl=ko

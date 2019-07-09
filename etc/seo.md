@@ -49,6 +49,7 @@
 * 이미지를 링크로 상용하는 경우 alt 속성의 텍스트는 텍스트 링크의 앵커 텍스트와 유사하게 처리됨
 
 # robot.txt
+* 서버 콘텐츠 제공자가 크롤러에 접근 허가 여부를 전하기 위한 프로토콜
 * 검색에 노출이 필요하지 않은 부분을 robots.txt로 제어
 * 이름 변경 경 안 됨. 사이트의 루트 디렉토리에 있어야 됨
 * robot.txt를 보안 도구로 사용하지 말것. 트래픽을 조절하기 위한 규약임.
@@ -92,6 +93,4 @@ Disallow: /*?
 * https://ko.wikipedia.org/wiki/%EA%B2%80%EC%83%89_%EC%97%94%EC%A7%84_%EC%B5%9C%EC%A0%81%ED%99%94
 * https://static.googleusercontent.com/media/www.google.com/ko//intl/ko/webmasters/docs/search-engine-optimization-starter-guide-ko.pdf
 * https://www.twinword.co.kr/blog/search-engine-optimization-guide/
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ0MjQzODY5XX0=
--->
+* 리얼월드 http

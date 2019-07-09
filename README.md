@@ -24,6 +24,10 @@
 - [프로젝트 시작하기](https://github.com/Seonghui/TIL/blob/master/django/start-project.md)
 - [가상 환경](https://github.com/Seonghui/TIL/blob/master/django/vertualenv.md)
 
+# http
+- [header](https://github.com/Seonghui/TIL/blob/master/http/header.md)
+- [URL(Uniform Resource Locator)](https://github.com/Seonghui/TIL/blob/master/http/url.md)
+
 ## etc
 
 ### Network, browser, web
@@ -46,7 +50,6 @@
 - [검색 엔진 최적화 (SEO)](https://github.com/Seonghui/TIL/blob/master/etc/seo.md)
 - [단위 테스트](https://github.com/Seonghui/TIL/blob/master/etc/unit-test.md)
 - [SPA(Single Page Application)](https://github.com/Seonghui/TIL/blob/master/etc/spa.md)
-- [URL(Uniform Resource Locator)](https://github.com/Seonghui/TIL/blob/master/etc/url.md)
 - [NPM(Node Package Manager)](https://github.com/Seonghui/TIL/blob/master/etc/npm.md)
 - [로컬 스토리지(Local Storage)](https://github.com/Seonghui/TIL/blob/master/etc/localstorage.md)
 - [모달창 활성화되었을 때 body 스크롤 막기](https://github.com/Seonghui/TIL/blob/master/etc/modal-prevent-body-scroll.md)
@@ -88,3 +91,7 @@
 - [Promise](https://github.com/Seonghui/TIL/blob/master/Javascript/promise.md)
 - [script의 async와 defer](https://github.com/Seonghui/TIL/blob/master/Javascript/script-async-defer.md)
 - [자바스크립트 형변환](https://github.com/Seonghui/TIL/blob/master/Javascript/type-coercion.md)
+- [변수 - 참조와 값](https://github.com/Seonghui/TIL/blob/master/Javascript/variable.md)
+
+## react native
+- [Expo Emulator 실행방법 & 스마트폰에서 직접 질행하기 (OSX)](https://github.com/Seonghui/TIL/blob/master/react-native/expo-run-emulator-and-phone.md)
