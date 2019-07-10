@@ -9,9 +9,27 @@ HTTP Request Libraries
 * 양방향 아님. 요청-응답이 끝나면 그냥 끝임. [웹소켓](https://d2.naver.com/helloworld/1336) 사용하면 양방향 가능하다는데 이 부분은 네트워크쪽에 가까운듯하여 공부가 더 필요할듯...
 
 ## Fetch API
-* XMLHttpRequest의 대안
+```js
+fetch('example.json', {
+  method: "GET",
+  headers: {
+    "Content-Type": "application/json"
+  }
+}).then(function(res) { // 헤더 부근까지 읽기를 마친 시점에서 호출
+  if (res.ok) {
+    alert('succeed');
+  } else if (res.status == 401) {
+    alert('401 error');
+  }
+}, function(e) {
+  alert('error');
+});
+```
+* XMLHttpRequest의 대안.
+* XMLHttpRequest보다 오리진 서버 밖으로의 액세스 등 CORS 제어가 쉬워진다.
+* 자바스크립트의 모던한 비동기 처리 작성 기법인 프로미스를 따른다.
+* 캐시, 리퍼러 정책을 설정할 수 있다. 캐시 제어는 Fetch API에서만 할 수 있다.
 * IE 미지원.
-* [요청 중간에 취소 불가능...??](https://medium.com/little-big-programming/%EB%82%B4%EA%B0%80-fetch-api%EB%A5%BC-%EC%93%B0%EC%A7%80-%EB%AA%BB%ED%96%88%EB%8D%98-%EC%9D%B4%EC%9C%A0-3c23f0ec6b82) 이슈가 close되어서 찾아보니 [여러](https://developers.google.com/web/updates/2017/09/abortable-fetch) [방법](https://github.com/whatwg/fetch/issues/447)이 있기는 한듯. 결론(?)적으로는 request.signal을 이용한 [이 방법](https://github.com/web-platform-tests/wpt/pull/6484#issuecomment-315775251)이 최선일 각????
 
 
 ## Axios
@@ -81,6 +99,8 @@ if (responseOK) {
 ```
 
 
+# refs
 * https://stackoverflow.com/questions/40844297/what-is-difference-between-axios-and-fetch
 * https://www.javascriptstuff.com/ajax-libraries/
 * https://dzone.com/articles/top-javascript-libraries-for-making-ajax-calls
+* 리얼월드 HTTP
