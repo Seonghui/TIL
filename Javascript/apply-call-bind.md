@@ -1,5 +1,5 @@
 call, apply, bind, Spread Operator
----
+===
 
 # 1. call과 apply
 함수가 실행될 때 내부 컨텍스트의 this는 실행 중인 객체 자신을 가리키거나 window를 가리킨다. 이때 this가 가리키는 대상을 바꿀 수 있는데, 이렇게 this값을 조작하는데 사용하는 방법이 바로 call()과 apply()이다.
@@ -24,16 +24,16 @@ obj1.getName.call(obj2); //'FREE'
 ```   
 
 ## 1.1 사용방법
-1. call
+- call
 
 ```
-함수.call(지정할 객체명, 전달할 매개변수)
+함수.call(지정할 객체명(컨텍스트), 전달할 매개변수)
 ``` 
 
-2. apply
+- apply
 
 ```
-함수.apply(지정할 객체명, [전달할 매개변수])
+함수.apply(지정할 객체명(컨텍스트), [전달할 매개변수])
 ```
 
 ## 1.2 call()과 apply()의 차이점
