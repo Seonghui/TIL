@@ -1,6 +1,4 @@
-# keep-alive-and-pipelining
-
-## Keep-Alive와 파이프라이닝
+# Keep-Alive와 파이프라이닝
 
 둘 다 범용적으로 모든 HTTP 통신을 고속화하는 기능
 
