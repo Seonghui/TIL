@@ -97,11 +97,14 @@ $ git checkout master
 "feature\_x" 브랜치 삭제. 그런데 원격 브랜치도 삭제를 해줘야 됨.
 
 ```text
-# 로컬
+# 로컬 브랜치 삭제
 $ git branch -d feature_x
 
-# 원격 브랜치
-$ git push origin :feature_x
+# 원격 브랜치에 반영
+$ git push origin feature_x
+
+# 로컬 브랜치 삭제하면서 원격 브랜치까지 삭제
+$ git push origin --delete feature_x
 ```
 
 ### 브랜치를 원격 저장소로 전송
