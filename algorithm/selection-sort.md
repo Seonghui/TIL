@@ -1,3 +1,5 @@
+# selection-sort
+
 ```javascript
 const selectionSort = ((arr) =>{
     for(let i = 0; i < arr.length; i++) {
@@ -15,3 +17,4 @@ const selectionSort = ((arr) =>{
 let arr = [12,56,35,93,45,62,56,8];
 console.log(selectionSort(arr));
 ```
+

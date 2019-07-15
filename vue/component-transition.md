@@ -1,7 +1,6 @@
-컴포넌트 트랜지션
----
+# 컴포넌트 트랜지션
 
-```html
+```markup
 <div id="demo">
   <button v-on:click="show = !show">
     Toggle
@@ -12,7 +11,7 @@
 </div>
 ```
 
-```js
+```javascript
 new Vue({
   el: '#demo',
   data: {
@@ -36,5 +35,7 @@ new Vue({
 * keyframes 사용 가능
 * 최초 렌더링시 트랜지션 적용하려면 appear 속성 추가
 
-# References
-* https://kr.vuejs.org/v2/guide/transitions.html
+## References
+
+* [https://kr.vuejs.org/v2/guide/transitions.html](https://kr.vuejs.org/v2/guide/transitions.html)
+

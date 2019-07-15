@@ -1,7 +1,6 @@
-크롬 개발자도구 팁
----
+# 크롬 개발자도구 팁
 
-# 크롬 개발자도구로 안 쓰는 자바스크립트 찾아내기
+## 크롬 개발자도구로 안 쓰는 자바스크립트 찾아내기
 
 * 전체 웹사이트가 아닌 해당 페이지에서의 사용 여부를 나타내줌
 
@@ -17,7 +16,7 @@
 
 ![coverage](https://developers.google.com/web/tools/chrome-devtools/speed/imgs/jquery.png?hl=ko)
 
-# 크롬 개발자도구에서 특정 파일 block하고 보기
+## 크롬 개발자도구에서 특정 파일 block하고 보기
 
 ### 1. 네트워크 탭 클릭
 
@@ -27,7 +26,7 @@
 
 ![blocking](https://developers.google.com/web/tools/chrome-devtools/speed/imgs/blocking.png?hl=ko)
 
-### 3. + 버튼 누르고 특정 파일 경로나 파일명 추가하고 엔터 (예제에서는 `/libs/*`)
+### 3. + 버튼 누르고 특정 파일 경로나 파일명 추가하고 엔터 \(예제에서는 `/libs/*`\)
 
 ![blocking](https://developers.google.com/web/tools/chrome-devtools/speed/imgs/libs.png?hl=ko)
 
@@ -35,5 +34,7 @@
 
 ![blocking](https://developers.google.com/web/tools/chrome-devtools/speed/imgs/blockedlibs.png?hl=ko)
 
-# refs
-https://developers.google.com/web/tools/chrome-devtools/speed/get-started?hl=ko
+## refs
+
+[https://developers.google.com/web/tools/chrome-devtools/speed/get-started?hl=ko](https://developers.google.com/web/tools/chrome-devtools/speed/get-started?hl=ko)
+

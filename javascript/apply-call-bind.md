@@ -1,8 +1,10 @@
-call, apply, bind, Spread Operator
-===
+# apply-call-bind
 
-# 1. call과 apply
-함수가 실행될 때 내부 컨텍스트의 this는 실행 중인 객체 자신을 가리키거나 window를 가리킨다. 이때 this가 가리키는 대상을 바꿀 수 있는데, 이렇게 this값을 조작하는데 사용하는 방법이 바로 call()과 apply()이다.
+## call, apply, bind, Spread Operator
+
+## 1. call과 apply
+
+함수가 실행될 때 내부 컨텍스트의 this는 실행 중인 객체 자신을 가리키거나 window를 가리킨다. 이때 this가 가리키는 대상을 바꿀 수 있는데, 이렇게 this값을 조작하는데 사용하는 방법이 바로 call\(\)과 apply\(\)이다.
 
 ```javascript
 var obj1 = {
@@ -21,23 +23,26 @@ var obj2 = {
 
 obj1.getName(); //'WEB'
 obj1.getName.call(obj2); //'FREE'
-```   
-
-## 1.1 사용방법
-- call
-
 ```
+
+### 1.1 사용방법
+
+* call
+
+```text
 함수.call(지정할 객체명(컨텍스트), 전달할 매개변수)
-``` 
-
-- apply
-
 ```
+
+* apply
+
+```text
 함수.apply(지정할 객체명(컨텍스트), [전달할 매개변수])
 ```
 
-## 1.2 call()과 apply()의 차이점
+### 1.2 call\(\)과 apply\(\)의 차이점
+
 동일하게 this 키워드가 가리키는 대상을 변경할 수 있게 해주지만, 인자를 전달하는 방식에 차이가 있다.
+
 * call: 쉼표로 구분해서 전달
 * apply: 배열 형태로 전달
 
@@ -52,7 +57,8 @@ myobj.sum.call(null, 1, 2); // 3
 myobj.sum.apply(null, [1, 2]); // 3
 ```
 
-## 1.3 확산 연산자(Spread Operator)
+### 1.3 확산 연산자\(Spread Operator\)
+
 만약 this 값이 중요하지 않은 경우 확산 연산자를 그대로 사용할 수 있다. 이 경우 apply와 같은 결과를 얻을 수 있다. 아래 예제에서 this의 값에 null을 쓴 이유는 Math.min과 Math.max가 this와 관계없이 동작하기 때문이다. 즉, 무엇을 넘기든 상관이 없다.
 
 ```javascript
@@ -64,8 +70,8 @@ Math.max.apply(null, arr); // 15
 Math.max(...arr); //15
 ```
 
+## 2. bind
 
-# 2. bind
 함수의 this 값을 영구적으로 바꿀 수 있다.
 
 ```javascript
@@ -87,8 +93,7 @@ var res = obj1.getName.bind(obj2);
 res(); // 'FREE'
 ```
 
-
-# Example
+## Example
 
 ```javascript
 const bruce = {
@@ -157,3 +162,4 @@ const bruce = {
   console.log(bruce); 
   // {name: "Bruce", birthYear: 1949, occupation: "singer, songwriter"}
 ```
+

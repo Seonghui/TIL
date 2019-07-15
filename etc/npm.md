@@ -1,10 +1,12 @@
-npm(Node Package Manager)
----
-npm은 node.js 기반의 모듈을 모아놓은 모듈저장소
-npm init 명령어로 프로젝트 관리를 위한 package.json 파일 생성
+# npm
+
+## npm\(Node Package Manager\)
+
+npm은 node.js 기반의 모듈을 모아놓은 모듈저장소 npm init 명령어로 프로젝트 관리를 위한 package.json 파일 생성
 
 ## 명령어 모음
-```
+
+```text
 # package.json에 있는 모든 디펜던시 설치하기
 npm install
 
@@ -25,5 +27,5 @@ npm ls
 
 # 오래된 패키지 조회
 npm outdated
-
 ```
+
