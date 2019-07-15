@@ -4,7 +4,7 @@
 * [http](http/README.md)
   * [인증과 세션](http/authorization-and-session.md)
   * [cache](http/cache.md)
-  * [keep-alive-and-pipelining](http/keep-alive-and-pipelining.md)
+  * [Keep-Alive와 파이프라이닝](http/keep-alive-and-pipelining.md)
   * [tls](http/tls.md)
   * [header](http/header.md)
   * [cookie](http/cookie.md)
