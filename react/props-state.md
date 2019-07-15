@@ -1,8 +1,8 @@
-# props-state
+---
+description: 둘 다 리액트에서 다루는 데이터이다.
+---
 
-## props와 state
-
-둘 다 리액트에서 다루는 데이터이다.
+# props와 state
 
 ## 1. props
 

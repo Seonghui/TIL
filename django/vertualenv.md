@@ -1,8 +1,7 @@
-# vertualenv
+# 가상환경\(Virtual environment\)
 
-## 가상환경\(Virtual environment\)
+가상환경\(Virtual environment\), 줄여서 virtualenv
 
-* 가상환경\(Virtual environment\), 줄여서 virtualenv
 * 독립적인 python 가상 환경을 새로 설정해 다른 프로젝트를 진행하면서 설치했던 라이브러리들간의 의존성 문제를 해결할 수 있도록 해줌. 즉 격리된 별도의 라이브러리 설치 디렉토리를 뜻함. 가상환경은 편의성을 위해 프로젝트별로 하나씩 생성하는 것이 좋음
 
 ## 파이썬 가상환경 라이브러리

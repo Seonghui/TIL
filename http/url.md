@@ -1,8 +1,4 @@
-# url
-
-### URL\(Uniform Resource Locator\)
-
-## URL
+# URL\(Uniform Resource Locator\)
 
 ### 일반적인 URL의 형식
 
@@ -27,7 +23,7 @@ http 프로토콜을 사용해서 www.mywebsite.com이라는 서버의 접속하
 * 실제로 통신하는 곳임.
 * 서버 주소에는 프로토콜 서비스의 포트 번호가 올 수 있음 \(ex: [http://localhost:8000](http://localhost:8000)\).
 
-#### 포트
+### 포트
 
 * 포트는 아파트 등의 현관 우편함 같은 것.
 * 같은 주소라도 포트가 다르면 독립적으로 복수의 서버를 운영해 서비스 제공 가능

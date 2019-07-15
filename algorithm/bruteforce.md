@@ -1,4 +1,4 @@
-# bruteforce
+# 브루트 포스
 
 ## 브루트 포스\(Brute Force\) 기본
 

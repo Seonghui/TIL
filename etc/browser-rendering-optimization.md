@@ -1,6 +1,4 @@
-# browser-rendering-optimization
-
-### 프론트엔드 성능 최적화
+# 프론트엔드 성능 최적화
 
 * 서버 성능 분석가의 관심사: 서버가 얼마나 많은 요청을 처리할 수 있나? \(TPS: Transition Per Second\)
 * FE 성능 분석가의 관심사: 사용자 입력에 얼마나 빠르게 반응할 수 있나? \(LAI: Loading And Interaction\)

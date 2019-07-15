@@ -1,6 +1,4 @@
-# ga
-
-### Google Analytics
+# Google Analytics
 
 ## 생김새
 

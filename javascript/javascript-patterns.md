@@ -1,6 +1,6 @@
-# javascript-patterns
+# 자바스크립트 패턴
 
-### 자바스크립트 패턴
+
 
 * Module
 * Prototype

@@ -1,6 +1,6 @@
-# web-architecture
+# 모던 웹 아키텍쳐 개요
 
-### 모던 웹 아키텍쳐 개요
+
 
 ![&#xBAA8;&#xB358; &#xC6F9; &#xC544;&#xD0A4;&#xD14D;&#xCCD0; &#xAC1C;&#xC694;](https://images.ctfassets.net/rpmifyuylbfw/6Qv56PUiQwmgYEokCWKGgW/d7d470aef20abadf6dd29c5de023e529/main.png?w=665)
 

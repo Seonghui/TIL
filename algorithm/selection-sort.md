@@ -1,4 +1,4 @@
-# selection-sort
+# 선택 정렬
 
 ```javascript
 const selectionSort = ((arr) =>{

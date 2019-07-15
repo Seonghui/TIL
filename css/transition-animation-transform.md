@@ -1,6 +1,4 @@
-# transition-animation-transform
-
-### Transition, animation and transform
+# Transition, animation and transform
 
 ## Transition
 

@@ -23,7 +23,11 @@
 
 ## 자주 하는 오해
 
-![pixel example](https://sebastien-gabriel.com/designers-guide-to-dpi/images/blue-square-01.png) 픽셀 자체는 물리적인 사이즈를 가지지 않는다. 픽셀의 사이즈는 스크린의 물리적 사이즈나 해상도 혹은 PPI들에 의해 결졍된다.
+ 
+
+![pixel example](https://sebastien-gabriel.com/designers-guide-to-dpi/images/blue-square-01.png)
+
+픽셀 자체는 물리적인 사이즈를 가지지 않는다. 픽셀의 사이즈는 스크린의 물리적 사이즈나 해상도 혹은 PPI들에 의해 결졍된다.
 
 ## 4k가 뭘까
 

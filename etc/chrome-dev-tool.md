@@ -1,6 +1,4 @@
-# chrome-dev-tool
-
-### 크롬 개발자도구로 웹사이트 퍼포먼스 분석하기
+# 크롬 개발자 도구 - Performance
 
 ## Performance
 

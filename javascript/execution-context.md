@@ -1,8 +1,8 @@
-# execution-context
+---
+description: 어떻게 자바스크립트 코드가 실행되는지 이해하기 위해 알아야하는 개념이다.
+---
 
-## 실행 컨텍스트 \(실행 문맥\)
-
-어떻게 자바스크립트 코드가 실행되는지 이해하기 위해 알아야하는 개념이다.
+# 실행 컨텍스트 \(실행 문맥\)
 
 ## 1. 실행 컨텍스트 개념
 
@@ -63,7 +63,11 @@ function context2() {
 
 ## 4. 실행 컨텍스트 생성 과정
 
-![execution-context](https://user-images.githubusercontent.com/16531837/44141222-71a427bc-a0b7-11e8-8b90-8257d70b2ffc.png) 1. 활성 객체 생성 \(공간 생성\) 2. arguments 객체 생성 3. 스코프 정보 생성 4. 변수 생성 5. this 바인딩 6. 코드 실행
+ 
+
+![execution-context](https://user-images.githubusercontent.com/16531837/44141222-71a427bc-a0b7-11e8-8b90-8257d70b2ffc.png)
+
+1. 활성 객체 생성 \(공간 생성\) 2. arguments 객체 생성 3. 스코프 정보 생성 4. 변수 생성 5. this 바인딩 6. 코드 실행
 
 쉽게 말해서 함수가 호출되면 함수의 실행 컨텍스트가 생성된다. 실질적으로는 함수 내부 정보를 담는 객체가 생성되고, 그 안에는 함수 정보가 담긴다. 이후 코드가 생성된다.
 

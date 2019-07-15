@@ -1,6 +1,4 @@
-# constructor-function
-
-## 생성자 함수
+# 생성자 함수
 
 ## 1. 생성자 함수의 개념
 

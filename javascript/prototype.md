@@ -1,6 +1,4 @@
-# prototype
-
-## 프로토타입\(Prototype\)
+# 프로토타입 \(Prototype\)
 
 ## 1. 프로토타입의 정의
 

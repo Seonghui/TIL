@@ -1,6 +1,4 @@
-# cache
-
-### 캐시
+# 캐시
 
 * 콘텐츠가 변경되지 않았을 땐 로컬에 저장된 파일을 재사용함으로써 다운로드 횟수를 줄이고 성능을 높인다.
 * GET, HEAD 메서드 이외에는 기본적으로 캐시되지 않는다.
@@ -41,12 +39,12 @@ no-cache는 요청한 콘텐츠가 이미 저장돼 있어도, 원래 서버\(�
 
 Cache-Control헤더로 더 유연한 케시 제어를 지시할 수 있다. Expires보다 우선해서 처리한다. 서버가 응답으로 보내는 헤더의 키는 아래와 같다.
 
-* public: 같은 컴퓨터를 복수의 사용자간 캐시 재사용을 허가한다.
-* private: 같은 컴퓨터를 사용하는 다른 사용자 간 캐시를 재사용하지 않는다. 같은 URL에서 사용자마자 다른 콘텐츠가 돌아오는 경우에 이용한다.
-* max-age=n: 캐시의 신선도를 초단위로 설정. 86400을 지정하면 하루동안 캐시가 유효하고 서버에 문의하지 않고 캐시를 이용한다. 그 이후 서버의 문의한 뒤 304 Not Modified가 반환되었을 때만 캐시를 이용한다.
-* s-maxage=n: max-age와 같으나 공유 캐시에 대한 설정값이다.
-* no-cache: 캐시가 유효한지 매번 문의한다. max-age=0와 거의 같다.
-* no-store: 캐시하지 않는다.
+* **public**: 같은 컴퓨터를 복수의 사용자간 캐시 재사용을 허가한다.
+* **private**: 같은 컴퓨터를 사용하는 다른 사용자 간 캐시를 재사용하지 않는다. 같은 URL에서 사용자마자 다른 콘텐츠가 돌아오는 경우에 이용한다.
+* **max-age=n**: 캐시의 신선도를 초단위로 설정. 86400을 지정하면 하루동안 캐시가 유효하고 서버에 문의하지 않고 캐시를 이용한다. 그 이후 서버의 문의한 뒤 304 Not Modified가 반환되었을 때만 캐시를 이용한다.
+* **s-maxage=n**: max-age와 같으나 공유 캐시에 대한 설정값이다.
+* **no-cache**: 캐시가 유효한지 매번 문의한다. max-age=0와 거의 같다.
+* **no-store**: 캐시하지 않는다.
 
 no-cache는 Pragma: no-cache와 똑같이 캐시하지 않는 것은 아니고, 시간을 보고 서버에 접속하지 않은 채 콘텐츠를 재이용하는 것을 그만둘 뿐이다.
 
@@ -68,16 +66,16 @@ referer: https://www.google.co.kr/
 
 만약 북마크에서 선택하거나 주소창에서 키보드로 직접 입력했을 때는 Referer태그를 전송하지 않더나 Referer:ablut:blank를 전송한다. 기본 동작으로는 https -&gt; http 일때 전송하지 않는 것이 기본이다.
 
-### 리퍼러 정책으로 설정할 수 있는 값-
+### 리퍼러 정책으로 설정할 수 있는 값
 
-* no-referrer: 전혀 보내지 않는다
-* no-referrer-when-downgrade: 현재 기본 동작과 마찬가지로 https -&gt; http일때는 전송하지 않는다
-* same-origin: 동일 도메인 내의 링크에 대해서만 리퍼러를 전송한다
-* origin: 상세페이지가 아니라 톱페이지에서 링크된 것으로 해 도메인 이름만 전송한다 \(무슨말이지\)
-* strict-origin: origin과 같지만 https -&gt; http일때는 전송하지 않는다
-* origin-when-crossorigin: 같은 도매인 내에서는 완전 리퍼러\(?\)를, 다른 도메인에서는 도메인 이름만 전송한다.
-* strict-origin-when-crossorigin: origin-when-crossorigin과 같지만 https-&gt;http일때는 송신하지 않는다.
-* unsafe-url: 항상 전송한다
+* **no-referrer**: 전혀 보내지 않는다
+* **no-referrer-when-downgrade**: 현재 기본 동작과 마찬가지로 https -&gt; http일때는 전송하지 않는다
+* **same-origin**: 동일 도메인 내의 링크에 대해서만 리퍼러를 전송한다
+* **origin**: 상세페이지가 아니라 톱페이지에서 링크된 것으로 해 도메인 이름만 전송한다 \(무슨말이지\)
+* **strict-origin**: origin과 같지만 https -&gt; http일때는 전송하지 않는다
+* **origin-when-crossorigin**: 같은 도매인 내에서는 완전 리퍼러\(?\)를, 다른 도메인에서는 도메인 이름만 전송한다.
+* **strict-origin-when-crossorigin**: origin-when-crossorigin과 같지만 https-&gt;http일때는 송신하지 않는다.
+* **unsafe-url**: 항상 전송한다
 
 ## refs
 

@@ -1,6 +1,4 @@
-# vue-with-django
-
-## Django랑 vue.js 같이 사용하기
+# Vue with django
 
 ### 1. Django REST framework + Vue.js\(Vue CLI\)
 

@@ -1,7 +1,5 @@
 # v-model
 
-## v-model
-
 ## 기본 개념
 
 * 폼 input과 textarea element에 양방향 데이터 바인딩을 생성. 참고로 v-model을 사용하면 form의 기본 속성들\(value, checked, selected\)등을 무시.

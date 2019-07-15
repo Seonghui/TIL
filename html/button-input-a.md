@@ -1,6 +1,4 @@
-# button-input-a
-
-### button, input and a tag
+# button, input and a tag
 
 ## 태그 설명
 

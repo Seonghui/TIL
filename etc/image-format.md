@@ -1,6 +1,4 @@
-# image-format
-
-### 웹에서 자주 쓰이는 이미지 형식 정리
+# 웹 이미지 형식
 
 ![&#xC774;&#xBBF8;&#xC9C0; &#xD3EC;&#xB9F7;](https://i.stack.imgur.com/Ow8RZ.png)
 

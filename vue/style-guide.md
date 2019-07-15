@@ -1,6 +1,4 @@
-# style-guide
-
-### vue.js 스타일 가이드
+# vue.js 스타일 가이드
 
 ## 필수
 

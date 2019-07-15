@@ -4,11 +4,19 @@
 
 ## 일반적인 실행
 
-![common](https://blog.asamaru.net/res/img/post/2017/05/script-async-defer-1.png) 스크립트를 가져오느라 HTMl 구문 분석이 일시 중단
+ 
+
+![common](https://blog.asamaru.net/res/img/post/2017/05/script-async-defer-1.png)
+
+스크립트를 가져오느라 HTMl 구문 분석이 일시 중단
 
 ## async를 추가한 상황
 
-![async](https://blog.asamaru.net/res/img/post/2017/05/script-async-defer-2.png) 스크립트 파일이 비동기적으로 실행될 수 있음을 나타내기 위해 사용. HTML 구문 분석과 병행하여 스크립트를 가져온 후 스크립트가 준비될 때마다 즉시 실행. 실행속도가 다운로드 완료 시점에 결정되니까 실행 순서가 중요한 스크립트들을 사용할 때는 주의해서 사용해야 함.
+ 
+
+![async](https://blog.asamaru.net/res/img/post/2017/05/script-async-defer-2.png)
+
+스크립트 파일이 비동기적으로 실행될 수 있음을 나타내기 위해 사용. HTML 구문 분석과 병행하여 스크립트를 가져온 후 스크립트가 준비될 때마다 즉시 실행. 실행속도가 다운로드 완료 시점에 결정되니까 실행 순서가 중요한 스크립트들을 사용할 때는 주의해서 사용해야 함.
 
 ```text
 <script async src="script.js">
@@ -16,7 +24,11 @@
 
 ## defer 속성을 추가한 상황
 
-![defer](https://blog.asamaru.net/res/img/post/2017/05/script-async-defer-3.png) HTML 구문 분석이 실행되는 동안 파일을 다운로드. 그리고 구문 분석이 완료되기 전에 스크립트가 다운로드 완료되더라도 구문 분석이 완료될때까지 스크립트는 실행되지 않음. 그리고 호출 순서대로 실행.
+ 
+
+![defer](https://blog.asamaru.net/res/img/post/2017/05/script-async-defer-3.png)
+
+HTML 구문 분석이 실행되는 동안 파일을 다운로드. 그리고 구문 분석이 완료되기 전에 스크립트가 다운로드 완료되더라도 구문 분석이 완료될때까지 스크립트는 실행되지 않음. 그리고 호출 순서대로 실행.
 
 ```text
 <script defer src="script.js">

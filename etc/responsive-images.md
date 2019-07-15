@@ -1,8 +1,4 @@
-# responsive-images
-
-### 반응형 이미지
-
-* 장식용 이미지는 css 배경 이미지로 구현
+# 반응형 이미지
 
 ## srcset, sizes
 
@@ -69,7 +65,8 @@ srcset에 sizes 없이 x-서술자 사용하기
 
 ## 알아둘 것
 
-IE 미지원
+* IE 미지원
+* 장식용 이미지는 css 배경 이미지로 구현할 
 
 ## refs
 

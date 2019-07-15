@@ -1,8 +1,6 @@
-# svg
+# SVG
 
-### SVG\(Scalable Vector Graphics\) 최적화하기
-
-## SVG란?
+## SVG\(Scalable Vector Graphics\)란?
 
 * 2차원 그래픽을 표현하기 위해 만들어진 XML 파일 형식의 마크업 언어
 * 코드로 수정 가능

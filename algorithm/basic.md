@@ -1,4 +1,4 @@
-# basic
+# 알고리즘 개념
 
 ## 시간복잡도\(Time complexity\)
 

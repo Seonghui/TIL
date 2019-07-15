@@ -1,10 +1,8 @@
 # nuxt
 
-### nuxt
-
 넉스트는 뷰, 뷰 라우터, 뷰엑스, 뷰 서버 렌더러와 뷰 메타의 조합임. 뷰 서버 렌더러는 spa 모드일 때 제외됨. 매뉴얼상의 넉스트는 universal app을 생성하기 위한 프레임워크임. 유니버셜 앱은 클라이언트 사이드와 서버 사이드에 대한 fancy word임. 그런데 서버 사이드에서 동작한다고 해서 넉스트가 익스프레스 같은 백엔드 프레임워크는 아니고, 서버 사이드 넉스트는 실제적으로 미리 구성된 vue 서버 렌더러임.
 
-## SSR \(Server side Rendering\)
+## 1. SSR \(Server side Rendering\)
 
 ### 장점
 
@@ -17,7 +15,7 @@
 * 설치와 배포 설정이 복잡. SPA는 정적 파일 서버라면 어디서든 배포가 되는데 서버 렌더링 앱에서는 Node.js 서버가 실행될 수있는 환경이 필요함 \(뭐????\)
 * 서버 사이드 로드가 증가. node.js에서 전체 앱을 렌더링하면 정적 파일 렌더링할때보다 cpu 사용량이 증가. 따라서 만약 트래픽이 많은 사이트라면 이러한 서버 로드에 대비하고 캐싱 등을 사용해서 대처해야 함.
 
-## lifecycle
+## 2. lifecycle
 
 Request가 들어오면..
 
@@ -61,10 +59,17 @@ export default function (context) {
 }
 ```
 
-#### 미들웨어 사용하기
+#### 미들웨어 사용하기 - 특정 페이지에서 사용하기
 
-* 특정 페이지에서 사용하기 ![&#xD2B9;&#xC815; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;](https://cdn-images-1.medium.com/max/2400/1*zNEFZjo0KQXWaoOAMO6xSQ.png) 앞서 말했듯 미들웨어는 특정 페이지나 전체 페이지에서전부 사용할 수 있는데, 특정 페이지에서 미들웨어를 사용하는 경우에는 페이지에 미들웨어 프로퍼티를 직접 작성하면 됨. 플러그인과 비슷하게 작성하면 되고 미들웨어 이름은 미들웨어 폴더에 있는 파일명임
-* 전체 페이지에서 사용하기 ![&#xC804;&#xCCB4; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;](https://cdn-images-1.medium.com/max/2400/1*kaobLl8tIPPU1A0bvPYrcw.png) nuxt.config.js에서 router 프로퍼티를 추가하고 그 안에 미들웨어를 추가하면 됨. 이렇게 하면 전체 페이지에 미들웨어 적용됨
+![&#xD2B9;&#xC815; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;](https://cdn-images-1.medium.com/max/2400/1*zNEFZjo0KQXWaoOAMO6xSQ.png)
+
+앞서 말했듯 미들웨어는 특정 페이지나 전체 페이지에서전부 사용할 수 있는데, 특정 페이지에서 미들웨어를 사용하는 경우에는 페이지에 미들웨어 프로퍼티를 직접 작성하면 됨. 플러그인과 비슷하게 작성하면 되고 미들웨어 이름은 미들웨어 폴더에 있는 파일명임
+
+#### 미들웨어 사용하기 - 전체 페이지에서 사용하기
+
+![&#xC804;&#xCCB4; &#xD398;&#xC774;&#xC9C0;&#xC5D0;&#xC11C; &#xBBF8;&#xB4E4;&#xC6E8;&#xC5B4; &#xC0AC;&#xC6A9;&#xD558;&#xAE30;](https://cdn-images-1.medium.com/max/2400/1*kaobLl8tIPPU1A0bvPYrcw.png)
+
+nuxt.config.js에서 router 프로퍼티를 추가하고 그 안에 미들웨어를 추가하면 됨. 이렇게 하면 전체 페이지에 미들웨어 적용됨
 
 ### validate\(\) - Pages & children
 

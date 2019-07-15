@@ -1,6 +1,4 @@
-# global-local-variable
-
-## 전역 변수와 지역 변수
+# 전역 변수와 지역 변수
 
 ## 1. 전역 변수 \(Global Variable\)
 

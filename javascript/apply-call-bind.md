@@ -1,6 +1,4 @@
-# apply-call-bind
-
-## call, apply, bind, Spread Operator
+# call, apply, bind, Spread Operator
 
 ## 1. call과 apply
 

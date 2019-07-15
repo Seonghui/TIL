@@ -1,4 +1,4 @@
-# expo-run-emulator-and-phone
+# Expo Emulator 실행방법 & 스마트폰에서 직접 질행하기 \(OSX\)
 
 ### Expo Emulator 실행방법 & 스마트폰에서 직접 질행하기 \(OSX\)
 

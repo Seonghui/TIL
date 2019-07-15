@@ -1,8 +1,7 @@
-# ir
+# IR \(Image Replacement\)
 
-### IR\(Image Replacement\)
+이미지에 대체 텍스트를 제공하는 것.
 
-* 이미지에 대체 텍스트를 제공하는 것.
 * html 요소를 사용하는 경우에는 alt 속성으로 제공 가능
 
 ## Visibility: hidden과 display: none은 올바른 IR기법이 아니다

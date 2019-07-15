@@ -1,8 +1,6 @@
 # flexbox
 
-## Flexbox
-
-* flex box에서 중요한 건 축이다. 축을 기준으로 element들을 정렬하는 것이다. 축은 `flex-direction` 속성을 사용해서 지정할 수 있다.
+flex box에서 중요한 건 축이다. 축을 기준으로 element들을 정렬하는 것이다. 축은 `flex-direction` 속성을 사용해서 지정할 수 있다.
 
 ## 속성
 
