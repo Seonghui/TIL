@@ -161,3 +161,6 @@ const bruce = {
   // {name: "Bruce", birthYear: 1949, occupation: "singer, songwriter"}
 ```
 
+## refs
+
+* 러닝 자바스크립트
