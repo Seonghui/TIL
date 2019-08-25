@@ -1,9 +1,9 @@
-Transition, animation and transform
----
+# Transition, animation and transform
 
-# Transition
-* 요소의 변화를 일정 기간(duration)동안 일어나게 함
-* 자동으로 발동되지 않음. 특정 이벤트(호버, 클릭 등)에 의해 동작됨
+## Transition
+
+* 요소의 변화를 일정 기간\(duration\)동안 일어나게 함
+* 자동으로 발동되지 않음. 특정 이벤트\(호버, 클릭 등\)에 의해 동작됨
 
 ```css
 .sqare {
@@ -24,49 +24,51 @@ Transition, animation and transform
 }
 ```
 
-# Animation
+## Animation
+
 * 이벤트 없이 효과 줄 수 있음
 * 축약 가능
-```
-// animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction  순서
-animation: slidein 3s linear 1s infinite alternate;
-```
 
-## 예시
+  ```text
+  // animation-name, animation-duration, animation-timing-function, animation-delay, animation-iteration-count, animation-direction  순서
+  animation: slidein 3s linear 1s infinite alternate;
+  ```
+
+### 예시
+
 1. 키프레임 정의
-```css
-// from은 0%, to는 100%
-@keyframes myAnimation {
+
+   \`\`\`css
+
+   // from은 0%, to는 100%
+
+   @keyframes myAnimation {
+
     from {
-        background-color: red;
-        width: 100px;
-        height: 100px;
+
+   ```text
+    background-color: red;
+    width: 100px;
+    height: 100px;
+   ```
+
     }
+
     to {
-        background-color: blue;
-        width: 200px;
-        heigh: 100px;
-    }
-}
 
-// 이렇게도 정의 가능
-@keyframes myAnimation {
-    0% {
-        background-color: red;
-        width: 100px;
-        height: 100px;
-    }
-    30% {
-        background-color: yellow;
-    }
-    100% {
-        background-color: blue;
-        width: 200px;
-        heigh: 200px;
-    }
-}
-```
+   ```text
+    background-color: blue;
+    width: 200px;
+    heigh: 100px;
+   ```
 
+    }
+
+   }
+
+// 이렇게도 정의 가능 @keyframes myAnimation { 0% { background-color: red; width: 100px; height: 100px; } 30% { background-color: yellow; } 100% { background-color: blue; width: 200px; heigh: 200px; } }
+
+```text
 2. 적용하기
 ```css
 .sqare {
@@ -109,23 +111,28 @@ animation: slidein 3s linear 1s infinite alternate;
 }
 ```
 
-# Transform
-* 요소에 이동(translate), 회전(rotate), 획대 축소(scale), 비틀기(skew) 효과를 줄 수 있음
+## Transform
 
-![transform 속성들](https://i.imgur.com/qgaqmoI.png)
+* 요소에 이동\(translate\), 회전\(rotate\), 획대 축소\(scale\), 비틀기\(skew\) 효과를 줄 수 있음
 
-## transform
+![transform &#xC18D;&#xC131;&#xB4E4;](https://i.imgur.com/qgaqmoI.png)
+
+### transform
+
 * 여러개 나열할 수 있음. `transform: scale(.5) rotate(20deg);` 이렇게 쉼표없이 나열
 * 트랜지션을 주면 움직이게도 할 수 있음
 
-## transform-origin
-* 요소의 기본 기준점을 설정할 때 사용. 기본 기준점은 요소의 정중앙 (50%, 50%)
+### transform-origin
 
-## 3d transform
+* 요소의 기본 기준점을 설정할 때 사용. 기본 기준점은 요소의 정중앙 \(50%, 50%\)
+
+### 3d transform
+
 * 이건 나중에 궁금하면 다시 알아보기
 
+## refs
 
-# refs
-* https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Animations/Using_CSS_animations
-* https://poiemaweb.com/css3-transform
-* https://ahribori.com/article/5a0c49926c9eef13d882e3ea
+* [https://developer.mozilla.org/ko/docs/Web/CSS/CSS\_Animations/Using\_CSS\_animations](https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Animations/Using_CSS_animations)
+* [https://poiemaweb.com/css3-transform](https://poiemaweb.com/css3-transform)
+* [https://ahribori.com/article/5a0c49926c9eef13d882e3ea](https://ahribori.com/article/5a0c49926c9eef13d882e3ea)
+
