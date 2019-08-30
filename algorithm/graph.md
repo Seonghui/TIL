@@ -4,6 +4,8 @@
 
 ## 1. 깊이 우선 탐색과 너비 우선 탐색
 
+![DFS와 BFS](https://ww.namu.la/s/1fe9246903b78fae07577b243a0b22791e02cb39640d5cbaae10d9849343b4ea6f162a9a677a5892fbf7819abd4ef7221ebd3608849cfb66793411fb5e643951fbef3bda9d864da7d156ded3717ec86b79316e27ed8eda9ac96e6b15c2dfbd65)
+
 ### 1.1 깊이 우선 탐색 (DFS; Depth First Search)
 
 시작 정점에서 한 방향으로 갈 수 있는 가장 먼 경로까지 탐색하다가 갈 곳이 없으면, 가장 마지막에 만났던 부모 노드로 돌아와서 다른 방향을 탐색하는 방법
