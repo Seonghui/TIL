@@ -77,7 +77,9 @@
 
 ## javascript <a id="javascript-1"></a>
 
-* [1. 자바스크립트의 특징](javascript-1/javascript-1.md)
+* [1. 자바스크립트의 특징](javascript-1/javascript-1/README.md)
+  * [동작 원리](javascript-1/javascript-1/undefined.md)
+  * [구성 요소](javascript-1/javascript-1/undefined-2.md)
 * [2. 데이터 타입과 변수](javascript-1/javascript-2/README.md)
   * [변수 \(Variable\)](javascript-1/javascript-2/variable.md)
   * [자료형](javascript-1/javascript-2/data-type.md)
