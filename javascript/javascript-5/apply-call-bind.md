@@ -70,7 +70,7 @@ Math.max(...arr); //15
 
 ## 2. bind
 
-함수의 this 값을 영구적으로 바꿀 수 있다.
+함수의 this 값을 영구적으로 바꿀 수 있다. call과 apply는 즉시 호출되는 반면, bind는 새로운 함수를 생성한다. 따라서 변수에 담을 수 있다.
 
 ```javascript
 var obj1 = {
