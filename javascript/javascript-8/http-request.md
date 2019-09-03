@@ -83,6 +83,8 @@ try {
 
 콜백지옥을 탈출하기위해 ES6에서 Promise가 등장. 쉽게 말해 성공과 실패를 분리해서 메소드를 실행하는 것. Promise 생성자 함수는 비동기 작업을 수행할 콜백 함수를 인자\(reslove와 reject\)로 전달받음. Promise는 then 함수로 꼬리에 꼬리를 잇는 체이닝 방식으로 비동기 방식을 순차적으로 처리할 수 있다.
 
+resolve를 통해서 결과값을 넘기게 되면, 그 결과값이 then에서 받은 함수에게 넘겨지게 된다. promise를 사용하기 전에는 콜백 안에 콜백을 넣는 식으로 사용했다면, 이제는 then을 이어서 (프로미스 체이닝) 콜백 없이도 구현할 수 있게 해준다. 이때 다음 then의 실행조건은 이전 then에서 실행한 promise가 resolve 되었을 때이다.
+
 ```js
 // Promise 객체의 생성
 const promise = new Promise((resolve, reject) => {
@@ -257,6 +259,8 @@ if (responseOK) {
 ## 7. async and await
 
 우선 함수 앞에 async를 붙여주고 비동기로 처리되는 곳에 await를 추가합니다. 여기서 주의할 점은 await 뒷부분은 반드시 promise를 반환해야하며, async함수 자체도 promise를 반환합니다. async await은 거의 동기 코드랑 비슷하게 짤 수 있게 해줍니다.
+
+async는 프로미스를 반환하니까 명시적으로 프로미스 코드를 안 써줘도 된다. await은 promise를 기다린다.
 
 ```js
 function doubleAfter2Seconds(x) {
