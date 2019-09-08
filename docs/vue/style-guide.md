@@ -158,26 +158,6 @@ components/
 
 템플릿에다 하면 복잡해짐. 심플한 코드와 재사용성을 위해 computed나 filter로...
 
-```text
-// Bad
-{{
-  fullName.split(' ').map(function (word) {
-    return word[0].toUpperCase() + word.slice(1)
-  }).join(' ')
-}}
-
-// Good
-<!-- In a template -->
-{{ normalizedFullName }}
-// The complex expression has been moved to a computed property
-computed: {
-  normalizedFullName: function () {
-    return this.fullName.split(' ').map(function (word) {
-      return word[0].toUpperCase() + word.slice(1)
-    }).join(' ')
-  }
-}
-```
 
 ### 복잡한 계산은 최대한 간단한 계산으로 분할할 것
 
