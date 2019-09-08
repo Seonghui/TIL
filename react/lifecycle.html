@@ -1,0 +1,1766 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>LifeCycle API · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="array.html" />
+    
+    
+    <link rel="prev" href="basic.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    README
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../http/">
+            
+                <a href="../http/">
+            
+                    
+                    http
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../http/authorization-and-session.html">
+            
+                <a href="../http/authorization-and-session.html">
+            
+                    
+                    인증과 세션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../http/cache.html">
+            
+                <a href="../http/cache.html">
+            
+                    
+                    캐시
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../http/keep-alive-and-pipelining.html">
+            
+                <a href="../http/keep-alive-and-pipelining.html">
+            
+                    
+                    Keep-Alive와 파이프라이닝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../http/tls.html">
+            
+                <a href="../http/tls.html">
+            
+                    
+                    TLS(Transport Layer Security)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../http/header.html">
+            
+                <a href="../http/header.html">
+            
+                    
+                    header
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../http/cookie.html">
+            
+                <a href="../http/cookie.html">
+            
+                    
+                    cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../http/url.html">
+            
+                <a href="../http/url.html">
+            
+                    
+                    URL(Uniform Resource Locator)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../http/proxy.html">
+            
+                <a href="../http/proxy.html">
+            
+                    
+                    프록시
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../python/">
+            
+                <a href="../python/">
+            
+                    
+                    python
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../python/class.html">
+            
+                <a href="../python/class.html">
+            
+                    
+                    class
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../python/args-and-kwargs.html">
+            
+                <a href="../python/args-and-kwargs.html">
+            
+                    
+                    args and kwargs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../etc/">
+            
+                <a href="../etc/">
+            
+                    
+                    etc
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../etc/chrome-devtool-tip.html">
+            
+                <a href="../etc/chrome-devtool-tip.html">
+            
+                    
+                    크롬 개발자 도구 - 팁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../etc/chrome-dev-tool.html">
+            
+                <a href="../etc/chrome-dev-tool.html">
+            
+                    
+                    크롬 개발자 도구 - Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../etc/browser-rendering-optimization.html">
+            
+                <a href="../etc/browser-rendering-optimization.html">
+            
+                    
+                    프론트엔드 성능 최적화
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../etc/inside-browser.html">
+            
+                <a href="../etc/inside-browser.html">
+            
+                    
+                    브라우저 내부 살펴보기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../etc/undefined.html">
+            
+                <a href="../etc/undefined.html">
+            
+                    
+                    브라우저 동작 원리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../etc/web-architecture.html">
+            
+                <a href="../etc/web-architecture.html">
+            
+                    
+                    모던 웹 아키텍쳐 개요
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../etc/basic.html">
+            
+                <a href="../etc/basic.html">
+            
+                    
+                    자주 까먹는 각종 개념 모음
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../etc/webpack.html">
+            
+                <a href="../etc/webpack.html">
+            
+                    
+                    webpack
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.9" data-path="../etc/spa.html">
+            
+                <a href="../etc/spa.html">
+            
+                    
+                    SPA(Single Page Application)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.10" data-path="../etc/npm.html">
+            
+                <a href="../etc/npm.html">
+            
+                    
+                    패키지 관리자(Package Manager)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.11" data-path="../etc/image-format.html">
+            
+                <a href="../etc/image-format.html">
+            
+                    
+                    웹 이미지 형식
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.12" data-path="../etc/responsive-images.html">
+            
+                <a href="../etc/responsive-images.html">
+            
+                    
+                    반응형 이미지
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.13" data-path="../etc/guide-to-dpi.html">
+            
+                <a href="../etc/guide-to-dpi.html">
+            
+                    
+                    DPI와 PPI의 개념
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.14" data-path="../etc/svg.html">
+            
+                <a href="../etc/svg.html">
+            
+                    
+                    SVG
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.15" data-path="../etc/oauth.html">
+            
+                <a href="../etc/oauth.html">
+            
+                    
+                    OAuth
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.16" data-path="../etc/jwt.html">
+            
+                <a href="../etc/jwt.html">
+            
+                    
+                    JWT(JSON Web Token)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.17" data-path="../etc/ga.html">
+            
+                <a href="../etc/ga.html">
+            
+                    
+                    Google Analytics
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.18" data-path="../etc/seo.html">
+            
+                <a href="../etc/seo.html">
+            
+                    
+                    검색엔진최적화 (SEO)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.19" data-path="../etc/unit-test.html">
+            
+                <a href="../etc/unit-test.html">
+            
+                    
+                    단위 테스트
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.20" data-path="../etc/git.html">
+            
+                <a href="../etc/git.html">
+            
+                    
+                    Git
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.21" data-path="../etc/localstorage.html">
+            
+                <a href="../etc/localstorage.html">
+            
+                    
+                    로컬 스토리지(Local Storage)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.22" data-path="../etc/markdown.html">
+            
+                <a href="../etc/markdown.html">
+            
+                    
+                    markdown  문법
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    react
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="props-state.html">
+            
+                <a href="props-state.html">
+            
+                    
+                    props와 state
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="basic.html">
+            
+                <a href="basic.html">
+            
+                    
+                    리액트 기본 사용법
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="lifecycle.html">
+            
+                <a href="lifecycle.html">
+            
+                    
+                    LifeCycle API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="array.html">
+            
+                <a href="array.html">
+            
+                    
+                    리액트에서 배열 다루기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../algorithm/">
+            
+                <a href="../algorithm/">
+            
+                    
+                    algorithm
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../algorithm/recursion-function.html">
+            
+                <a href="../algorithm/recursion-function.html">
+            
+                    
+                    재귀 함수(Recursion Function)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../algorithm/selection-sort.html">
+            
+                <a href="../algorithm/selection-sort.html">
+            
+                    
+                    선택 정렬
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../algorithm/bruteforce.html">
+            
+                <a href="../algorithm/bruteforce.html">
+            
+                    
+                    브루트 포스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../algorithm/bfs.html">
+            
+                <a href="../algorithm/bfs.html">
+            
+                    
+                    BFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../algorithm/undefined.html">
+            
+                <a href="../algorithm/undefined.html">
+            
+                    
+                    알고리즘 개념
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../algorithm/dp.html">
+            
+                <a href="../algorithm/dp.html">
+            
+                    
+                    다이나믹 프로그래밍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../algorithm/binary-seach.html">
+            
+                <a href="../algorithm/binary-seach.html">
+            
+                    
+                    이진 탐색(Binary Search)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../vue/">
+            
+                <a href="../vue/">
+            
+                    
+                    vue
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../vue/data-and-data-reset.html">
+            
+                <a href="../vue/data-and-data-reset.html">
+            
+                    
+                    vue.js 데이터
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../vue/style-guide.html">
+            
+                <a href="../vue/style-guide.html">
+            
+                    
+                    vue.js 스타일 가이드
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../vue/vue-with-django.html">
+            
+                <a href="../vue/vue-with-django.html">
+            
+                    
+                    Vue with django
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../vue/component-transition.html">
+            
+                <a href="../vue/component-transition.html">
+            
+                    
+                    컴포넌트 트랜지션
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../vue/nuxt.html">
+            
+                <a href="../vue/nuxt.html">
+            
+                    
+                    nuxt
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.6" data-path="../vue/v-model.html">
+            
+                <a href="../vue/v-model.html">
+            
+                    
+                    v-model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.7" data-path="../vue/watch.html">
+            
+                <a href="../vue/watch.html">
+            
+                    
+                    watch로 데이터 변화 감지하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../html/">
+            
+                <a href="../html/">
+            
+                    
+                    html
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../html/hidden-content.html">
+            
+                <a href="../html/hidden-content.html">
+            
+                    
+                    Hidden Content
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../html/ir.html">
+            
+                <a href="../html/ir.html">
+            
+                    
+                    IR (Image Replacement)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../html/html5-semantic-markup.html">
+            
+                <a href="../html/html5-semantic-markup.html">
+            
+                    
+                    시멘틱 마크업
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="../html/button-input-a.html">
+            
+                <a href="../html/button-input-a.html">
+            
+                    
+                    button, input and a tag
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../css/">
+            
+                <a href="../css/">
+            
+                    
+                    css
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../css/sass.html">
+            
+                <a href="../css/sass.html">
+            
+                    
+                    SASS(SCSS)모르는 부분 간단 정리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../css/transition-animation-transform.html">
+            
+                <a href="../css/transition-animation-transform.html">
+            
+                    
+                    Transition, animation and transform
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../css/pseudo-element-and-clearfix.html">
+            
+                <a href="../css/pseudo-element-and-clearfix.html">
+            
+                    
+                    가상 선택자와 클리어픽스
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../css/css-tips.html">
+            
+                <a href="../css/css-tips.html">
+            
+                    
+                    CSS 팁 모음
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../css/flexbox.html">
+            
+                <a href="../css/flexbox.html">
+            
+                    
+                    flexbox
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../css/css-specificity.html">
+            
+                <a href="../css/css-specificity.html">
+            
+                    
+                    css 명시도
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../django/">
+            
+                <a href="../django/">
+            
+                    
+                    django
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../django/start-project.html">
+            
+                <a href="../django/start-project.html">
+            
+                    
+                    프로젝트 시작하기
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../django/vertualenv.html">
+            
+                <a href="../django/vertualenv.html">
+            
+                    
+                    가상환경(Virtual environment)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../react-native/">
+            
+                <a href="../react-native/">
+            
+                    
+                    react-native
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../react-native/expo-run-emulator-and-phone.html">
+            
+                <a href="../react-native/expo-run-emulator-and-phone.html">
+            
+                    
+                    Expo Emulator 실행방법 & 스마트폰에서 직접 질행하기 (OSX)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">javascript</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../javascript/javascript-1/">
+            
+                <a href="../javascript/javascript-1/">
+            
+                    
+                    1. 자바스크립트의 특징
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../javascript/javascript-1/what-is-javascript.html">
+            
+                <a href="../javascript/javascript-1/what-is-javascript.html">
+            
+                    
+                    특징
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.2" data-path="../javascript/javascript-1/how-does-javascript-work.html">
+            
+                <a href="../javascript/javascript-1/how-does-javascript-work.html">
+            
+                    
+                    동작 원리
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.1.3" data-path="../javascript/javascript-1/javascript-object.html">
+            
+                <a href="../javascript/javascript-1/javascript-object.html">
+            
+                    
+                    구성 요소
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../javascript/javascript-2/">
+            
+                <a href="../javascript/javascript-2/">
+            
+                    
+                    2. 데이터 타입과 변수
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" data-path="../javascript/javascript-2/variable.html">
+            
+                <a href="../javascript/javascript-2/variable.html">
+            
+                    
+                    변수 (Variable)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../javascript/javascript-2/data-type.html">
+            
+                <a href="../javascript/javascript-2/data-type.html">
+            
+                    
+                    자료형
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" data-path="../javascript/javascript-2/type-coercion.html">
+            
+                <a href="../javascript/javascript-2/type-coercion.html">
+            
+                    
+                    형변환
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../javascript/javascript-3.html">
+            
+                <a href="../javascript/javascript-3.html">
+            
+                    
+                    3. 제어문
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../javascript/javascript-4.html">
+            
+                <a href="../javascript/javascript-4.html">
+            
+                    
+                    4. 연산자
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../javascript/javascript-5/">
+            
+                <a href="../javascript/javascript-5/">
+            
+                    
+                    5. 함수
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../javascript/javascript-5/function.html">
+            
+                <a href="../javascript/javascript-5/function.html">
+            
+                    
+                    함수의 정의
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../javascript/javascript-5/argument-parameter.html">
+            
+                <a href="../javascript/javascript-5/argument-parameter.html">
+            
+                    
+                    인자와 매개변수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../javascript/javascript-5/constructor-function.html">
+            
+                <a href="../javascript/javascript-5/constructor-function.html">
+            
+                    
+                    생성자 함수
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../javascript/javascript-5/this.html">
+            
+                <a href="../javascript/javascript-5/this.html">
+            
+                    
+                    this
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../javascript/javascript-5/apply-call-bind.html">
+            
+                <a href="../javascript/javascript-5/apply-call-bind.html">
+            
+                    
+                    call, apply, bind, Spread Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="../javascript/javascript-6/">
+            
+                <a href="../javascript/javascript-6/">
+            
+                    
+                    6. 스코프와 클로저
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../javascript/javascript-6/execution-context.html">
+            
+                <a href="../javascript/javascript-6/execution-context.html">
+            
+                    
+                    실행 컨텍스트 (실행 문맥)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.2" data-path="../javascript/javascript-6/scope.html">
+            
+                <a href="../javascript/javascript-6/scope.html">
+            
+                    
+                    스코프 (Scope)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.3" data-path="../javascript/javascript-6/closure.html">
+            
+                <a href="../javascript/javascript-6/closure.html">
+            
+                    
+                    클로저 (Closure)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6.4" data-path="../javascript/javascript-6/hoisting.html">
+            
+                <a href="../javascript/javascript-6/hoisting.html">
+            
+                    
+                    호이스팅
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="../javascript/javascript-7/">
+            
+                <a href="../javascript/javascript-7/">
+            
+                    
+                    7. 객체지향 프로그래밍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" data-path="../javascript/javascript-7/prototype.html">
+            
+                <a href="../javascript/javascript-7/prototype.html">
+            
+                    
+                    프로토타입 (Prototype)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7.2" data-path="../javascript/javascript-7/oop.html">
+            
+                <a href="../javascript/javascript-7/oop.html">
+            
+                    
+                    객체지향 프로그래밍 (OOP)
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="../javascript/javascript-8/">
+            
+                <a href="../javascript/javascript-8/">
+            
+                    
+                    8. 기타
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.8.1" data-path="../javascript/javascript-8/http-request-libraries.html">
+            
+                <a href="../javascript/javascript-8/http-request-libraries.html">
+            
+                    
+                    HTTP Request Libraries
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.2" data-path="../javascript/javascript-8/promise.html">
+            
+                <a href="../javascript/javascript-8/promise.html">
+            
+                    
+                    프로미스 (Promise)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.3" data-path="../javascript/javascript-8/debouncing-and-throttling.html">
+            
+                <a href="../javascript/javascript-8/debouncing-and-throttling.html">
+            
+                    
+                    Debounce and throttle
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.4" data-path="../javascript/javascript-8/script-async-defer.html">
+            
+                <a href="../javascript/javascript-8/script-async-defer.html">
+            
+                    
+                    script의 async와 defer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8.5" data-path="../javascript/javascript-8/javascript-patterns.html">
+            
+                <a href="../javascript/javascript-8/javascript-patterns.html">
+            
+                    
+                    자바스크립트 패턴
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >LifeCycle API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="lifecycle-api">LifeCycle API</h1>
+<p>&#xC774; API &#xB294; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xB098;&#xD0C0;&#xB0A0;&#xB54C;, &#xC0AC;&#xB77C;&#xC9C8;&#xB54C;, &#xADF8;&#xB9AC;&#xACE0; &#xC5C5;&#xB370;&#xC774;&#xD2B8; &#xB420; &#xB54C;, &#xD638;&#xCD9C;&#xB418;&#xB294; API&#xC774;&#xB2E4;. &#xCC38;&#xACE0;&#xB85C; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xB80C;&#xB354;&#xB9C1; &#xB41C;&#xB2E4;&#xACE0; &#xD574;&#xC11C; &#xBB34;&#xC870;&#xAC74; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC5D0;&#xC11C; &#xB2E4;&#xC2DC; &#xADF8;&#xB824;&#xC9C0;&#xB294; &#xAC83;&#xC774; &#xC544;&#xB2C8;&#xB2E4;. &#xC77C;&#xB2E8; Virtual DOM&#xC5D0; &#xADF8;&#xB9AC;&#xACE0; &#xC2E4;&#xC81C;&#xB85C; &#xBCC0;&#xD558;&#xB294; &#xACF3;&#xC774; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC758; &#xC2E4;&#xC81C; DOM&#xC5D0; &#xBC18;&#xC601;&#xB41C;&#xB2E4;.</p>
+<h3 id="&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB294;-&#xC5B8;&#xC81C;-&#xB80C;&#xB354;&#xB9C1;-&#xB420;&#xAE4C;">&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB294; &#xC5B8;&#xC81C; &#xB80C;&#xB354;&#xB9C1; &#xB420;&#xAE4C;?</h3>
+<ol>
+<li>props &#xBC14;&#xB014; &#xB54C;</li>
+<li>state &#xBC14;&#xB014; &#xB54C;</li>
+<li>&#xBD80;&#xBAA8; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xB80C;&#xB354;&#xB9C1; &#xB420; &#xB54C;</li>
+<li>this.forceUpdate()&#xD568;&#xC218;&#xB97C; &#xD1B5;&#xD574; &#xAC15;&#xC81C; &#xB80C;&#xB354;&#xB9C1;</li>
+</ol>
+<h3 id="&#xB80C;&#xB354;&#xB9C1;-&#xC21C;&#xC11C;&#xB294;-&#xC5B4;&#xB5BB;&#xAC8C;-&#xB420;&#xAE4C;">&#xB80C;&#xB354;&#xB9C1; &#xC21C;&#xC11C;&#xB294; &#xC5B4;&#xB5BB;&#xAC8C; &#xB420;&#xAE4C;</h3>
+<p><img src="https://user-images.githubusercontent.com/16531837/44030694-8fce0b76-9f3c-11e8-8626-21652d7dd7ed.png" alt="lifecycle"></p>
+<ul>
+<li>Mounting: &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC0C1;&#xC5D0; &#xB098;&#xD0C0;&#xB09C;&#xB2E4;&#xB294; &#xAC83;</li>
+<li>Updating: &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC758; props&#xB098; state&#xAC00; &#xBC14;&#xB00C;&#xC5C8;&#xC744; &#xB54C;</li>
+<li><p>Unmounting: &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xBE0C;&#xB77C;&#xC6B0;&#xC800;&#xC0C1;&#xC5D0;&#xC11C; &#xC0AC;&#xB77C;&#xC9C8; &#xB54C;</p>
+<p>constructor -&gt; getDerivedStateFromProps -&gt; render -&gt; componentDidMount &#xC21C;&#xC73C;&#xB85C; &#xB80C;&#xB354;&#xB9C1;&#xC774; &#xC9C4;&#xD589;&#xB41C;&#xB2E4;.  </p>
+<p>&#xCCAB; &#xD654;&#xBA74; &#xB79C;&#xB354;&#xB9C1; &#xD6C4; props&#xAC00; &#xBC14;&#xB014;&#xACBD;&#xC6B0; getDerivedStateFromProps -&gt; shouldComponentUpdate &#xACFC;&#xC815;&#xC744; &#xAC70;&#xCE58;&#xBA70; false&#xC77C; &#xACBD;&#xC6B0; &#xC885;&#xB8CC;, true&#xC77C; &#xACBD;&#xC6B0; render -&gt; getSnapshotBeforeUpdate -&gt; componentDidUpdate &#xD6C4; &#xC885;&#xB8CC;&#xB41C;&#xB2E4;. state&#xAC00; &#xBC14;&#xB014; &#xACBD;&#xC6B0;&#xC5D0;&#xB294; &#xBC14;&#xB85C; shouldComponentUpdate &#xBD80;&#xD130; &#xB77C;&#xC774;&#xD504;&#xC0AC;&#xC774;&#xD074;&#xC774; &#xC9C4;&#xD589;&#xB41C;&#xB2E4;.</p>
+</li>
+</ul>
+<h2 id="1-mounting-&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;-&#xCD08;&#xAE30;-&#xC0DD;&#xC131;">1. Mounting (&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xCD08;&#xAE30; &#xC0DD;&#xC131;)</h2>
+<ul>
+<li><p>constructor</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">constructor</span>(props) {
+<span class="hljs-keyword">super</span>(props);
+}
+</code></pre>
+<p>&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xC0DD;&#xC131;&#xC790; &#xD568;&#xC218;. &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xC0C8;&#xB85C; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C8; &#xB54C;&#xB9C8;&#xB2E4; &#xC774; &#xD568;&#xC218;&#xAC00; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;. &#xAC00;&#xC7A5; &#xBA3C;&#xC800; &#xC2E4;&#xD589;&#xB418;&#xB294; &#xD568;&#xC218;. &#xC8FC;&#xB85C; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xAC00;&#xC9C0;&#xACE0; &#xC788;&#xC744; state&#xB97C; &#xCD08;&#xAE30;&#xD654;. &#xC544;&#xB2C8;&#xBA74; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xB9CC;&#xB4E4;&#xC5B4;&#xC9C0;&#xAE30; &#xC804;&#xC5D0; &#xBBF8;&#xB9AC; &#xD574;&#xC57C;&#xD560; &#xC791;&#xC5C5;&#xC744; &#xC815;&#xD574;&#xC90C;.</p>
+</li>
+<li><p>getDerivedStateFromProps</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">static</span> getDerivedStateFromProps(nextProps, prevState) {
+<span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>props&#xB85C; &#xBC1B;&#xC740; &#xAC12;&#xC744; state&#xC5D0; &#xB3D9;&#xAE30;&#xD654;&#xC2DC;&#xD0A4;&#xACE0; &#xC2F6;&#xC744; &#xB54C;. Mounting &#xACFC;&#xC815;&#xC5D0;&#xC11C;&#xB3C4; &#xC2E4;&#xD589;&#xB418;&#xACE0; props&#xAC00; Updating &#xB420;&#xB54C;&#xB3C4; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;. static &#xAC12;&#xC73C;&#xB85C; &#xB123;&#xC5B4;&#xC8FC;&#xC5B4;&#xC57C; &#xD55C;&#xB2E4;.</p>
+</li>
+<li><p>componentDidMount</p>
+<pre><code class="lang-javascript">componentDidMount() {
+<span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xD654;&#xBA74;&#xC5D0; &#xB098;&#xD0C0;&#xB098;&#xAC8C; &#xB410;&#xC744; &#xB54C; &#xD638;&#xCD9C;&#xB41C;&#xB2E4;. D3, masonry&#xCC98;&#xB7FC; DOM&#xC744; &#xC0AC;&#xC6A9;&#xD574;&#xC57C;&#xD558;&#xB294; &#xC678;&#xBD80; &#xB77C;&#xC774;&#xBE0C;&#xB7EC;&#xB9AC; &#xC5F0;&#xB3D9;&#xC744; &#xD558;&#xAC70;&#xB098;, &#xD574;&#xB2F9; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC5D0;&#xC11C; &#xD544;&#xC694;&#xB85C; &#xD558;&#xB294; &#xB370;&#xC774;&#xD130;&#xB97C; &#xC694;&#xCCAD;&#xD558;&#xAE30; &#xC704;&#xD574; ajax &#xC694;&#xCCAD;&#xC744; &#xD558;&#xAC70;&#xB098;, DOM&#xC758; &#xC18D;&#xC131;&#xC744; &#xC77D;&#xAC70;&#xB098; &#xC9C1;&#xC811; &#xBCC0;&#xACBD;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC744; &#xC9C4;&#xD589;&#xD55C;&#xB2E4;.</p>
+</li>
+</ul>
+<h2 id="2-updating&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;-&#xC5C5;&#xB370;&#xC774;&#xD2B8;">2. Updating(&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xC5C5;&#xB370;&#xC774;&#xD2B8;)</h2>
+<ul>
+<li><p>shouldComponentUpdate</p>
+<pre><code class="lang-javascript">shouldComponentUpdate(nextProps, nextState) {
+<span class="hljs-comment">// return false &#xD558;&#xBA74; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB97C; &#xC548; &#xD568;</span>
+<span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+</code></pre>
+<p>&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB97C; &#xCD5C;&#xC801;&#xD654;&#xD558;&#xB294; &#xC791;&#xC5C5;&#xC5D0;&#xC11C; &#xB9E4;&#xC6B0; &#xC720;&#xC6A9;&#xD558;&#xAC8C; &#xC0AC;&#xC6A9;&#xB428;. state&#xAC00; &#xBCC0;&#xACBD;&#xB418;&#xAC70;&#xB098; &#xBD80;&#xBAA8; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xB85C;&#xBD80;&#xD130; &#xC0C8;&#xB85C;&#xC6B4; props&#xB97C; &#xC804;&#xB2EC;&#xBC1B;&#xC744; &#xB54C; &#xC2E4;&#xD589;&#xB41C;&#xB2E4;. &#xB9AC;&#xC561;&#xD2B8;&#xB294; &#xC774; &#xBA54;&#xC18C;&#xB4DC;&#xC758; &#xBC18;&#xD658; &#xAC12;&#xC5D0; &#xB530;&#xB77C;&#xC11C; re-render&#xB97C; &#xD560;&#xC9C0;&#xC5D0; &#xB300;&#xD55C; &#xC5EC;&#xBD80;&#xB97C; &#xACB0;&#xC815;&#xD55C;&#xB2E4;.<br>&#xAE30;&#xBCF8;&#xC801;&#xC73C;&#xB85C; shouldComponentUpdate &#xBA54;&#xC18C;&#xB4DC;&#xB294; true&#xB97C; &#xBC18;&#xD658;&#xD55C;&#xB2E4;. &#xD558;&#xC9C0;&#xB9CC; &#xC6D0;&#xD558;&#xC9C0; &#xC54A;&#xC744; &#xACBD;&#xC6B0; &#xC774; return value&#xB97C; false&#xB85C; &#xB9CC;&#xB4E4; &#xC218;&#xB3C4; &#xC788;&#xB2E4;.</p>
+</li>
+<li><p>getSnapshotBeforeUpdate</p>
+<pre><code class="lang-javascript">getSnapshotBeforeUpdate(prevProps, prevState) {
+  <span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#xB80C;&#xB354;&#xB9C1;&#xC744; &#xD558;&#xACE0;&#xB098;&#xC11C; &#xC5C5;&#xB370;&#xC774;&#xD2B8;&#xB97C; &#xBC14;&#xB85C; &#xD558;&#xAE30; &#xC804;&#xC5D0; &#xC2A4;&#xD06C;&#xB864;&#xC758; &#xC704;&#xCE58;, &#xC544;&#xB2C8;&#xBA74; &#xD574;&#xB2F9; &#xB3D4;&#xC758; &#xD06C;&#xAE30;&#xB97C; &#xAC00;&#xC838;&#xC624;&#xACE0; &#xC2F6;&#xB2E4;... &#xB4F1;&#xB4F1; &#xD560;&#xB54C; &#xC0AC;&#xC6A9;.</p>
+</li>
+<li><p>componentDidUpdate</p>
+<pre><code class="lang-javascript">componentDidUpdate(prevProps, prevState, snapshot) {
+<span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC5D0;&#xC11C; render() &#xB97C; &#xD638;&#xCD9C;&#xD558;&#xACE0;&#xB09C; &#xB2E4;&#xC74C;&#xC5D0; &#xBC1C;&#xC0DD;. &#xC608;&#xB97C; &#xB4E4;&#xC5B4; state &#xAC00; &#xBCC0;&#xACBD;&#xB418;&#xC5C8;&#xC73C;&#xBA74; &#xC774;&#xC804;&#xC758; &#xC0C1;&#xD0DC;&#xC640; &#xC9C0;&#xAE08;&#xC758; &#xC0C1;&#xD0DC;&#xB97C; &#xBE44;&#xAD50;&#xD588;&#xC744; &#xB54C; &#xB9CC;&#xC57D; &#xB2E4;&#xB974;&#xB2E4;&#xBA74; &#xC791;&#xC5C5;&#xC744; &#xD574;&#xB77C;... &#xB4F1;&#xB4F1; &#xD560;&#xB54C; &#xC0AC;&#xC6A9;.</p>
+</li>
+</ul>
+<h2 id="3-unmounting&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;-&#xC81C;&#xAC70;">3. Unmounting(&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xC81C;&#xAC70;)</h2>
+<ul>
+<li><p>componentWillUnmount</p>
+<pre><code class="lang-javascript">componentWillUnmount() {
+<span class="hljs-comment">// ...</span>
+}
+</code></pre>
+<p>&#xC5EC;&#xAE30;&#xC11C;&#xB294; &#xC8FC;&#xB85C; &#xB4F1;&#xB85D;&#xD588;&#xC5C8;&#xB358; &#xC774;&#xBCA4;&#xD2B8;&#xB97C; &#xC81C;&#xAC70;&#xD55C;&#xB2E4;. &#xC5EC;&#xAE30;&#xC11C; &#xC774;&#xBCA4;&#xD2B8; &#xB4F1;&#xB85D;&#xC740; &#xC8FC;&#xB85C; componentDidMount &#xC5D0;&#xC11C; &#xB4F1;&#xB85D;&#xD588;&#xB358; &#xC774;&#xBCA4;&#xD2B8;&#xC784;.</p>
+</li>
+</ul>
+<h2 id="4-&#xAE30;&#xD0C0;-&#xC5D0;&#xB7EC;-&#xBC1C;&#xC0DD;">4. &#xAE30;&#xD0C0; (&#xC5D0;&#xB7EC; &#xBC1C;&#xC0DD;)</h2>
+<ul>
+<li><p>componentDidCatch</p>
+<pre><code class="lang-javascript">componentDidCatch(error, info) {
+<span class="hljs-keyword">this</span>.setState({
+  error: <span class="hljs-literal">true</span>
+});
+}
+</code></pre>
+<p>&#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xC790;&#xC2E0;&#xC758; render &#xD568;&#xC218;&#xC5D0;&#xC11C; &#xC5D0;&#xB7EC;&#xAC00; &#xBC1C;&#xC0DD;&#xD574;&#xBC84;&#xB9AC;&#xB294; &#xAC83;&#xC740; &#xC7A1;&#xC544;&#xB0BC; &#xC218;&#xB294; &#xC5C6;&#xC9C0;&#xB9CC;, &#xADF8; &#xB300;&#xC2E0;&#xC5D0; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC758; &#xC790;&#xC2DD; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8; &#xB0B4;&#xBD80;&#xC5D0;&#xC11C; &#xBC1C;&#xC0DD;&#xD558;&#xB294; &#xC5D0;&#xB7EC;&#xB4E4;&#xC744; &#xC7A1;&#xC544;&#xB0BC; &#xC218; &#xC788;&#xB2E4;. &#xC989; &#xC790;&#xC2DD; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xC758; &#xC5D0;&#xB7EC;&#xB97C; &#xBD80;&#xBAA8; &#xCEF4;&#xD3EC;&#xB10C;&#xD2B8;&#xAC00; &#xC7A1;&#xC544;&#xB0B8;&#xB2E4;.</p>
+</li>
+</ul>
+<h3 id="references">References</h3>
+<ul>
+<li><a href="https://medium.com/@shlee1353/%EB%A6%AC%EC%95%A1%ED%8A%B8-v16-3-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8-%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4-%EC%A0%95%EB%A6%AC-a3a65de60beb" target="_blank">Medium &#xD3EC;&#xC2A4;&#xD2B8;</a></li>
+<li><a href="https://react-anyone.vlpt.us/05.html" target="_blank">&#xB204;&#xAD6C;&#xB4E0;&#xC9C0; &#xD558;&#xB294; &#xB9AC;&#xC561;&#xD2B8;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="basic.html" class="navigation navigation-prev " aria-label="Previous page: 리액트 기본 사용법">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="array.html" class="navigation navigation-next " aria-label="Next page: 리액트에서 배열 다루기">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LifeCycle API","level":"1.5.3","depth":2,"next":{"title":"리액트에서 배열 다루기","level":"1.5.4","depth":2,"path":"react/array.md","ref":"react/array.md","articles":[]},"previous":{"title":"리액트 기본 사용법","level":"1.5.2","depth":2,"path":"react/basic.md","ref":"react/basic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"react/lifecycle.md","mtime":"2019-08-25T07:51:22.528Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-09-08T07:21:57.909Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
