@@ -1,3 +1,11 @@
+---
+layout: default
+title: 자료형
+parent: 2. 변수, 상수, 데이터 타입
+grand_parent: javascript
+nav_order: 2
+---
+
 # 자료형
 
 * 자료형을 선언하지 않아도 됨. 그래도 자료형은 존재한다

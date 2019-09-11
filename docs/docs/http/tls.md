@@ -1,5 +1,8 @@
 ---
-description: SSL으로 불리기도 한다.
+layout: default
+title: TLS(Transport Layer Security)
+parent: http
+nav_order: 2
 ---
 
 # TLS\(Transport Layer Security\)

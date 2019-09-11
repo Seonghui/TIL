@@ -1,3 +1,11 @@
+---
+layout: default
+title: 자바스크립트 구성 요소
+parent: 1. 자바스크립트 개요
+grand_parent: javascript
+nav_order: 2
+---
+
 # 자바스크립트 구성 요소
 
 자바스크립트는 아래 세 가지가 합쳐진 것이다.

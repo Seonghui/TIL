@@ -1,3 +1,10 @@
+---
+layout: default
+title: 가상 환경 세팅하기
+parent: django
+nav_order: 2
+---
+
 # 가상환경\(Virtual environment\)
 
 > 가상환경\(Virtual environment\), 줄여서 virtualenv

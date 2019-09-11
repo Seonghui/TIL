@@ -1,3 +1,10 @@
+---
+layout: default
+title: Hidden Content
+parent: html
+nav_order: 2
+---
+
 # Hidden Content
 
 ## 왠지 컨텐츠를 숨겨야할것같은 4가지 상황들

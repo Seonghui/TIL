@@ -1,3 +1,10 @@
+---
+layout: default
+title: JWT(JSON Web Token)
+parent: etc
+nav_order: 2
+---
+
 # JWT\(JSON Web Token\)
 
 JSON 기반의 open standard. 정보\(claim\)를 assert하는 access token을 만들어줌. 예를 들어서 서버는 "관리자로 로그인" 이라는 클레임을 가지고 있는 토큰을 생성, 클라이언트에게 이 토큰을 제공해줌. 클라이언트는 이 토큰을 사용해서 관리자로 로그인되었는지를 확인함.

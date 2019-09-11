@@ -1,3 +1,11 @@
+---
+layout: default
+title: 프로토타입
+parent: 7. 객체지향 프로그래밍
+grand_parent: javascript
+nav_order: 2
+---
+
 # 프로토타입 \(Prototype\)
 
 ## 1. 프로토타입의 정의

@@ -1,3 +1,10 @@
+---
+layout: default
+title: vue.js 스타일 가이드
+parent: vue
+nav_order: 2
+---
+
 # vue.js 스타일 가이드
 
 ## 필수

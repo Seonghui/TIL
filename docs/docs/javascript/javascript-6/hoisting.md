@@ -1,3 +1,11 @@
+---
+layout: default
+title: 호이스팅
+parent: 6. 클로저와 스코프
+grand_parent: javascript
+nav_order: 4
+---
+
 # 호이스팅
 
 ## 호이스팅\(hoisting\)의 정의

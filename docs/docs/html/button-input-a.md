@@ -1,3 +1,10 @@
+---
+layout: default
+title: button, input and a tag
+parent: html
+nav_order: 2
+---
+
 # button, input and a tag
 
 ## 태그 설명

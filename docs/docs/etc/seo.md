@@ -1,3 +1,10 @@
+---
+layout: default
+title: 검색엔진최적화 (SEO)
+parent: etc
+nav_order: 2
+---
+
 # 검색엔진최적화 \(SEO\)
 
 ## 개념

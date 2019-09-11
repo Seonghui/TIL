@@ -1,3 +1,10 @@
+---
+layout: default
+title: args and kwargs
+parent: python
+nav_order: 2
+---
+
 # args and kwargs
 
 kwargs는 키워드된 n개의 변수들을 함수의 인자로 보낼 때 사용한다. \(args 키워드되지않은 n개의 변수\)

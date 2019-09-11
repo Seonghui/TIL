@@ -1,5 +1,8 @@
 ---
-description: 크롬 개발자도구로 안 쓰는 자바스크립트 찾아내기
+layout: default
+title: 크롬 개발자도구 - 팁
+parent: etc
+nav_order: 2
 ---
 
 # 크롬 개발자 도구 - 팁

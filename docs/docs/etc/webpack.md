@@ -1,5 +1,8 @@
 ---
-description: webpack 4 기준
+layout: default
+title: Webpack
+parent: etc
+nav_order: 2
 ---
 
 # webpack

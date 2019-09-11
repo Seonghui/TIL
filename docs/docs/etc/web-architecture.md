@@ -1,5 +1,11 @@
-# 모던 웹 아키텍쳐 개요
+---
+layout: default
+title: 모던 웹 아키텍쳐 개요
+parent: etc
+nav_order: 2
+---
 
+# 모던 웹 아키텍쳐 개요
 
 
 ![&#xBAA8;&#xB358; &#xC6F9; &#xC544;&#xD0A4;&#xD14D;&#xCCD0; &#xAC1C;&#xC694;](https://images.ctfassets.net/rpmifyuylbfw/6Qv56PUiQwmgYEokCWKGgW/d7d470aef20abadf6dd29c5de023e529/main.png?w=665)
@@ -71,4 +77,3 @@
 ## refs
 
 * [https://blog.rhostem.com/posts/2018-07-22-web-architecture-101?fbclid=IwAR2chRekA4YHcae-Ir8Ytoy1XysTlGYRze1DNUvA8UQnC7twq\_i15Yvj7oM](https://blog.rhostem.com/posts/2018-07-22-web-architecture-101?fbclid=IwAR2chRekA4YHcae-Ir8Ytoy1XysTlGYRze1DNUvA8UQnC7twq_i15Yvj7oM)
-

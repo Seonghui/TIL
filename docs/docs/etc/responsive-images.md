@@ -1,3 +1,10 @@
+---
+layout: default
+title: 반응형 이미지
+parent: etc
+nav_order: 2
+---
+
 # 반응형 이미지
 
 ## srcset, sizes

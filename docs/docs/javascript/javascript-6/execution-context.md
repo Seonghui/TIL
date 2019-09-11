@@ -1,5 +1,9 @@
 ---
-description: 어떻게 자바스크립트 코드가 실행되는지 이해하기 위해 알아야하는 개념이다.
+layout: default
+title: 실행 컨텍스트
+parent: 6. 클로저와 스코프
+grand_parent: javascript
+nav_order: 1
 ---
 
 # 실행 컨텍스트 \(실행 문맥\)

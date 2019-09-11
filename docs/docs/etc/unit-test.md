@@ -1,3 +1,10 @@
+---
+layout: default
+title: 단위 테스트
+parent: etc
+nav_order: 2
+---
+
 # 단위 테스트
 
 ## 규칙 정하기

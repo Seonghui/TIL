@@ -1,3 +1,11 @@
+---
+layout: default
+title: 함수의 정의
+parent: 5. 함수
+grand_parent: javascript
+nav_order: 1
+---
+
 # 함수의 정의
 
 ## 1. 함수의 정의

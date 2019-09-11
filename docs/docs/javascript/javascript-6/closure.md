@@ -1,3 +1,11 @@
+---
+layout: default
+title: 클로저
+parent: 6. 클로저와 스코프
+grand_parent: javascript
+nav_order: 3
+---
+
 # 클로저 \(Closure\)
 
 이미 생명 주기가 끝난 외부 함수의 변수를 참조하는 함수를 클로저라고 한다. 클로저는 함수와 함수가 선언된 어휘적 환경(lexical environment)의 조합이다.

@@ -1,3 +1,10 @@
+---
+layout: default
+title: 프론트엔드 성능 최적화
+parent: etc
+nav_order: 2
+---
+
 # 프론트엔드 성능 최적화
 
 * 서버 성능 분석가의 관심사: 서버가 얼마나 많은 요청을 처리할 수 있나? \(TPS: Transition Per Second\)

@@ -1,3 +1,10 @@
+---
+layout: default
+title: IR (Image Replacement)
+parent: html
+nav_order: 2
+---
+
 # IR \(Image Replacement\)
 
 이미지에 대체 텍스트를 제공하는 것.

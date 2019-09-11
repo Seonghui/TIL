@@ -1,3 +1,11 @@
+---
+layout: default
+title: 생성자 함수
+parent: 5. 함수
+grand_parent: javascript
+nav_order: 2
+---
+
 # 생성자 함수
 
 ## 1. 생성자 함수의 개념

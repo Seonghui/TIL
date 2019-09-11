@@ -1,3 +1,10 @@
+---
+layout: default
+title: 시멘틱 마크업
+parent: html
+nav_order: 2
+---
+
 # 시멘틱 마크업
 
 ### HTML5 Semantic Markup \(의미론적 마크업\)
@@ -18,7 +25,7 @@ Semantic HTML이라고도 함. 시맨틱 HTML은 HTML 마크업을 사용하여 
 
 ### 예시
 
-```markup
+```html
  <header>
     <h1>Little Green Guys With Guns</h1>
     <nav>
@@ -43,7 +50,7 @@ Semantic HTML이라고도 함. 시맨틱 HTML은 HTML 마크업을 사용하여 
 
 ### 예시
 
-```markup
+```html
 <footer>
   <ul>
      <li>copyright</li>
@@ -67,7 +74,7 @@ Semantic HTML이라고도 함. 시맨틱 HTML은 HTML 마크업을 사용하여 
 * pull-quote를 포함하는 aside
 * article 내의 aside
 
-  ```markup
+  ```html
   <article>
     <header>
         <h1>Lorem Ipsum Dolor Sit Amets</h1>
@@ -92,7 +99,7 @@ Semantic HTML이라고도 함. 시맨틱 HTML은 HTML 마크업을 사용하여 
 
 * 컨텐츠와 연관되어있지만 article body에는 넣을 필요 없는 내용들
 
-  ```markup
+  ```html
   <article>
     <header>
         <h1>Web Technologies</h1>
@@ -123,7 +130,7 @@ Semantic HTML이라고도 함. 시맨틱 HTML은 HTML 마크업을 사용하여 
 * blogroll로 사용된 aside
 * article 바깥쪽에 위치
 
-  ```markup
+  ```html
   <body>
   <header>
     <h1>My Blog</h1>
@@ -163,7 +170,7 @@ Semantic HTML이라고도 함. 시맨틱 HTML은 HTML 마크업을 사용하여 
 
 ### 예시
 
-```markup
+```html
 <nav>
   <ul>
     <li><a href="index.html">Home</a></li>
@@ -223,7 +230,7 @@ Semantic HTML이라고도 함. 시맨틱 HTML은 HTML 마크업을 사용하여 
 * names and values의 many-to-many relationship을 표현. 
 * `<dl>`은 많은 키 \(`<dt>`\)를 여러 값 \(`<dd>`\)으로 매핑 가능
 
-```markup
+```html
 <dl>
   <dt>Authors:</dt>
   <dd>Remy Sharp</dd>

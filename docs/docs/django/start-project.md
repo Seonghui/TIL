@@ -1,3 +1,10 @@
+---
+layout: default
+title: 프로젝트 시작하기
+parent: django
+nav_order: 2
+---
+
 # 프로젝트 시작하기
 
 ## 1. 설치까지의 작업 요약

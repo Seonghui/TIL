@@ -1,4 +1,9 @@
-# OAuth
+---
+layout: default
+title: OAuth
+parent: etc
+nav_order: 2
+---
 
 * Authentication: 인증
 * Authorization: 허가

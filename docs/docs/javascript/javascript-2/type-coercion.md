@@ -1,3 +1,11 @@
+---
+layout: default
+title: 형변환
+parent: 2. 변수, 상수, 데이터 타입
+grand_parent: javascript
+nav_order: 3
+---
+
 # 형변환
 
 형변환은 3가지 타입으로만 가능하다.

@@ -1,3 +1,10 @@
+---
+layout: default
+title: 데이터
+parent: vue
+nav_order: 2
+---
+
 # vue.js 데이터
 
 ## What is difference between 'data:' and 'data\(\)' in Vue.js?

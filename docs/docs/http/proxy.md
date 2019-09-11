@@ -1,3 +1,10 @@
+---
+layout: default
+title: 프록시
+parent: http
+nav_order: 2
+---
+
 # 프록시
 
  

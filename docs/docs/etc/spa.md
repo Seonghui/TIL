@@ -1,3 +1,10 @@
+---
+layout: default
+title: SPA(Single Page Application)
+parent: etc
+nav_order: 2
+---
+
 # SPA\(Single Page Application\)
 
 * SPA는 SPA 자체에서 데이터를 가지지 않고 데이터베이스로 사용되지도 않는다. 

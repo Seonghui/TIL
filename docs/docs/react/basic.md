@@ -1,3 +1,10 @@
+---
+layout: default
+title: 리액트 기본 사용법
+parent: react
+nav_order: 2
+---
+
 # 리액트 기본 사용법
 
 ## 1. Webpack, Babel

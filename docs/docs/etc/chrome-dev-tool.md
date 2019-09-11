@@ -1,3 +1,10 @@
+---
+layout: default
+title: 크롬 개발자 도구 - Performance
+parent: etc
+nav_order: 2
+---
+
 # 크롬 개발자 도구 - Performance
 
 ## Performance

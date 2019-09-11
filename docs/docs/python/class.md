@@ -1,3 +1,10 @@
+---
+layout: default
+title: class
+parent: python
+nav_order: 2
+---
+
 # class
 
 ## class

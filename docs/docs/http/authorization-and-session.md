@@ -1,3 +1,10 @@
+---
+layout: default
+title: 인증과 세션
+parent: http
+nav_order: 2
+---
+
 # 인증과 세션
 
 ## 1. BASIC 인증과 Digest 인증

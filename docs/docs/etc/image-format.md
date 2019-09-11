@@ -1,3 +1,10 @@
+---
+layout: default
+title: 웹 이미지 형식
+parent: etc
+nav_order: 2
+---
+
 # 웹 이미지 형식
 
 ![&#xC774;&#xBBF8;&#xC9C0; &#xD3EC;&#xB9F7;](https://i.stack.imgur.com/Ow8RZ.png)

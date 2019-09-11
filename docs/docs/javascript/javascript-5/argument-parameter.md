@@ -1,3 +1,11 @@
+---
+layout: default
+title: 인자와 매개변수
+parent: 5. 함수
+grand_parent: javascript
+nav_order: 3
+---
+
 # 인자와 매개변수
 
 ## 1. 인자와 매개변수의 개념

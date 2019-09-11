@@ -1,3 +1,10 @@
+---
+layout: default
+title: SVG
+parent: etc
+nav_order: 2
+---
+
 # SVG
 
 ## SVG\(Scalable Vector Graphics\)란?

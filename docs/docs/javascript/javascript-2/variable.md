@@ -1,3 +1,11 @@
+---
+layout: default
+title: 변수
+parent: 2. 변수, 상수, 데이터 타입
+grand_parent: javascript
+nav_order: 1
+---
+
 # 변수 \(Variable\)
 
 ## 1. 변수의 개념

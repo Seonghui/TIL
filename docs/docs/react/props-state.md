@@ -1,5 +1,8 @@
 ---
-description: 둘 다 리액트에서 다루는 데이터이다.
+layout: default
+title: props와 state
+parent: react
+nav_order: 2
 ---
 
 # props와 state

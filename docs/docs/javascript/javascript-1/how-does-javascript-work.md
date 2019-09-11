@@ -1,3 +1,11 @@
+---
+layout: default
+title: 자바스크립트의 동작 원리
+parent: 1. 자바스크립트 개요
+grand_parent: javascript
+nav_order: 3
+---
+
 # 자바스크립트의 동작 원리
 
 ## 자바스크립트 엔진

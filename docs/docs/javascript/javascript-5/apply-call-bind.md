@@ -1,3 +1,11 @@
+---
+layout: default
+title: call, apply, bind, Spread Operator
+parent: 5. 함수
+grand_parent: javascript
+nav_order: 5
+---
+
 # call, apply, bind, Spread Operator
 
 ## 1. call과 apply

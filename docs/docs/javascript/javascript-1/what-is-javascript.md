@@ -1,3 +1,11 @@
+---
+layout: default
+title: 자바스크립트의 특징
+parent: 1. 자바스크립트 개요
+grand_parent: javascript
+nav_order: 1
+---
+
 # 자바스크립트의 특징
 
 * 자바스크립트는 싱글 쓰레드 기반 언어이다. 호출 스택이 하나밖에는 없어서 한 번에 단 하나의 함수만 처리할 수 있다.

@@ -1,3 +1,10 @@
+---
+layout: default
+title: 로컬 스토리지
+parent: etc
+nav_order: 2
+---
+
 # 로컬 스토리지\(Local Storage\)
 
 ## 1. 웹스토리지\(Web Storage\)

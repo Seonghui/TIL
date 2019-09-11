@@ -1,3 +1,10 @@
+---
+layout: default
+title: 헤더
+parent: http
+nav_order: 2
+---
+
 # header
 
 ## 1. 클라이언트가 서버에 보내는 헤더 \(Request Headers\)

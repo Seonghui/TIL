@@ -1,3 +1,11 @@
+---
+layout: default
+title: this 바인딩
+parent: 5. 함수
+grand_parent: javascript
+nav_order: 4
+---
+
 # this
 
 ## this 바인딩

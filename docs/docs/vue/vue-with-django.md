@@ -1,3 +1,10 @@
+---
+layout: default
+title: Vue with django
+parent: vue
+nav_order: 2
+---
+
 # Vue with django
 
 ### 1. Django REST framework + Vue.js\(Vue CLI\)

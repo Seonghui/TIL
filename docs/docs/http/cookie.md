@@ -1,3 +1,10 @@
+---
+layout: default
+title: 쿠키
+parent: http
+nav_order: 2
+---
+
 # cookie
 
 ## 1. 쿠키의 정의

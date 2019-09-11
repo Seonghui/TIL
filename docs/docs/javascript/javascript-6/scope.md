@@ -1,3 +1,11 @@
+---
+layout: default
+title: 스코프
+parent: 6. 클로저와 스코프
+grand_parent: javascript
+nav_order: 2
+---
+
 # 스코프 \(Scope\)
 
 ## 1. 스코프\(Scope\)

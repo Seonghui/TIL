@@ -1,3 +1,10 @@
+---
+layout: default
+title: v-model
+parent: vue
+nav_order: 2
+---
+
 # v-model
 
 ## 기본 개념
@@ -15,4 +22,3 @@
 
 * [Editing a form with save and cancel options](https://stackoverflow.com/questions/46166359/editing-a-form-with-save-and-cancel-options)
 * [Vue.js return object to previous state on cancel](https://medium.com/@nickdenardis/vue-js-return-object-to-previous-state-on-cancel-2fa0f2db700a)
-

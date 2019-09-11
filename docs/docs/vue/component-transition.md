@@ -1,3 +1,10 @@
+---
+layout: default
+title: 컴포넌트 트랜지션
+parent: vue
+nav_order: 2
+---
+
 # 컴포넌트 트랜지션
 
 ```markup

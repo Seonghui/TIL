@@ -1,3 +1,10 @@
+---
+layout: default
+title: git
+parent: etc
+nav_order: 2
+---
+
 # Git
 
 ## 기본 개념

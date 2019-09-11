@@ -1,3 +1,10 @@
+---
+layout: default
+title: LifeCycle API
+parent: react
+nav_order: 2
+---
+
 # LifeCycle API
 
 이 API 는 컴포넌트가 브라우저에서 나타날때, 사라질때, 그리고 업데이트 될 때, 호출되는 API이다. 참고로 컴포넌트가 렌더링 된다고 해서 무조건 브라우저에서 다시 그려지는 것이 아니다. 일단 Virtual DOM에 그리고 실제로 변하는 곳이 브라우저의 실제 DOM에 반영된다.

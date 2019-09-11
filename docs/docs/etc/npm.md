@@ -1,8 +1,9 @@
 ---
-description: npm and yarn
+layout: default
+title: 패키지 관리자(Package Manager)
+parent: etc
+nav_order: 2
 ---
-
-# 패키지 관리자\(Package Manager\)
 
 ## 1. npm \(Node Package Manager\)
 
@@ -36,6 +37,3 @@ npm outdated
 ## 2. yarn
 
 새로운 패키지 매니저임. npm보다 빠르고 안정적이고 보안성이 뛰어나다고 주장하고 있음. npm을 통해 설치할 수 있음.
-
-## 
-

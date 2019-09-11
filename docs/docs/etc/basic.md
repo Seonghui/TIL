@@ -1,3 +1,10 @@
+---
+layout: default
+title: 자주 까먹는 각종 개념 모음
+parent: etc
+nav_order: 2
+---
+
 # 자주 까먹는 각종 개념 모음
 
 ## 1. 보일러플레이트\(Boilerplate\)

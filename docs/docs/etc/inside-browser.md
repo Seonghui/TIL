@@ -1,3 +1,10 @@
+---
+layout: default
+title: 브라우저 내부 살펴보기
+parent: etc
+nav_order: 2
+---
+
 # 브라우저 내부 살펴보기
 
 브라우저가 HTML을 해석하고 화면에 나타내는 방법은 HTML,CSS 표준에 따르게 되는데, 브라우저에 따라 스펙 정의가 좀 다를 수도 있음

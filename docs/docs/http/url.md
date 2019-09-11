@@ -1,3 +1,10 @@
+---
+layout: default
+title: URL(Uniform Resource Locator)
+parent: http
+nav_order: 2
+---
+
 # URL\(Uniform Resource Locator\)
 
 ### 일반적인 URL의 형식

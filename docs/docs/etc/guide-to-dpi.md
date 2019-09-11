@@ -1,3 +1,10 @@
+---
+layout: default
+title: DPI와 PPI의 개념
+parent: etc
+nav_order: 2
+---
+
 # DPI와 PPI의 개념
 
 ## 기본 용어
