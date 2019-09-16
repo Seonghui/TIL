@@ -8,24 +8,23 @@ nav_order: 1
 
 # 자바스크립트 패턴
 
+1. Module Pattern
+2. Prototype Pattern
+3. Observer Pattern
+4. Singleton Pattern
 
-* Module
-* Prototype
-* Observer
-* Singleton
+## Module Pattern
 
-## Module Design Pattern
+모듈은 자바스크립트의 클래스와도 같다. 여기서 모듈은 즉시실행함수(IIFE)여야 한다. 클래스의 장점은 캡슐화인데, 모듈 패턴은 클로저를 사용해서 private members를 정의할 수 있다. 따라서 public 변수나 함수만 리턴이 되고, 나머지는 모두 클로저 안에서 private하게 위치하게 된다. 참고로 자바스크립트 자체에서는 private의 개념이 없다. 그저 함수의 스코프를 사용해서 흉내를 내는 것이다.
 
-* 모듈은 자바스크립트의 클래스와도 같다. 클래스의 장점은 캡슐화\(states와 behaviors를 다른 클래스로부터 보호\)인데, 모듈 패턴은 클로저를 사용해서 private하게 만들 수 있음.
-* public 변수나 함수만 리턴이 되고, 나머지는 모두 클로저 안에서 private하게 위치
-* 모듈은 즉시실행함수\(IIFE\)여야함.
-* 참고로 자바스크립트 자체에서는 private의 개념이 없기 때문에, 그저 함수의 스코프를 사용해서 흉내를 내는 것
 * 장점
-  * 자바스크립트의 관점에서 캡슐화 구현 가능
-  * public parts가 private parts에 접근 가능하지만 밖에서는 private parts에 접근 불가능
+  * 자바스크립트의 관점에서 캡슐화 구현이 가능하다.
+  * public members가 private members에 접근 가능하지만 밖에서는 private members에 접근 불가능하다.
 * 단점
-  * public members와 private members의 접근방법이 달라서 뭔가를 바꾸고 싶을 때 public과 private 둘다 변경해야함\(무슨말?\)
-  * private members 유닛테스트 불가능
+  * public members와 private members의 접근방법이 달라서 뭔가를 바꾸고 싶을 때 public과 private 둘 다 변경해야 한다.
+  * private members의 유닛테스트가 불가능하다.
+
+### Module Pattern 예시
 
 ```javascript
 (function() {
@@ -39,7 +38,7 @@ nav_order: 1
 })();
 ```
 
-* 같은 스코프에 있지 않는 이상 private 변수나 메소드에 접근할 수 있는 방법이 없음. 아래 예제의 경우, `callChangeHTML`는 반환된 객체를 바인드해 `HTMLChanger` namespace 내부를 참조할 수 있음. 그런데 모듈 외부에서는 contents를 참조할 수 없음.
+같은 스코프에 있지 않는 이상 private 변수나 메소드에 접근할 수 있는 방법이 없다. 아래 예제의 경우, `callChangeHTML`는 반환된 객체를 바인드해 `HTMLChanger` 내부를 참조할 수 있다. 그런데 모듈 외부에서는 contents를 참조할 수 없다.
 
 ```javascript
 var HTMLChanger = (function() { // 익명 모듈을 위한 namespace - HTMLChanger
@@ -71,7 +70,7 @@ console.log(HTMLChanger.contents);  // undefined
   * 깔끔함, 명시성이 좋음
   * 문법의 일관성
 * 단점
-  * 모듈 패턴과 같이 private 메소드에 접근할 방법이 없음\(유닛 테스트 어려움\)
+  * 모듈 패턴과 같이 private 메소드에 접근할 방법이 없음(유닛 테스트 어려움)
   * private 메소드를 확장하기 어려움
   * private 메소드를 참조하는 public 메소드를 수정하기 어려움
 
@@ -103,10 +102,9 @@ Exposer.second();       // Output: Inside a private method!
 Exposer.methodToExpose; // undefined
 ```
 
-## Prototype Design Pattern
+## Prototype Pattern
 
-* 프로토타입 상속에 기반해서 만들어짐
-* 쉽게 유지보수가 가능
+프로토타입 상속에 기반해서 만들어진 패턴이다. 쉽게 유지보수가 가능한 것이 장점이다.
 
 ```javascript
 var TeslaModelS = function() {
@@ -124,24 +122,25 @@ TeslaModelS.prototype.stop = function() {
 }
 ```
 
-* TeslaModelS 객체로 메소드 유지보수하기
+### 객체로 메소드 유지보수하기
 
-  \`\`\`javascript
-
-  var TeslaModelS = function\(\) {
-
+```javascript
+var TeslaModelS = function\(\) {
   this.numWheels    = 4;
-
   this.manufacturer = 'Tesla';
-
   this.make         = 'Model S';
+}
 
+TeslaModelS.prototype = {
+  go: function() { // Rotate wheels
+  },
+  stop: function\(\) { // Apply brake pads
   }
+}
+```
 
-TeslaModelS.prototype = { go: function\(\) { // Rotate wheels }, stop: function\(\) { // Apply brake pads } }
-
-```text
 ## Revealing Prototype Pattern
+
 * Revealing Module Pattern과 비슷
 
 ```javascript
@@ -175,25 +174,66 @@ TeslaModelS.prototype = function() {
 * MVC 패턴도 example이 될 수 있음. 모델이 바뀌면 view도 업데이트됨. mvc 아키텍쳐의 장점은 종속성을 줄이기 위해 뷰와 모델을 분리하는 것임.
 * 단점
   * observer 수가 많아지면 성능이 저하됨
+
 * 자바스크립트로 observer 만들기
 
-  \`\`\`javascript var Subject = function\(\) { this.observers = \[\];
+```javascript
+var Subject = function() {
+  this.observers = [];
 
-  return { subscribeObserver: function\(observer\) { this.observers.push\(observer\); }, unsubscribeObserver: function\(observer\) { var index = this.observers.indexOf\(observer\); if\(index &gt; -1\) { this.observers.splice\(index, 1\); } }, notifyObserver: function\(observer\) { var index = this.observers.indexOf\(observer\); if\(index &gt; -1\) { this.observers\[index\].notify\(index\); } }, notifyAllObservers: function\(\) { for\(var i = 0; i &lt; this.observers.length; i++\){ this.observers\[i\].notify\(i\); }; } }; };
+  return {
+    subscribeObserver: function(observer) {
+      this.observers.push(observer);
+    },
+    unsubscribeObserver: function(observer) {
+      var index = this.observers.indexOf(observer);
+      if(index > -1) {
+        this.observers.splice(index, 1);
+      }
+    },
+    notifyObserver: function(observer) {
+      var index = this.observers.indexOf(observer);
+      if(index > -1) {
+        this.observers[index].notify(index);
+      }
+    },
+    notifyAllObservers: function() {
+      for(var i = 0; i < this.observers.length; i++){
+        this.observers[i].notify(i);
+      };
+    }
+  };
+};
 
-var Observer = function\(\) { return { notify: function\(index\) { console.log\("Observer " + index + " is notified!"\); } } }
+var Observer = function() {
+  return {
+    notify: function(index) {
+      console.log("Observer " + index + " is notified!");
+    }
+  }
+}
 
-var subject = new Subject\(\);
+var subject = new Subject();
 
-var observer1 = new Observer\(\); var observer2 = new Observer\(\); var observer3 = new Observer\(\); var observer4 = new Observer\(\);
+var observer1 = new Observer();
+var observer2 = new Observer();
+var observer3 = new Observer();
+var observer4 = new Observer();
 
-subject.subscribeObserver\(observer1\); // 옵저버 구독 subject.subscribeObserver\(observer2\); subject.subscribeObserver\(observer3\); subject.subscribeObserver\(observer4\);
+subject.subscribeObserver(observer1);
+subject.subscribeObserver(observer2);
+subject.subscribeObserver(observer3);
+subject.subscribeObserver(observer4);
 
-subject.notifyObserver\(observer2\); // Observer 2 is notified!
+subject.notifyObserver(observer2); // Observer 2 is notified!
 
-subject.notifyAllObservers\(\); // Observer 1 is notified! // Observer 2 is notified! // Observer 3 is notified! // Observer 4 is notified!
+subject.notifyAllObservers();
+// Observer 1 is notified!
+// Observer 2 is notified!
+// Observer 3 is notified!
+// Observer 4 is notified!
+```
 
-```text
 ## PUBLISH / SUBSCRIBE
 * 알림을 수신하려는 객체와 이벤트를 발생시키는 객체 사이에 있는 topic/event 채널을 사용함.
 * 구독자가 필요로 하는 값을 사용자 정의 인자로 넘길수 있는 애플리케이션별 이벤트 정의가 가능함
@@ -252,4 +292,3 @@ var officePrinter = printer.getInstance();
 ## Refs
 
 * [https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
-
