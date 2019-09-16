@@ -13,7 +13,7 @@ nav_order: 1
 3. Observer Pattern
 4. Singleton Pattern
 
-## Module Pattern
+## 1. Module Pattern
 
 모듈은 자바스크립트의 클래스와도 같다. 여기서 모듈은 즉시실행함수(IIFE)여야 한다. 클래스의 장점은 캡슐화인데, 모듈 패턴은 클로저를 사용해서 private members를 정의할 수 있다. 따라서 public 변수나 함수만 리턴이 되고, 나머지는 모두 클로저 안에서 private하게 위치하게 된다. 참고로 자바스크립트 자체에서는 private의 개념이 없다. 그저 함수의 스코프를 사용해서 흉내를 내는 것이다.
 
@@ -24,7 +24,7 @@ nav_order: 1
   * public members와 private members의 접근방법이 달라서 뭔가를 바꾸고 싶을 때 public과 private 둘 다 변경해야 한다.
   * private members의 유닛테스트가 불가능하다.
 
-### Module Pattern 예시
+### 1.1 Module Pattern 예시
 
 ```javascript
 (function() {
@@ -62,7 +62,7 @@ HTMLChanger.callChangeHTML(); // Outputs: 'contents' // 객체 리터럴 방식�
 console.log(HTMLChanger.contents);  // undefined
 ```
 
-### Revealing Module Pattern
+### 1.2 Revealing Module Pattern
 
 캡슐화를 유지하지만 모듈 패턴과 달리 명시적으로 노출하고 싶은 부분만 정해서 노출하는 방식.
 
@@ -102,9 +102,13 @@ Exposer.second();       // Output: Inside a private method!
 Exposer.methodToExpose; // undefined
 ```
 
-## Prototype Pattern
+## 2. Prototype Pattern
 
 프로토타입 상속에 기반해서 만들어진 패턴이다. 쉽게 유지보수가 가능한 것이 장점이다.
+
+### 2.1 prototype 객체를 사용해 메소드 추가하기
+
+생성자 함수 TeslaModelS는 단일 TeslaModelS 객체(인스턴스)를 생성할 수 있다. TeslaModelS 객체는 생성자한테서 초기화된 상태를 유지한다. 덧붙여, 프로토타입을 사용해서 go 와 stop 함수를 쉽게 유지보수 할 수 있다.
 
 ```javascript
 var TeslaModelS = function() {
@@ -113,6 +117,7 @@ var TeslaModelS = function() {
   this.make         = 'Model S';
 }
 
+// 방법 1
 TeslaModelS.prototype.go = function() {
   // Rotate wheels
 }
@@ -120,28 +125,19 @@ TeslaModelS.prototype.go = function() {
 TeslaModelS.prototype.stop = function() {
   // Apply brake pads
 }
-```
 
-### 객체로 메소드 유지보수하기
-
-```javascript
-var TeslaModelS = function\(\) {
-  this.numWheels    = 4;
-  this.manufacturer = 'Tesla';
-  this.make         = 'Model S';
-}
-
+// 방법2
 TeslaModelS.prototype = {
   go: function() { // Rotate wheels
   },
-  stop: function\(\) { // Apply brake pads
+  stop: function() { // Apply brake pads
   }
 }
 ```
 
-## Revealing Prototype Pattern
+### 2.2 Revealing Prototype Pattern
 
-* Revealing Module Pattern과 비슷
+Revealing Module Pattern과 비슷하다. 객체를 반환하여 캡슐화를 한다. 객체를 반환하기 때문에 prototype 객체에 function 키워드를 선언한다.
 
 ```javascript
 var TeslaModelS = function() {
@@ -152,6 +148,7 @@ var TeslaModelS = function() {
 
 TeslaModelS.prototype = function() {
 
+  // go와 stop 함수는 외부로부터 보호된다.
   var go = function() {
     // Rotate wheels
   };
@@ -161,46 +158,45 @@ TeslaModelS.prototype = function() {
   };
 
   return {
+    // 객체 반환
     pressBrakePedal: stop,
     pressGasPedal: go
   }
-
 }();
 ```
 
-## Observer Design Pattern
+## 3. Observer Design Pattern
 
-* 애플리케이션이 한 부분이 변경될 때 다른 부분도 같이 변경되어야 하는 일이 있음. 앵귤러JS에서는 `$scope` 객체가 변경될때 이걸 다른 컴포넌트들에게 알리기 위해 이벤트를 트리거할 수 있음. observer 패턴은 이런 방식임. 만약 객체가 수정되면 dependent 객체들에게 변경되었다고 알려줌.
-* MVC 패턴도 example이 될 수 있음. 모델이 바뀌면 view도 업데이트됨. mvc 아키텍쳐의 장점은 종속성을 줄이기 위해 뷰와 모델을 분리하는 것임.
-* 단점
-  * observer 수가 많아지면 성능이 저하됨
+애플리케이션의 한 부분이 변경될 때 다른 부분도 같이 변경되어야 하는 일이 있다. 만약 객체가 수정되면 그 객체와 연관된 객체들에게 변경되었다고 알려주는 것을 옵저버 패턴이라고 한다. 발행/구독 모델로 알려져 있기도 하다.
 
-* 자바스크립트로 observer 만들기
+MVC 패턴도 예가 될 수 있다. 모델이 바뀌면 View도 업데이트 되기 떄문이다. MVC 아키텍쳐의 장점은 종속성을 줄이기 위해 뷰와 모델을 분리하는 것이다. 단, 단점은 observer 수가 많아지면 성능이 저하된다는 것이다.
+
+### 3.1 자바스크립트로 Observer 만들기
 
 ```javascript
 var Subject = function() {
   this.observers = [];
-
+  var self = this;
   return {
     subscribeObserver: function(observer) {
-      this.observers.push(observer);
+      self.observers.push(observer);
     },
     unsubscribeObserver: function(observer) {
-      var index = this.observers.indexOf(observer);
+      var index = self.observers.indexOf(observer);
       if(index > -1) {
-        this.observers.splice(index, 1);
+        self.observers.splice(index, 1);
       }
     },
     notifyObserver: function(observer) {
-      var index = this.observers.indexOf(observer);
+      var index = self.observers.indexOf(observer);
       if(index > -1) {
-        this.observers[index].notify(index);
+        self.observers[index].notify(index);
       }
     },
     notifyAllObservers: function() {
-      for(var i = 0; i < this.observers.length; i++){
-        this.observers[i].notify(i);
-      };
+      for(var i = 0; i < self.observers.length; i++){
+        self.observers[i].notify(i);
+      }
     }
   };
 };
@@ -208,7 +204,8 @@ var Subject = function() {
 var Observer = function() {
   return {
     notify: function(index) {
-      console.log("Observer " + index + " is notified!");
+      var parsedIndex = Number(index) + 1
+      console.log("Observer " + parsedIndex + " is notified!");
     }
   }
 }
@@ -224,6 +221,7 @@ subject.subscribeObserver(observer1);
 subject.subscribeObserver(observer2);
 subject.subscribeObserver(observer3);
 subject.subscribeObserver(observer4);
+subject.unsubscribeObserver(observer3);
 
 subject.notifyObserver(observer2); // Observer 2 is notified!
 
@@ -231,37 +229,28 @@ subject.notifyAllObservers();
 // Observer 1 is notified!
 // Observer 2 is notified!
 // Observer 3 is notified!
-// Observer 4 is notified!
 ```
 
-## PUBLISH / SUBSCRIBE
-* 알림을 수신하려는 객체와 이벤트를 발생시키는 객체 사이에 있는 topic/event 채널을 사용함.
-* 구독자가 필요로 하는 값을 사용자 정의 인자로 넘길수 있는 애플리케이션별 이벤트 정의가 가능함
-* PUBLISH / SUBSCRIBE 패턴은 observer 패턴과 다르지만 많이들 같이 사용함
-* 예를 들어(앵귤러JS), subscriber는 `$on('event', callback)`로 이벤트를 구독하고, publisher는 `$emit('event', args)`이나 `$broadcast('event', args)`로 이벤트를 발행함.
+## 4. Singleton Pattern
 
-# Singleton
-* 단일 인스턴스 생성만 허용하지만, 이 인스턴스들은 같은 객체임.
-* Singleton은 클라이언트가 여러 객체를 생성하지 못하게 제한하고, 첫 번째 객체가 생성되면 자기 자신을 반환함
-* 예를 들어 사무실에 10명의 사람이 있고, 그 사람들이 전부 하나의 프린터를 사용한다면, 열 개의 컴퓨터(인스턴스)는 하나의 프린터를 공유하는 것이 된다는 말임. 하나의 프린터를 사용해서 같은 자원을 공유함.
-* 아래는 getInstance 메소드를 사용해서 프린터 인스턴스를 생성하는 예제
+생성자가 여러 차례 호출되더라도 실제로 생성되는 객체는 하나이고 최초 생성 이후에 호출된 생성자는 최초의 생성자가 생성한 객체를 리턴한다. 이와 같은 디자인 유형을 싱글톤 패턴이라고 한다. 싱글톤 패턴은 클라이언트가 여러 객체를 생성하지 못하게 제한한다. 예를 들어 사무실에 10명의 사람이 있고, 그 사람들이 전부 하나의 프린터를 사용한다면, 열 개의 컴퓨터(인스턴스)는 하나의 프린터를 공유하는 것이 된다. 하나의 프린터를 사용해서 같은 자원을 공유하는 것이다.
+
+### 4.1 getInstance 메소드를 사용해서 프린터 인스턴스를 생성하는 예제
 
 ```javascript
 var printer = (function () {
-
   var printerInstance;
 
   function create () {
-
     function print() {
       // underlying printer mechanics
+      console.log('print')
     }
-
     function turnOn() {
       // warm up
       // check for paper
+      console.log('turnOn')
     }
-
     return {
       // public + private states and behaviors
       print: print,
@@ -270,6 +259,8 @@ var printer = (function () {
   }
 
   return {
+    // 만약 프린터 인스턴스가 존재하지 않는 경우에는 프린터 인스턴스를 생성하고
+    // 존재하는 경우에는 만들어진 프린터 인스턴스를 반환한다
     getInstance: function() {
       if(!printerInstance) {
         printerInstance = create();
@@ -278,17 +269,15 @@ var printer = (function () {
     }
   };
 
-  function Singleton () {
-    if(!printerInstance) {
-      printerInstance = intialize();
-    }
-  };
-
 })();
 
 var officePrinter = printer.getInstance();
+officePrinter.print(); // print
+officePrinter.turnOn(); // turnOn
 ```
 
-## Refs
+## References
 
 * [https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know](https://scotch.io/bar-talk/4-javascript-design-patterns-you-should-know)
+* [wikipedia - 옵서버 패턴](https://ko.wikipedia.org/wiki/%EC%98%B5%EC%84%9C%EB%B2%84_%ED%8C%A8%ED%84%B4)
+* [wikipedia - 싱글턴 패턴](https://ko.wikipedia.org/wiki/%EC%8B%B1%EA%B8%80%ED%84%B4_%ED%8C%A8%ED%84%B4)
