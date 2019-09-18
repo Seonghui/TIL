@@ -28,8 +28,8 @@ heading_anchors: true
 
 # Aux links for the upper right navigation
 aux_links:
-  "TIL":
-    - "//seonghui.github.io/TIL"
+  "Blog":
+    - "//seonghui.github.io/"
 
 # Color scheme currently only supports "dark" or nil (default)
 color_scheme: nil
