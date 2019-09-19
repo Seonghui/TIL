@@ -3,14 +3,14 @@ layout: default
 title: 선택 정렬
 parent: 정렬 알고리즘
 grand_parent: algorithm
-nav_order: 1
+nav_order: 2
 ---
 
-# 선택 정렬
+# 선택 정렬(Selection sort)
 
 ## 1. 선택 정렬이란
 
-선택 정렬(選擇整列, selection sort)은 제자리 정렬 알고리즘의 하나로, O(n^2)의 시간 복잡도를 가진다. 선택 정렬은 다음과 같은 순서로 이루어진다.
+선택 정렬(選擇整列, selection sort)은 제자리 정렬 알고리즘의 하나로, O(n^2)의 시간 복잡도를 가진다. 말 그대로 배열에서 아이템을 선택해 맨앞으로 보낸다. 따라서 앞부터 정렬이 된다. 선택 정렬은 다음과 같은 순서로 이루어진다.
 
 ![https://hudi.kr](https://hudi.kr/wp-content/uploads/2018/02/selectionsort.gif)
 
