@@ -7,36 +7,34 @@ nav_order: 2
 
 # nuxt
 
-넉스트는 뷰, 뷰 라우터, 뷰엑스, 뷰 서버 렌더러와 뷰 메타의 조합임. 뷰 서버 렌더러는 spa 모드일 때 제외됨. 매뉴얼상의 넉스트는 universal app을 생성하기 위한 프레임워크임. 유니버셜 앱은 클라이언트 사이드와 서버 사이드에 대한 fancy word임. 그런데 서버 사이드에서 동작한다고 해서 넉스트가 익스프레스 같은 백엔드 프레임워크는 아니고, 서버 사이드 넉스트는 실제적으로 미리 구성된 vue 서버 렌더러임.
+## 1. Nuxt.js
 
-## 1. SSR \(Server side Rendering\)
+넉스트는 Vue.js, Vue Router, Vuex, Vue Server Renderer와 vue-meta의 조합이다. 여기서 뷰 서버 렌더러는 spa 모드일 때 제외된다. 매뉴얼상의 Nuxt는 Universal app을 생성하기 위한 프레임워크이다. 여기서 Universal app은 클라이언트 사이드와 서버 사이드를 아우르는(Isomorphic application) 단어일 뿐이다. 그런데 서버 사이드에서 동작한다고 해서 넉스트가 익스프레스 같은 백엔드 프레임워크는 아니고, 실제적으로 미리 구성된 Vue 서버 렌더러이다.
 
-### 장점
+### 1.1. Isomorphic application
 
-* SEO. 검색 엔진 크롤러가 렌더된 페이지를 바로 볼 수 있음.
-* Faster time to content. 특히 느린 인터넷이나 기기에서 빠름. 서버에서 렌더된 마크업은 모든 자바스크립트가 실행될때까지 기다릴 필요가 없음. 따라서 유저는 렌더링된 페이지를 보다 빨리 볼 수 있음. 
+일반적으로 동형 자바스크립트라고 번역한다. 서버와 클라이언트에서 동일한 코드가 동작한다는 의미로 생각하면 된다.
 
-### ssr를 사용하면 감수해야하는 것들
-
-* Browser-specific 코드는 특정 라이프사이클 훅에서만 사용될 수 있음. 그래서 ssr 지원 안 하는 외부 라이브러리는 서버 렌더링 앱에서 별도로 처리해줘야 함.
-* 설치와 배포 설정이 복잡. SPA는 정적 파일 서버라면 어디서든 배포가 되는데 서버 렌더링 앱에서는 Node.js 서버가 실행될 수있는 환경이 필요함 \(뭐????\)
-* 서버 사이드 로드가 증가. node.js에서 전체 앱을 렌더링하면 정적 파일 렌더링할때보다 cpu 사용량이 증가. 따라서 만약 트래픽이 많은 사이트라면 이러한 서버 로드에 대비하고 캐싱 등을 사용해서 대처해야 함.
+Nuxt.js 로 예시를 들자면, nuxtServeInit, middleware, validate(), asyncData(), fetch() 등의 과정을 최초 요청에서는 서버사이드에서 처리한다. 그 이후 페이지를 이동할 때는 클라이언트 사이드에서 동일한 로직을 통해서 페이지를 렌더링한다. 서버와 클라이언트에서 같은 코드로 동작하는 것이다.
+Node.js 어플리케이션은 서버와 클라이언트가 동일하게 JavaScript 로 이루어져 있기 때문에 Isomorphic JavaScript가 가능한 것이다. 다만 주의해야할 점은 실제 코딩할 때 해당 코드가 서버/클라이언트 양쪽에서 모두 실행될 수 있다는 걸 항상 염두에 두고 작업해야 한다.
 
 ## 2. lifecycle
 
-Request가 들어오면..
-
 ![Nuxt lifeCycle](https://cdn-images-1.medium.com/max/1600/1*CM9tZI28r0sJjb53MtjmYw.png)
+
+처음 리퀘스트가 도착하면 서버사이드에서 nuxtServeInit, middleware, validate(), asyncData(), fetch() 등의 과정을 거쳐서 렌더링한 뒤 완성된 페이지를 리스폰스로 보낸다. 그 이후에 페이지 이동은 페이지 갱신없이 클라이언트에서 nuxt-link(Vue router 의 router-link)를 통해 필요한 리소스만 ajax 통신으로 받아서 렌더링한다. 첫 요청후 페이지 이동은 클라이언트 사이드 렌더링을 하는 것이다.
+
+말 그대로 server-side rendring + client-side navigation 두 가지 모두 사용한다.
 
 ### nuxtServerInit
 
-nuxtServerInit이 Store에 정의되어 있으면 Nuxt.js는 컨텍스트 \(서버 측에서만 해당\)를 사용해 호출해야 함. 서버의 데이터를 클라이언트에게 직접 주고 싶을때 유용.
+nuxtServerInit이 Store에 정의되어 있으면 Nuxt.js는 컨텍스트 (서버 측에서만 해당)를 사용해 호출해야 한다. 서버의 데이터를 클라이언트에게 직접 주고 싶을때 유용.
 
 * nuxtServerInit은 vuex 액션 메소드
 * nuxt 라이프 사이클에서 nuxtServerInit 메소드가 맨 처음에 호출
-* dispatch 메소드가 호출한 대부분의 action 메소드들은 두 개의 인자를 가짐. 첫번째는 vuex의 context이고, 나머지 하나는 dispatch 메소드에 의해 전달된 값임.
+* dispatch 메소드가 호출한 대부분의 action 메소드들은 두 개의 인자를 가진다. 첫번째는 vuex의 context이고, 나머지 하나는 dispatch 메소드에 의해 전달된 값이다.
 * fetch나 asyncData처럼 context를 인자로 가짐
-* 따라서 nuxtServerInit은 두 개의 context를 가지고 있는데, 하나는 vuex context이고 나머지 하나는 nuxt context임. 
+* 따라서 nuxtServerInit은 두 개의 context를 가지고 있는데, 하나는 vuex context이고 나머지 하나는 nuxt context이다.
 
 ![nuxtServerInit example](https://cdn-images-1.medium.com/max/2400/1*IA4-YufZJRGEFz6t03x0FQ.png)
 
@@ -150,5 +148,7 @@ plugin config 파일 있는 곳임. 플러그인은 js file을 config로 파일�
 
 ## Refs
 
-[https://nuxtjs.org/guide/](https://nuxtjs.org/guide/) [https://medium.com/@onlykiosk/the-complete-nuxt-guide-940751e1a6a5](https://medium.com/@onlykiosk/the-complete-nuxt-guide-940751e1a6a5) [https://ssr.vuejs.org/](https://ssr.vuejs.org/)
-
+* [https://nuxtjs.org/guide/](https://nuxtjs.org/guide/)
+* [https://medium.com/@onlykiosk/the-complete-nuxt-guide-940751e1a6a5](https://medium.com/@onlykiosk/the-complete-nuxt-guide-940751e1a6a5)
+* [https://ssr.vuejs.org/](https://ssr.vuejs.org/)
+* [아하 프론트 개발기(1) — SPA와 SSR의 장단점 그리고 Nuxt.js](https://medium.com/aha-official/%EC%95%84%ED%95%98-%ED%94%84%EB%A1%A0%ED%8A%B8-%EA%B0%9C%EB%B0%9C%EA%B8%B0-1-spa%EC%99%80-ssr%EC%9D%98-%EC%9E%A5%EB%8B%A8%EC%A0%90-%EA%B7%B8%EB%A6%AC%EA%B3%A0-nuxt-js-cafdc3ac2053)
