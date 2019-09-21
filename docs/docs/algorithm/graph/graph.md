@@ -2,7 +2,8 @@
 layout: default
 title: 그래프
 parent: algorithm
-nav_order: 2
+nav_order: 4
+has_children: true
 ---
 
 # 그래프
@@ -11,7 +12,7 @@ nav_order: 2
 
 ## 1. 깊이 우선 탐색과 너비 우선 탐색
 
-![DFS와 BFS](https://ww.namu.la/s/1fe9246903b78fae07577b243a0b22791e02cb39640d5cbaae10d9849343b4ea6f162a9a677a5892fbf7819abd4ef7221ebd3608849cfb66793411fb5e643951fbef3bda9d864da7d156ded3717ec86b79316e27ed8eda9ac96e6b15c2dfbd65)
+![DFS와 BFS]({{site.url}}/TIL/assets/images/algorithm/graph/graph.gif)
 
 ### 1.1 깊이 우선 탐색 (DFS; Depth First Search)
 
