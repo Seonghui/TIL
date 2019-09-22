@@ -92,7 +92,7 @@ A의 값이 6에서 5로 바뀌었다. 정점 A에 다다르는 빠른 경로를
 
 위 단계를 구현하려면 3개의 해시 테이블이 필요하다
 
-![다익스트라 알고리즘]({{site.url}}/TIL/assets/images/algorithm/dijkstra/dijkstra_7.png){:height="50%" width="50%"}
+![다익스트라 알고리즘]({{site.url}}/TIL/assets/images/algorithm/dijkstra/dijkstra_7.png)
 
 * 그래프에 대한 해시 테이블
 * 가격에 대한 해시 테이블
@@ -100,7 +100,7 @@ A의 값이 6에서 5로 바뀌었다. 정점 A에 다다르는 빠른 경로를
 
 알고리즘을 실행하면서 해시 테이블과 부모 해시 테이블을 갱신하게 된다.
 
-![다익스트라 알고리즘]({{site.url}}/TIL/assets/images/algorithm/dijkstra/dijkstra_1.png)
+![다익스트라 알고리즘]({{site.url}}/TIL/assets/images/algorithm/dijkstra/dijkstra_1.png){:height="50%" width="50%"}
 
 1. 모든 정점을 처리할 때까지 반복한다.
 2. 출발점에서 가장 가까운 정점을 찾는다.
