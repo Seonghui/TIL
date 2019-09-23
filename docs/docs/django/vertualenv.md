@@ -5,9 +5,9 @@ parent: django
 nav_order: 2
 ---
 
-# 가상환경\(Virtual environment\)
+# 가상환경(Virtual environment)
 
-> 가상환경\(Virtual environment\), 줄여서 virtualenv
+> 가상환경(Virtual environment), 줄여서 virtualenv
 
 독립적인 python 가상 환경을 새로 설정해 다른 프로젝트를 진행하면서 설치했던 라이브러리들간의 의존성 문제를 해결할 수 있도록 해줌. 즉 격리된 별도의 라이브러리 설치 디렉토리를 뜻함. 가상환경은 편의성을 위해 프로젝트별로 하나씩 생성하는 것이 좋다.
 
@@ -15,13 +15,13 @@ nav_order: 2
 
 ### virtualenv
 
-python2에서는 가상환경 라이브러리가 기본 제공되지 않아 써드파티 라이브러리인 virtualenv 라이브러리가 필수임. \(하지만 python3에서는 vevn라는 가상환경 라이브러리가 기본 제공되기 때문에 굳이 쓰지 않아도 됨\)
+python2에서는 가상환경 라이브러리가 기본 제공되지 않아 써드파티 라이브러리인 virtualenv 라이브러리가 필수임. (하지만 python3에서는 vevn라는 가상환경 라이브러리가 기본 제공되기 때문에 굳이 쓰지 않아도 됨)
 
 ### venv
 
 python3 기본 제공 라이브러리임. virtualenv와 비교해서 가상환경 생성 명령만 다를 뿐, 활성화, 설치, 비활성화 부분은 동일함.
 
-## How To Use\(venv\)
+## How To Use(venv)
 
 ### 1. 가상환경 만들기
 
@@ -43,7 +43,7 @@ source myvenv/bin/activate
 . myvenv/bin/activate
 ```
 
-입력하면 콘솔의 프롬포트 앞에 \(myvenv\) 접두어가 붙는다. 가상환경 활성화 이후 작업할 폴더로 이동해 장고를 설치하면 된다.
+입력하면 콘솔의 프롬포트 앞에 (myvenv) 접두어가 붙는다. 가상환경 활성화 이후 작업할 폴더로 이동해 장고를 설치하면 된다.
 
 ### 3. 종료하기
 

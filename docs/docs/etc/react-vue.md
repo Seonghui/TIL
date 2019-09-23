@@ -43,7 +43,7 @@ ReactDOM.render(React.createElement(HelloMessage, { name: "John" }), mountNode);
 
 Vue.js는 여러모로 하이브리드형 프레임워크다. Angular의 양방향 바인딩과 React의 Virtual Dom 을 지원한다. 게다가 Flux 의 저장소 패턴을 구현한 vuex 를 통해 리액트의 단방향 데이터 바인딩도 활용 가능하다. jQuery 와 같이 cdn을 이용한 사용법까지 지원해서 유연성면에서는 가장 뛰어나며, 레거시 시스템을 점진적으로 개선할 때도 적합하다. vue.js의 .vue 파일(Single File Component)은 마크업과 스크립트, 스타일이 한 파일에 모여있다.
 
-```
+```text
 <template>
   <div>
     <h1>{{ message }}</h1>

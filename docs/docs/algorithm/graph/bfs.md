@@ -10,7 +10,7 @@ nav_order: 1
 
 BFS(Breadth-First Search)는 그래프 전체를 탐색하는 방법 중의 하나로, 루트 노드(혹은 다른 임의의 노드)에서 시작해서 인접한 노드를 먼저 탐색하는 방법이다. 여기서 그래프란 연결의 집합을 모형화한 것이다. 그래프는 정점과 간선으로 이루어져있다.
 
-![정점과 간선]({{site.url}}/TIL/assets/images/algorithm/bfs/bfs_1.png)
+![정점과 간선]({{site.url}}/TIL/assets/images/algorithm/bfs/bfs_1.png){:height="50%" width="50%"}
 
 정점은 여러 개의 다른 정점과 바로 이어질 수 있다. 이렇게 바로 이어진 정점을 이웃이라고 한다. 이 그래프에서 A와 B, A와 C는 서로 이웃이다. B와 C는 이어져 있지 않기 때문에 알렉스의 이웃이 아니다.
 
