@@ -13,3 +13,6 @@ nav_order: 2
 * [Understanding JavaScript Function Invocation and "this"](https://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/)
 * [Critical Rendering Path 최적화 도전기](https://blog.smilecat.dev/frontend/2017/08/07/critical-rendering-path-optimization.html)
 * [How JavaScript works: an overview of the engine, the runtime, and the call stack](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)
+* [Critical Rendering Path 최적화 도전기](https://blog.smilecat.dev/frontend/2017/08/07/critical-rendering-path-optimization.html)
+* [How React Do?](https://blog.jfo.click/how-react-do/)
+* [Understanding Javascript Function Executions — Call Stack, Event Loop , Tasks & more](https://medium.com/@gaurav.pandvia/understanding-javascript-function-executions-tasks-event-loop-call-stack-more-part-1-5683dea1f5ec)
