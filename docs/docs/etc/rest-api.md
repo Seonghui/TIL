@@ -50,17 +50,61 @@ REST 서버는 다중 계층으로 구성될 수 있으며 보안, 로드 밸런
 1. URI는 정보의 자원을 표현해야 한다.
 2. 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현한다.
 
-### URI는 정보의 자원을 표현
-
 ```text
 GET /members/delete/1
 ```
+
+위와 같은 방식은 REST를 제대로 적용하지 않은 URL이다. URL은 자원을 표현하는데 중점을 두어야 한다. delete와 같은 행위에 대힌 표현이 들어가서는 안 된다.
 
 ```text
 DELETE /members/1
 ```
 
-### 자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE)로 표현
+자원에 대한 행위는 HTTP Method(GET, POST, PUT, DELETE 등)로 표현해야 한다.
+
+### 예시
+
+* 회원정보를 가져오는 URL
+
+```text
+GET /members/show/1     (x)
+GET /members/1          (o)
+```
+
+* 회원을 추가할 때
+
+```text
+GET /members/insert/2 (x)  - GET 메서드는 리소스 생성에 맞지 않습니다.
+POST /members/2       (o)
+```
+
+## HTTP Method
+
+POST, GET, PUT, DELETE 이 4가지의 Method를 가지고 CRUD를 할 수 있다.
+
+| Method | 역할 |
+| :--- | :--- |
+| POST | POST를 통해 해당 URI를 요청하면 리소스를 생성. |
+| GET | GET를 통해 해당 리소스를 조회. 리소스를 조회하고 해당 도큐먼트에 대한 자세한 정보를 가져온다. |
+| PUT | PUT를 통해 해당 리소스를 수정. |
+| DELETE | DELETE를 통해 리소스를 삭제. |
+
+다음과 같은 식으로 URI는 자원을 표현하는 데에 집중하고 행위에 대한 정의는 HTTP METHOD를 통해 하는 것이 REST한 API를 설계하는 중심 규칙이다.
+
+## REST API의 장단점
+
+### 장점
+
+1. Open API 를 제공하기 쉽다
+2. 멀티플랫폼 지원 및 연동이 용이하다.
+3. 원하는 타입으로 데이터를 주고 받을 수 있다.
+4. 기존 웹 인프라(HTTP)를 그대로 사용할 수 있다.
+
+### 단점
+
+1. 사용할 수 있는 메소드가 4 가지 밖에 없다.
+2. 분산환경에는 부적합하다.
+3. HTTP 통신 모델에 대해서만 지원한다.
 
 ## References
 
