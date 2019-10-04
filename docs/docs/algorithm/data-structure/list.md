@@ -1,19 +1,21 @@
 ---
 layout: default
-title: 리스트형 자료구조
+title: 연결 리스트
 parent: 자료구조
 grand_parent: algorithm
-nav_order: 2
+nav_order: 1
 ---
 
-# 리스트형 자료구조
+# 연결 리스트
+{: .no_toc }
 
-연속적인 저장의 형태를 가지며, 두 가지가 있다.
+## Table of contents
+{: .no_toc .text-delta }
 
-* 배열: 크기가 변하지 않는 리스트형 자료구조. 중간에 값을 지워도 빈칸으로 유지된다.
-* 리스트: 크기가 변하는 자료구조. 중간의 값을 지우면 뒤의 것이 앞으로 이동한다.
+1. TOC
+{:toc}
 
-만약 리스트의 원소들 사이에 순서를 가지면 선형 리스트(Linear List)라고 한다.
+---
 
 ## 연결 리스트 자료구조
 
@@ -26,6 +28,17 @@ nav_order: 2
 ![연결 리스트](https://rxa2pq.bn.files.1drv.com/y4mXYyPcWsPsKTeK9s53ESwdd21lkzCswMNOmFodAlUuEVDt4mQ0aZG00h7YUhcSGrGFCYvfsacsTDkAHGo5vnwmLAPMK2gXFr4jsN_Mkx3wqtZEM62n2mLdOgyl8XfZuX6dkESMFtuMUF3_YLV6ZUUINuJZXPDHj3Nj4hBgT0198SgdRDcT6LAoinAt3aEpx6LneyVGaNI9iyLG9XPtOXE4g?width=862&height=142&cropmode=none)
 
 저장된 각 데이터가 **데이터(data) + 다음 데이터의 포인터(next)**로 이루어진 것으로, 한 방향으로만 탐색 가능한 구조이다.
+
+#### 연결 리스트 관련 메서드
+
+| 메서드 | 설명 |
+| :--- | :--- |
+| append(data) | 노드 추가 |
+| insert(newData, data) | 노드 중간 삽입 |
+| find(data) | 노드 찾기 |
+| display() | 연결 리스트의 요소 출력 |
+| findPrevious(data) | 이전 노드 찾기 |
+| remove(data) | 노드 삭제 |
 
 #### 연결 리스트 구현(Javascript)
 
@@ -123,6 +136,17 @@ list.display() // GBD
 ![이중 연결 리스트](https://4otd3w.bn.files.1drv.com/y4mBymJi3vI8J8vOyk2EW5pBdOpqPEsg66gbpD4CLyQW3Tsj5vo8JIjX1Ho5qa20LWTKtAgH86FI1fdh-wisW79V83BP5svwGWpwEwDG7b7STKlaDfPDf9ModxuHBFck-HHAidrokw6FTB9VYDArHR7IL_znhKAI6-8J8F1D1gj4phv1SZUCGihUWIyq52A833XrP-d3crvPN3xm0ATerWS_g?width=1084&height=142&cropmode=none)
 
 더블 원형 리스트라고도 한다. 저장된 각 데이터가 **이전 데이터의 포인터(prev) + 데이터(data) + 다음 데이터의 포인터(next)**로 이루어진 것으로, 양방향 탐색 가능 구조이다.
+
+#### 이중 연결 리스트 관련 메서드
+
+| 메서드 | 설명 |
+| :--- | :--- |
+| append(data) | 노드 추가 |
+| insert(newData, data) | 노드 중간 삽입 |
+| find(data) | 노드 찾기 |
+| display() | 연결 리스트의 요소 출력 |
+| findPrevious(data) | 이전 노드 찾기 |
+| remove(data) | 노드 삭제 |
 
 #### 이중 연결 리스트 구현(Javascript)
 
@@ -236,6 +260,17 @@ list.display() // GBD
 환형 연결 리스트라고도 한다. 연결 리스트의 양끝이 연결되어있는 구조이다. 이중 연결 리스트의 양 끝이 연결되어 있으면 이중 원형 연결 리스트가 된다.
 원형 연결 리스트는 마지막에 노드를 삽입하는 것이 첫 번째 노드를 삽입하는 것과 같은 의미를 가진다.
 
+#### 원형 리스트 관련 메서드
+
+| 메서드 | 설명 |
+| :--- | :--- |
+| append(data) | 노드 추가 |
+| insert(newData, data) | 노드 중간 삽입 |
+| find(data) | 노드 찾기 |
+| display() | 연결 리스트의 요소 출력 |
+| findPrevious(data) | 이전 노드 찾기 |
+| remove(data) | 노드 삭제 |
+
 #### 원형 연결 리스트(Javascript)
 
 ```js
@@ -333,3 +368,7 @@ list.remove('E');
 list.remove('A');
 list.display() // GBD
 ```
+
+## References
+
+* 그림으로 정리한 알고리즘과 자료구조
