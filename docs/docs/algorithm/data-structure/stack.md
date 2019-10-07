@@ -21,24 +21,39 @@ nav_order: 2
 
 데이터가 입력되면 입력되는 순서대로 쌓고, 나중에 들어온 것부터 먼저 사용하는 자료구조이다. 스택 형태의 데이터 구조를 LIFO(Last In First Out)형이라고 하며, 스택에 데이터를 넣는 것을 **PUSH**, 데이터를 꺼내는 것을 **POP**이라고 한다. 스택의 구현은 배열을 이용해도 되고, 연결 리스트를 이용해도 된다.
 
-## 연결 리스트로 스택 구현하기
+```js
+function Stack() {
+  Stack = [];
+  Stack.push('A');
+  Stack.push('B');
+  Stack.push('C');
 
-연결 리스트에서 insert 메서드를 삭제하고 pop, peek, isEmpty 메서드를 추가 구현하였다.
+  console.log(Stack);
 
-### 관련 메서드
+  while (Stack.length) {
+    console.log(Stack.pop());
+  }
+}
+
+Stack(); // C B A
+```
+
+## 관련 메서드
+
+연결 리스트에서 insert 메서드를 삭제하고 pop, peek, isEmpty 메서드를 추가 구현하면 된다.
 
 | 메서드 | 설명 |
 | :--- | :--- |
 | append(data) | 노드 추가 |
 | find(data) | 노드 찾기 |
-| display() | 연결 리스트의 요소 출력 |
+| display() | 스택의 모든 요소 출력 |
 | findPrevious(data) | 이전 노드 찾기 |
 | remove(data) | 노드 삭제 |
-| pop() | 마지막에 노드 제거 |
+| pop() | 마지막 노드 제거 |
 | peek() | 마지막 노드 반환 |
 | isEmpty() | 스택이 비어있는지 확인 |
 
-### 연결 리스트로 스택 구현(Javascript)
+## 연결 리스트로 스택 구현(Javascript)
 
 ```js
 function Node(data) {
