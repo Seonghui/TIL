@@ -51,13 +51,56 @@ nav_order: 4
 
 ### 이진 트리의 분류
 
-![이진 트리의 분류](https://4otc3w.bn.files.1drv.com/y4mPLgkqi2iy3qE3gsCCO3WXXhsdhnTIdceAzANC1eGGsus7N4kn1RbPJ3Ok4UFln0lGNAg3G98BEdm2rouAoeDP0lAm-hQqGph6uOnduE6w8GuY5YwWfq3PZXeetxp5zs0bobfiixQLGk_gpE757syEJDUXGc0pepMHaMJj8Y6MWyZzv5gICV-bSTK16oKz2biNEVdjtMg5N4qo78Vj2ZGvw?width=1678&height=510&cropmode=none)
-
 이진 트리를 구성하다 보면 여러 가지 모양이 나올 수 있으며, 모양에 따라 3가지로 분류할 수 있다.
 
 * 포화 이진 트리(Full Binary Tree): 레벨의 노드가 꽉 차 있는 트리
 * 완전 이진 트리(Complete Binary Tree): 마지막 레벨 전까지는 노드가 꽉 차 있고, 마지막 레벨의 왼쪽에서 오른쪽으로 노드가 채워져 있는 트리
 * 편향 이진 트리(Skewed Binary Tree): 왼쪽 혹은 오른쪽 서브 트리만을 가지는 트리
+
+### 이진 트리의 순회 방식
+
+![이진 트리의 순회방식](https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Sorted_binary_tree.svg/500px-Sorted_binary_tree.svg.png)
+
+순회 방식은 자기 자신의 처리 순서에 따라 전위/중위/후위 3가지로 나눈다.
+
+#### 전위(Preorder)
+
+**자기 자신 -> 왼쪽 자식 -> 오른쪽 자식** 순으로 순회를 한다. 전위 순회는 깊이 우선 순회(depth-first traversal)라고도 한다.
+
+위 트리를 전위 순회하면 F, B, A, D, C, E, G, I, H (root, left, right) 순으로 순회된다.
+
+```text
+preorder(node)
+  print node.value
+  if node.left ≠ null then preorder(node.left)
+  if node.right ≠ null then preorder(node.right)
+```
+
+#### 중위(Inorder)
+
+**왼쪽 -> 자기 자신 -> 오른쪽 자식** 순으로 순회를 한다. 중위 순회는 대칭 순회(symmetric)라고도 한다.
+
+위 트리를 중위 순회하면 A, B, C, D, E, F, G, H, I (left, root, right) 순으로 순회된다.
+
+```text
+inorder(node)
+  if node.left  ≠ null then inorder(node.left)
+  print node.value
+  if node.right ≠ null then inorder(node.right)
+```
+
+#### 후위(Postorder)
+
+**왼쪽 자신 -> 오른쪽 자식 -> 자기 자신** 순으로 순회를 한다.
+
+위 트리를 후위 순회하면 A, C, E, D, B, H, I, G, F (left, right, root) 순으로 순회된다.
+
+```text
+postorder(node)
+  if node.left  ≠ null then postorder(node.left)
+  if node.right ≠ null then postorder(node.right)
+  print node.value
+```
 
 ### 이진 트리의 입력, 검색, 삭제 과정
 
@@ -86,6 +129,202 @@ nav_order: 4
 2. 19가 9보다 크므로 9의 오른쪽에 위치한다.
 
 만약 8을 삭제하는 경우에는 특정 노드를 후계자로 임의 선정하여 8의 위치에 놓고 나머지 노드를 앞에서 설명한 방법에 의해 재배치한다.
+
+### 이진 트리 구현(Javascript)
+
+| 메서드 | 설명 |
+| :--- | :--- |
+| insert(data) | 트리에 데이터 추가(노드 추가) |
+| delete(data) | 노드 삭제 |
+| search(data) | 노드 찾기 |
+| getParent(node) | 부모 노드 반환 |
+| getMin(node) | 트리의 최소값 반환 |
+| getMax(node) | 트리의 최대값 반환 |
+| preOrder(node) | 전위 순회 |
+| inOrder(node) | 중위 순회 |
+| postOrder(node) | 후위 순회 |
+
+```js
+function Node(data, left, right) {
+  this.data = data;
+  this.left = left;
+  this.right = right;
+}
+
+function BST() {
+  this.root = null;
+}
+
+BST.prototype.insert = function (data) {
+  var node = new Node(data, null, null);
+  // 만약 빈 트리라면
+  if (this.root === null) {
+    this.root = node;
+  } else {
+    var current = this.root;
+    var parent;
+
+    while (true) {
+      parent = current;
+      // 데이터가 현재 노드의 데이터보다 작을 경우
+      if (data < current.data) {
+        current = current.left;
+        // 현재 노드의 데이터가 null일 경우
+        if (current === null) {
+          // 현재 위치에 노드 삽입
+          parent.left = node;
+          break;
+        }
+      } else {
+        current = current.right;
+        if (current === null) {
+          parent.right = node;
+          break;
+        }
+      }
+    }
+  }
+}
+
+BST.prototype.delete = function (data) {
+  var current = this.search(data);
+  var parent = this.getParent(current);
+
+  if (current.right === null && current.left === null) { // 자식이 없는 노드를 지울 떄
+    // 노드를 null로 만든다
+    if (parent.left.data === data) {
+      parent.left = null;
+    } else {
+      parent.right = null;
+    }
+  } else if (current.right !== null && current.left !== null) { // 자식이 둘 다 있을 때
+    // 오른쪽 자식 중에서 가장 작은 값을 구한다
+    var min = this.getMin(current.right);
+    // 최소값을 복사한다
+    var tempNode = min;
+    // 최소값의 부모 노드를 구한다
+    var minParent = this.getParent(min);
+
+    // 최소값 노드와 부모 노드간의 연결을 끊는다
+    if (minParent.right.data === min.data) {
+      minParent.right = null;
+    } else {
+      minParent.left = null;
+    }
+
+    // 지우려고 하는 데이터와 최소값 노드의 데이터를 교체한다
+    current.data = tempNode.data;
+    // 최소값 노드에 자식노드를 연결해 준다
+    current.right = tempNode.right;
+  } else { // 자식이 하나만 있을 때
+    // 삭제하려는 노드의 자식노드를 구한다
+    var child = current.left === null ? current.right : current.left;
+    // 삭제하려는 노드의 부모노드와 삭제하려는 노드의 자식노드를 연결한다
+    if (parent.left == current) {
+      parent.left = child;
+    } else {
+      parent.right = child;
+    }
+  }
+}
+
+BST.prototype.search = function (data) {
+  var current = this.root;
+  while (current.data !== data) {
+    if (current.data > data) {
+      current = current.left;
+    } else {
+      current = current.right;
+    }
+  }
+  return current;
+}
+
+BST.prototype.getParent = function (node) {
+  var current = this.root;
+  var parent;
+
+  while (current.data !== node.data) {
+    parent = current;
+
+    if (node.data < current.data) {
+      current = current.left;
+    } else {
+      current = current.right;
+    }
+  }
+  return parent;
+}
+
+BST.prototype.getMin = function (node) {
+  var current = node;
+  while (current.left !== null) {
+    current = current.left;
+  }
+  return current;
+}
+
+BST.prototype.getMax = function (node) {
+  var current = node;
+  while (current.right !== null) {
+    current = current.right;
+  }
+  return current;
+}
+
+// 전위
+BST.prototype.preOrder = function (node) {
+  console.log(node.data);
+  if (node.left !== null) {
+    this.preOrder(node.left);
+  }
+  if (node.right !== null) {
+    this.preOrder(node.right);
+  }
+}
+
+// 중위
+BST.prototype.inOrder = function (node) {
+  if (node.left !== null) {
+    this.inOrder(node.left);
+  }
+  console.log(node.data);
+  if (node.right !== null) {
+    this.inOrder(node.right);
+  }
+}
+
+// 후위
+BST.prototype.postOrder = function (node) {
+  if (node.left !== null) {
+    this.postOrder(node.left);
+  }
+  if (node.right !== null) {
+    this.postOrder(node.right);
+  }
+  console.log(node.data);
+}
+
+var tree = new BST();
+tree.insert('F');
+tree.insert('B');
+tree.insert('G');
+tree.insert('A');
+tree.insert('D');
+tree.insert('I');
+tree.insert('C');
+tree.insert('E');
+tree.insert('H');
+
+// tree.preOrder(tree.root); // F, B, A, D, C, E, G, I, H
+// tree.inOrder(tree.root); // A, B, C, D, E, F, G, H, I
+// tree.postOrder(tree.root); // A, C, E, D, B, H, I, G, F
+
+tree.delete('D')
+// tree.inOrder(tree.root); // A, B, C, E, F, G, H, I
+tree.delete('F');
+tree.inOrder(tree.root); // A, B, C, E, G, H, I
+```
 
 ## 힙 (Heap)
 
@@ -125,3 +364,4 @@ nav_order: 4
 ## References
 
 * 그림으로 정리한 알고리즘과 자료구조
+* [위키피디아 - 트리 순회](https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A6%AC_%EC%88%9C%ED%9A%8C)
