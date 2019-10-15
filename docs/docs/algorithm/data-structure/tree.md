@@ -361,6 +361,14 @@ tree.inOrder(tree.root); // A, B, C, E, G, H, I
 4. 17이 7보다 크므로 둘의 위치를 바꾼다.
 5. 9가 7보다 크므로 둘의 위치를 바꾼다.
 
+### 최대 힙 구현
+
+![최대 힙 구현](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/1206px-Heap-as-array.svg.png)
+
+* 힙은 배열로 구현한다.
+* 구현을 쉽게 하기 위해 배열을 사용할 때 인덱스는 1부터 사용한다.
+* 특정 노드의 배열 인덱스가 `current`라고 한다면, 부모 노드는 `current/2`를 통해 찾아갈 수 있고, 자식 노드는 `current*2(좌측 자식 노드)` 또는 `current*2+1(우측 자식 노드)`을 통해서 찾아갈 수 있다.
+
 ## References
 
 * 그림으로 정리한 알고리즘과 자료구조
