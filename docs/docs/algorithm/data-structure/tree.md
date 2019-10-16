@@ -361,15 +361,96 @@ tree.inOrder(tree.root); // A, B, C, E, G, H, I
 4. 17이 7보다 크므로 둘의 위치를 바꾼다.
 5. 9가 7보다 크므로 둘의 위치를 바꾼다.
 
-### 최대 힙 구현
+### 최대 힙 구현(Javascript)
 
 ![최대 힙 구현](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Heap-as-array.svg/1206px-Heap-as-array.svg.png)
 
 * 힙은 배열로 구현한다.
-* 구현을 쉽게 하기 위해 배열을 사용할 때 인덱스는 1부터 사용한다.
 * 특정 노드의 배열 인덱스가 `current`라고 한다면, 부모 노드는 `current/2`를 통해 찾아갈 수 있고, 자식 노드는 `current*2(좌측 자식 노드)` 또는 `current*2+1(우측 자식 노드)`을 통해서 찾아갈 수 있다.
+* 구현을 쉽게 하기 위해 배열을 사용할 때 인덱스를 1부터 사용할 때도 있다.
+
+| 메서드 | 설명 |
+| :--- | :--- |
+| insert(data) | 힙에 데이터 추가 |
+| bubbleUp() | 힙 재정렬. 데이터 삽입 시 호출되는 메서드. Percolate-up, sift-up, trickle-up, swim-up, heapify-up 또는 cascade-up이라고도 한다. |
+| extractMax() | 가장 높은 값(루트)을 제거하고 힙을 재정렬한다.  Bubble-down, percolate-down, sift-down, down-heap, trickle down, heapify-down, cascade-down나 extract-min/max라고도 한다. |
+| sinkDown(current) | 힙 재정렬. 데이터 삭제 시 호출되는 메서드. |
+
+```js
+class BinaryHeap {
+  constructor() {
+    this.heap = [30, 20, 10, 7, 9, 5]
+  }
+
+  // 힙에 요소 추가
+  insert(data) {
+    this.heap.push(data)
+    this.bubbleUp();
+  }
+
+  // 일반 배열을 힙으로 구성
+  bubbleUp() {
+    let index = this.heap.length - 1;
+
+    while (index > 0) {
+      let element = this.heap[index];
+      let parentIndex = Math.floor((index - 1) / 2);
+      let parent = this.heap[parentIndex];
+
+      // 부모가 요소보다 크거나 같을 경우 루프 중단
+      if (parent >= element) break;
+
+      // 부모와 요소 교환
+      this.heap[index] = parent;
+      this.heap[parentIndex] = element;
+      index = parentIndex;
+    }
+  }
+
+  // 루트 노드를 추출하고 정렬
+  extractMax() {
+    const max = this.heap[0];
+    // 힙의 첫번째 요소를 마지막 요소로 초기화
+    this.heap[0] = this.heap.pop();
+    this.sinkDown(0);
+    return max
+  }
+
+  sinkDown(current) {
+    let left = 2 * current + 1;
+    let right = 2 * current + 2;
+    let largest = current;
+    const length = this.heap.length;
+
+    // 최상단 루트의 값과 왼쪽, 오른쪽 자식의 값과 비교를 해 큰값을 largest 변수에 넣는다.
+    if (left <= length && this.heap[left] > this.heap[largest]) {
+      largest = left
+    }
+    if (right <= length && this.heap[right] > this.heap[largest]) {
+      largest = right
+    }
+
+    // 가장 큰 값의 인덱스가 현재 인덱스와 같지 않을 경우
+    if (largest !== current) {
+      // 가장 큰 값의 인덱스와 현재 인덱스의 값을 바꿔 준다.
+      [this.heap[largest], this.heap[current]] = [this.heap[current], this.heap[largest]]
+      // 최대 힙이 다 구성되지 않은 상태이니, 구성할 때까지 재귀적 호출을 한다.
+      this.sinkDown(largest)
+    }
+  }
+
+}
+
+const heap = new BinaryHeap();
+heap.insert(90);
+heap.insert(50);
+// console.log(heap); //BinaryHeap { heap: [ 90, 50, 30, 20, 9, 5, 10, 7 ] }
+heap.extractMax();
+console.log(heap); //BinaryHeap { heap: [ 50, 30, 20, 9, 5, 10, 7 ] }
+```
 
 ## References
 
 * 그림으로 정리한 알고리즘과 자료구조
 * [위키피디아 - 트리 순회](https://ko.wikipedia.org/wiki/%ED%8A%B8%EB%A6%AC_%EC%88%9C%ED%9A%8C)
+* [How to implement Heap Data structure in JavaScript](https://reactgo.com/javascript-heap-datastructure/)
