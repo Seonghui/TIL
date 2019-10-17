@@ -217,19 +217,167 @@ queue.clear();
 queue.display(); // 큐가 비어있습니다.
 ```
 
+### 스택 2개로 큐 구현 (Javascript)
+
+stack2에 아무것도 없는 상태에서 dequeue를 수행하려고 할 때, stack1에 쌓여있는 데이터들을 전부 stack2로 옮기는 것이 포인트이다.
+
+![스택 2개로 큐 구현]({{site.url}}/TIL/assets/images/algorithm/queue/stack-queue-1.png)
+
+```js
+class Stack {
+  constructor() {
+    this.stackArray = [];
+  }
+  push(item) {
+    this.stackArray.push(item);
+  }
+  pop() {
+    return this.stackArray.pop();
+  }
+  peek() {
+    return this.stackArray[this.stackArray.length - 1]
+  }
+  isEmpty() {
+    return this.stackArray.length === 0;
+  }
+  display() {
+    console.log(this.stackArray)
+  }
+}
+
+class Queue {
+  constructor() {
+    this.stack1 = new Stack();
+    this.stack2 = new Stack();
+  }
+  enqueue(item) {
+    this.stack1.push(item);
+  }
+  dequeue() {
+    // 스택 2가 비어있으면
+    if (this.stack2.isEmpty()) {
+      // 스택 1의 아이템이 비워질때까지
+      while (!this.stack1.isEmpty()) {
+        // 스택 1의 아이템을 스택 2로 옮긴다
+        this.stack2.push(this.stack1.pop());
+      }
+    }
+    // 스택 2의 아이템을 dequeue한다.
+    return this.stack2.pop();
+  }
+}
+
+const q = new Queue();
+q.enqueue(1);
+q.enqueue(2);
+q.enqueue(3);
+q.enqueue(4);
+console.log(q.dequeue());//1
+console.log(q.dequeue());//2
+q.enqueue(5);
+q.enqueue(6);
+console.log(q.dequeue());//3
+console.log(q.dequeue());//4
+console.log(q.dequeue());//5
+console.log(q.dequeue());//6
+```
+
 ## 우선순위 큐(Priority Queue)
 
 우선순위 큐의 요소들은 우선순위를 가지고 있다. 일반 큐는 선형 자료구조이지만, 우선순위 큐는 들어간 순서에 상관없이 우선순위가 높은 데이터가 먼저 나온다. 우선순위 큐가 힙이라는 것은 널리 알려진 오류이다. 우선순위 큐는 리스트나 맵과 같이 추상적인 개념이다. 리스트는 연결 리스트나 배열로 구현될 수 있는 것과 같이, 우선순위 큐는 힙이나 다양한 다른 방법을 이용해 구현될 수 있다.
 
-하지만 배열의 경우에는 데이터 삽입 및 삭제 과정에서 데이터를 한 칸씩 당기거나 밀어야 하는 연산을 계속해야 하고, 삽입의 위치를 찾기 위해 배열에 저장된 모든 데이터와 우선순위를 비교해야 한다. 연결리스트는 삽입의 위치를 찾기 위해 첫 번째 노드에서부터 시작해 마지막 노드에 저장된 데이터와 우선순위 비교를 진행할지도 모른다. 그래서 우선순위 큐는 주로 힙을 이용해 구현하는 것이 일반적이다.
+하지만 배열의 경우에는 데이터 삽입 및 삭제 과정에서 데이터를 한 칸씩 당기거나 밀어야 하는 연산을 계속해야 하고, 삽입의 위치를 찾기 위해 배열에 저장된 모든 데이터와 우선순위를 비교해야 한다. 연결리스트는 삽입의 위치를 찾기 위해 첫 번째 노드에서부터 시작해 마지막 노드에 저장된 데이터와 우선순위 비교를 진행할지도 모른다. 그래서 우선순위 큐는 주로 힙을 이용해 구현하는 것이 일반적이다. 구현에 대해서는 [힙](/TIL/docs/algorithm/data-structure/tree.html#힙-heap)을 참고.
 
 우선순위 큐는 최소한 다음 연산이 지원되어야 한다.
 
 * 우선순위를 지정하여 큐에 추가한다.
 * 가장 높은 우선순위를 가진 원소를 큐에서 제거하고 이를 반환한다.
 
+## 원형 큐(Circular Queue)
+
+선형 큐의 문제점(배열로 큐를 선언할시 큐의 삭제와 생성이 계속 일어났을때, 마지막 배열에 도달후 실제로는 데이터공간이 남아있지만 오버플로우가 발생)을 보완한 것이 원형 큐이다. front가 큐의 끝에 닿으면 큐의 맨 앞으로 자료를 보내어 원형으로 연결 하는 방식이다. 환형 큐라고도 한다.
+
+| ENQ(A) | ENQ(B) | ENQ(C) | ENQ(D) | DEQ(A) | ENQ(E) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+|  |  |  | D | D | D |
+|  |  | C | C | C | C |
+|  | B | B | B | B | B |
+| A | A | A | A |  | E |
+
+```js
+class CircleQueue {
+  constructor(size) {
+    this.maxSize = size;
+    this.array = [];
+    this.front = 0;
+    this.rear = 0;
+  }
+
+  // front와 rear가 같은 위치에 있다면 큐가 비어있다는 뜻
+  isEmpty() {
+    return this.front == this.rear;
+  }
+
+  // rear가 front의 바로 전 위치에 있다면 큐가 가득 찼다는 뜻
+  isFull() {
+    return (this.rear + 1) % this.maxSize == this.front;
+  }
+
+  // 데이터가 들어갈 때는 rear만 움직인다
+  // rear의 위치는 최근에 들어온 데이터의 위치이다
+  // 즉 새로운 데이터가 들어오기 위해 먼저 이동해야 한다
+  enQueue(item) {
+    if (this.isFull()) {
+      console.log(new Error('큐가 포화상태입니다.'))
+    } else {
+      // rear를 이동시키고
+      this.rear = (this.rear + 1) % this.maxSize;
+      // 그 자리에 데이터를 넣는다.
+      this.array[this.rear] = item;
+    }
+  }
+
+  deQueue() {
+    if (this.isEmpty()) {
+      console.log(new Error('큐가 비었습니다.'));
+    } else {
+      // 데이터가 나갈 때는 front만 움직인다.
+      this.front = (this.front + 1) % this.maxSize;
+      return this.array[this.front];
+    }
+  }
+
+  print() {
+    if (this.isEmpty()) {
+      console.log(new Error('큐가 비었습니다.'));
+    }
+    let string = '';
+    let i = this.front;
+    do {
+      i = (i + 1) % this.maxSize;
+      string += this.array[i] + ' ';
+      if (i == this.rear) {
+        console.log(string);
+        break;
+      }
+    } while (i != this.front);
+  }
+}
+
+let queue = new CircleQueue(5);
+
+queue.enQueue(1);
+queue.enQueue(2);
+queue.enQueue(3);
+queue.enQueue(4);
+queue.deQueue();
+queue.enQueue(5);
+queue.print();
+```
+
 ## References
 
 * 그림으로 정리한 알고리즘과 자료구조
 * [위키백과 - 큐](https://ko.wikipedia.org/wiki/%ED%81%90_(%EC%9E%90%EB%A3%8C_%EA%B5%AC%EC%A1%B0))
 * [위키백과 - 우선순위 큐](https://ko.wikipedia.org/wiki/%EC%9A%B0%EC%84%A0%EC%88%9C%EC%9C%84_%ED%81%90)
+* [원형 큐 (Circular Queue) 자료 구조](https://lktprogrammer.tistory.com/59)
