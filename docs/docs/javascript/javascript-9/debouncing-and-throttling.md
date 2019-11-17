@@ -3,7 +3,7 @@ layout: default
 title: Debounce and throttle
 parent: 9. 기타
 grand_parent: javascript
-nav_order: 1
+nav_order: 10
 ---
 
 # Debounce and throttle

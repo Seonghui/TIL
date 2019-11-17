@@ -8,6 +8,14 @@ nav_order: 1
 
 # 함수의 정의
 
+{: .no_toc }
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 ## 1. 함수의 정의
 
 자바스크립트의 함수는 언뜻 보면 여느 언어와 마찬가지의 기능을 제공한다. 즉, 특정 기능을 제공하는 코드를 작성해서 함수를 정의하고, 이를 호출해서 결과값을 얻는 것처럼 말이다. 하지만 이러한 기본적인 기능 외에도, 자바스크립트 함수를 제대로 이해하려면 함수가 일급 객체이며 함수가 일반 객체처럼 값으로 취급된다는 것을 이해해야 한다.
@@ -198,6 +206,5 @@ arr.forEach(function(index, value) {
 
 * 인사이드 자바스크립트
 * 러닝 자바스크립트
-* [[번역] JavaScript: 도대체 콜백이 뭔데?
-](https://medium.com/@oasis9217/%EB%B2%88%EC%97%AD-javascript-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%BD%9C%EB%B0%B1%EC%9D%B4-%EB%AD%94%EB%8D%B0-65bb82556c56)
+* [[번역] JavaScript: 도대체 콜백이 뭔데?](https://medium.com/@oasis9217/%EB%B2%88%EC%97%AD-javascript-%EB%8F%84%EB%8C%80%EC%B2%B4-%EC%BD%9C%EB%B0%B1%EC%9D%B4-%EB%AD%94%EB%8D%B0-65bb82556c56)
 * [[자바스크립트] 자바스크립트의 콜백함수 이해하기!_v2](https://yubylab.tistory.com/entry/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8%EC%9D%98-%EC%BD%9C%EB%B0%B1%ED%95%A8%EC%88%98-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0)

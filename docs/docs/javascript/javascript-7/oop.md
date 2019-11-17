@@ -10,8 +10,6 @@ nav_order: 1
 
 {: .no_toc }
 
-## Table of contents
-
 {: .no_toc .text-delta }
 
 1. TOC
@@ -40,14 +38,14 @@ OOP 로 코드를 작성하면 이미 작성한 코드에 대한 재사용성이
 * 인스턴스: **마티즈**처럼 구체적이고 한정적인 것. 인스턴스를 처음 만들 때는 생성자가 실행된다. 이때 생성자는 객체 인스턴스를 초기화한다.
 * 메소드: 기능
 * 클래스 메소드: 클래스에 속하지만 특정 인스턴스에 묶이지는 않는 메소드 (ex. 시동을 거는 기능)
-* 생성자(constructor): 인스턴스를 생성하고 클래스 필드를 초기화하기 위한 특수한 메소드. 클래스 필드는 클래스 내부의 캡슐화된 변수를 말한다. 데이터 멤버 또는 멤버 변수라고도 부른다. 쉽게 말해 자바스크립트의 생성자 함수에서 this에 추가한 프로퍼티를 클래스 기반 객체지향 언어에서는 클래스 필드라고 부른다.
+* 생성자(constructor): 인스턴스를 생성하고 클래스 필드를 초기화하기 위한 특수한 메소드. 클래스 필드는 클래스 내부의 캡슐화된 변수를 말한다. 데이터 멤버 또는 멤버 변수라고도 부른다. 쉽게 말해 자바스크립트의 생성자 함수에서 this에 추가한 프로퍼티를 클래스 기반 객체지향 언어에서는 클래스 필드라고 부른다. 생성자가 없으면 인스턴스를 생성할 수 없다.
 
-### 1.1 클래스의 개념
+### 1. 클래스의 개념
 
-OOP는 클래스를 계층적으로 분류하는 수단이 될 수 있다. 예를 들어 **자동차**보다 더 범용적인 **운송 수단**이라는 클래스가 있다. 만약 운송 수단이라는 클래스에 자동차가 속한다면, 운송 수단은 자동차의 **슈퍼 클래스**가 되고, 자동차는 운송 수단의 **서브 클래스**가 된다.  
+OOP는 클래스를 계층적으로 분류하는 수단이 될 수 있다. 예를 들어 **자동차**보다 더 범용적인 **운송 수단**이라는 클래스가 있다. 만약 운송 수단이라는 클래스에 자동차가 속한다면, 운송 수단은 자동차의 **슈퍼 클래스**가 되고, 자동차는 운송 수단의 **서브 클래스**가 된다. 
 운송 수단 클래스에는 자동차, 보트, 비행기 등 여러가지 서브클래스가 있을 수 있고, 서브클래스 역시 서브클래스를 가질 수 있다. 예를 들면 보트 자동차 서브클래스에는 트럭, 해치백, 세단, 경차 등의 서브클래스가 있을 수 있다.
 
-### 1.2 클래스와 인스턴스
+### 2. 클래스와 인스턴스
 
 여기서 자동차, 경차 등 클래스는 추상적인 개념이지만, 그 클래스에 속하는 마티즈는 실제로 볼 수 있는 구체적인 대상이기 때문에 인스턴스라고 한다.
 
@@ -59,7 +57,7 @@ arr라는 배열을 생성하면, 이 배열은 사실은 Array라는 생성자 
 
 여기서 클래스를 통해 생성한 객체 [1,2,3]는 바로 인스턴스라고 한다. 구체적인 데이터를 지니고, 실제 코드상에 동작을 수행하는 실체이다.
 
-### 1.3 알아두면 좋은 것
+### 3. 알아두면 좋은 것
 
 * 클래스의 인스턴스는 모두 같은 프로토타입을 공유한다
 * 프로토타입에 프로퍼티나 메소드가 있다면 해당 클래스의 인스턴스는 모두 그 프로퍼티나 메소드에 접근할 수 있다
@@ -89,7 +87,7 @@ me.setName("iamhjoo");
 console.log(me.getName());
 ```
 
-여기서 함수 Person은 클래스이자 생성자의 역할을 한다. 자바스크립트에서 클래스 기반의 객체 지향 프로그램은 기본적인 형태가 이와 같다.  
+여기서 함수 Person은 클래스이자 생성자의 역할을 한다. 자바스크립트에서 클래스 기반의 객체 지향 프로그램은 기본적인 형태가 이와 같다. 
 하지만 이 예제는 문제가 많다. 왜냐면 객체가 공통적으로 사용하는 setName() 함수와 getName()을 함수를 따로따로 생성하고 있기 때문이다. 이는 불필요하게 중복되는 영역을 메모리에 올려 자원을 낭비하는 것이 된다.
 
 ```javascript
@@ -111,7 +109,7 @@ console.log(me.getName());
 console.log(you.getName());
 ```
 
-new 키워드로 만든 새 객체는 생성자의 prototype 프로퍼티에 접근할 수 있다.  
+new 키워드로 만든 새 객체는 생성자의 prototype 프로퍼티에 접근할 수 있다. 
 따라서 이렇게 프로토타입 객체에 정의해서 사용하는 것이 좋다.
 
 ```javascript
@@ -149,22 +147,25 @@ console.log(you.getName());
 
 #### 2.1 프로토타입을 이용한 상속
 
-**2.1.1 create\_object()**
+##### 2.1.1 create_object()
 
 ```javascript
 function create_object(o) {
-    function F() {}
-    F.prototype = o;
-    return new F();
+    function F() {} // 빈 클래스 F 생성
+    F.prototype = o; // F의 prototype에 인자로 들어온 객체 참조
+    return new F(); // F의 인스턴스를 반환
 }
 ```
 
 ![pi](https://user-images.githubusercontent.com/16531837/44308758-5e0d1c80-a3f6-11e8-8fe7-98cf81c4b2e7.png)
 
-create\_object() 함수는 인자로 들어온 객체를 부모로 하는 자식 객체를 생성하여 반환한다. 그림을 보면 새로운 빈 함수 객체 F를 만들고 F.prototype에 인자로 들어온 객체를 참조한다. 그리고 함수 객체 F를 생성자로 하는 새로운 객체를 만들어 반환한다.  
+create\_object() 함수는 인자로 들어온 객체를 부모로 하는 자식 객체를 생성하여 반환한다. 그림을 보면 **새로운 빈 함수 객체 F를 만들고 F.prototype에 인자로 들어온 객체를 참조**한다. 그리고 함수 객체 F를 생성자로 하는 새로운 객체를 만들어 반환한다.
+
+
+
 이렇게 프로토타입의 특성을 활용하여 상속을 구현하는 것이 프로토타입 기반의 상속이다. (참고로 create\_object() 함수는 ES5에서 Object.create() 함수로 제공된다. 여기서는 프로토타입 기반 상속의 이해를 돕고자 사용한 것이다.)
 
-**2.1.2 create\_object() 함수로 상속 구현하기**
+##### 2.1.2 create_object() 함수로 상속 구현하기
 
 부모 객체에 해당하는 person 객체와 이 객체를 프로토타입 체인으로 참조할 수 있는 자식 객체 student를 만들어서 사용하였다.
 
@@ -180,9 +181,9 @@ var person = {
 };
 
 function create_object(o) {
-    function F() {};
-    F.prototype = o;
-    return new F();
+    function F() {}; // 빈 클래스 F 생성
+    F.prototype = o; // F의 prototype에 인자로 들어온 객체 person 참조
+    return new F(); // F의 인스턴스를 반환
 }
 
 var student = create_object(person);
@@ -193,7 +194,7 @@ console.log(student.getName());
 
 ![pi2](https://user-images.githubusercontent.com/16531837/44308856-1dae9e00-a3f8-11e8-8b55-ed1c1bea368d.png)
 
-**2.1.3 extend() 함수로 메소드 추가하기**
+##### 2.1.3 extend() 함수로 메소드 추가하기
 
 얕은 복사를 사용하는 extend() 함수를 사용해서 stduent 객체를 확장시켰다.
 
@@ -214,10 +215,18 @@ function create_object(o) {
     return new F();
 }
 
-function extend(obj,prop) {
-    if ( !prop ) { prop = obj; obj = this; }
-    for ( var i in prop ) obj[i] = prop[i];
-    return obj;
+function extend(obj, prop) {
+  // 만약 prop이 존재하지 않을 경우,
+  // prop은 obj가 되고 obj는 this가 된다.
+  // 현재 예시에서는 prop이 added 객체로 존재하기 때문에 아래 코드는 패스하게 된다.
+  if ( !prop ) { prop = obj; obj = this; }
+  
+  // 그리고 obj에 props을 전부 추가한다.
+  // 현재 예시에서는 student 객체에 added 객체의 프로퍼티를 전부 추가하게 된다.
+  for ( var i in prop ) obj[i] = prop[i];
+  
+  // obj를 반환한다
+  return obj;
 };
 
 var student = create_object(person);
@@ -276,7 +285,7 @@ me.setName("zzoon");
 console.log(me.getName());
 ```
 
-빈 함수 F()를 생성하고 이 F()의 인스턴스를 Person.prototype과 Student 사이에 두었다. 그리고 이 인스턴스를 Student.prototype에 참조되게 한다.  
+빈 함수 F()를 생성하고 이 F()의 인스턴스를 Person.prototype과 Student 사이에 두었다. 그리고 이 인스턴스를 Student.prototype에 참조되게 한다.
 즉 빈 함수(F)의 객체를 중간에 두어 Person의 인스턴스와 Student 의 인스턴스를 서로 독립적으로 만들었다. 이제 Person 함수 객체에서 this에 바인딩되는 것은 Studentd의 인스턴스가 접근할 수 없다.
 
 ### 3. 캡슐화
@@ -307,7 +316,7 @@ console.log(me.getName());
 
 클로저를 사용해서 name에 접근할 수 없다.
 
-## ES6의 클래스
+## 3. ES6의 클래스
 
 * ES6의 클래스는 함수이다. 모양만 클래스처럼 보일 뿐 typeof로 타입체크를 하면 function이 나온다.
 * 그래서 여전히 클래스 인스턴스에서 사용할 수 있는 메소드라고 하면 프로토타입 메소드를 가리킨다. 실제로 콘솔에 Car.prototype을 찍어보면 메소드와 생성자가 찍힌다.
@@ -325,7 +334,7 @@ class Car {
         this.userGear = this.userGears[0];
     }
 
-    // 기어변속 메소드 생성 
+    // 기어변속 메소드 생성
     shift(gear) {
         if (this.userGears.indexOf(gear) < 0)
             throw new Error(`Invalid gear: ${gear}`);
@@ -339,9 +348,45 @@ car.shift('D');
 car.userGear; // 'D'
 ```
 
-Car 클래스에 shift 메소드를 사용하면 잘못된 기어를 선택하는 실수를 방지할 수 있을 것처럼 보이지만 완벽하게 보호되는 것은 아님. 직접 `car.userGear = 'X'`라고 설정하면 막을 수 없음. 따라서 가짜 접근 제한이나 WeakMap 인스턴스를 사용해야 함. 가짜 접근 제한은 단순 명시일 뿐이고, WeakMap을 사용해야 진정한 제한을 할 수 있음.
+이 예시에서, `new Car('Tesla', 'Model S');`를 실행하면 Car 클래스에 작성한 constructor가 자동으로 호출되고, 파라미터 값으로 'Tesla'와 'Model S'를 넘겨준다.
+
+여기서 new 연산자가 인스턴스를 생성하는 것처럼 보이지만, 사실 new 연산자는 constructor를 호출하면서 파라미터를 넘겨주는 역할만 한다. 호출된 constructor가 인스턴스를 생성하여 반환하면 new 연산자가 받아 new를 실행한 곳으로 반환한다. 과정은 다음과 같다.
+
+1. `new Car('Tesla', 'Model S');`를 실행
+2. new 연산자가 constructor를 호출하면서 파라미터 전달
+3. constructor에 작성한 코드를 실행하기 전에 빈 Object 를 생성
+4. constructor 코드를 실행
+5. 생성한 Object(인스턴스)에 property 할당 (인스턴스를 먼저 생성했기 때문에 this로 Object 참조 가능
+6. 생성한 Object 반환
+
+다음은 생성된 인스턴스의 구조이다.
+
+![인스턴스의 구조]({{site.url}}/TIL/assets/images/javascript/javascript-7/oop-1.png)
+
+car 인스턴스의 __proto__는 Car Class 오브젝트와 함께 생성된 Prototype object를 가리키고 있다. 결국 Class 문법을 이용한 코드를 prototype 기반의 코드로 변경하면 다음과 같다.
+
+```js
+function Car(make, model) {
+    this.make = make;
+    this.model = model;
+    this.userGears = ['P', 'N', 'R', 'D'];
+    this.userGear = this.userGears[0];
+}
+
+Car.prototype.shift = function(gear) {
+    if (this.userGears.indexOf(gear) < 0)
+        throw new Error(`Invalid gear: ${gear}`);
+    this.userGear = gear;
+}
+
+const car = new Car('Tesla', 'Model S');
+car.shift('D');
+car.userGear; // 'D'
+```
 
 ### 2. 가짜 접근 제한
+
+Car 클래스에 shift 메소드를 사용하면 잘못된 기어를 선택하는 실수를 방지할 수 있을 것처럼 보이지만 완벽하게 보호되는 것은 아니다. 직접 `car.userGear = 'X'`라고 설정하면 막을 수 없다. 따라서 가짜 접근 제한이나 WeakMap 인스턴스를 사용해야 한다. 가짜 접근 제한은 단순 명시일 뿐이고, WeakMap을 사용해야 진정한 제한을 할 수 있다.
 
 그냥 단순하게 말해서 외부에서 접근하면 안 되는 프로퍼티 이름 앞에 밑줄을 붙이는 것임. 진정한 제한 아님.
 
@@ -383,7 +428,7 @@ class Vehicle {
 
 class Car extends Vehicle {
     constructor() {
-        super();
+        super(); // 슈퍼클래스의 생성자를 호출하는 특별한 함수
         console.log('car created');
     }
     deployAirbags() {
@@ -409,12 +454,12 @@ c.deployAirbags();
 
 #### extends
 
-* 어떤 클래스의 서브클래스로 만들어줌
+* 어떤 클래스의 서브클래스로 만들어준다.
 
 #### super()
 
 * 슈퍼클래스의 생성자를 호출하는 특별한 함수
-* 서브클래스에서는 이 함수르 반드시 호출해야 한다. 호출하지 않으면 에러가 발생함.
+* 서브클래스에서는 이 함수를 반드시 호출해야 한다. 호출하지 않으면 에러가 발생함.
 
 ### 4. 다형성
 
@@ -422,7 +467,7 @@ c.deployAirbags();
 * 자바(스크립트가 아닌 자바)에서는 하나의 메소드나 클래스가 있을 때 이것들이 다양한 방법으로 동작하는 것을 의미.
 * 키보드를 예를 들면, 키보드의 키를 사용하는 것은 '누른다' 이다. 하지만 똑같은 동작 방법의 키라고 하더라도 ESC는 취소를, ENTER는 실행의 목적을 가지고 있다. 다형성이란 동일한 조작방법으로 동작시키지만 동작방법은 다른 것을 의미한다.
 
-## Ref
+## References
 
 * 러닝 자바스크립트
 * 인사이드 자바스크립트

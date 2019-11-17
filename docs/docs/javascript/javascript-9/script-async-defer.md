@@ -3,7 +3,7 @@ layout: default
 title: script의 async와 defer
 parent: 9. 기타
 grand_parent: javascript
-nav_order: 1
+nav_order: 50
 ---
 
 # script의 async와 defer

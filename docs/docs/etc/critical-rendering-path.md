@@ -7,6 +7,17 @@ nav_order: 2
 
 # 주요 렌더링 경로(Critical Rendering Path)
 
+{: .no_toc }
+
+## Table of contents
+
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 ![주요 렌더링 경로](https://d2.naver.com/content/images/2019/04/helloworld-201904-sangwoo-ko_3-01.png)
 
 * 탭 내부에서 발생하는 모든 작업(웹 콘텐츠)을 처리.
@@ -28,7 +39,7 @@ nav_order: 2
 6. 화면에 실제 픽셀을 Paint한다.
 7. 화면의 픽셀로 변환한다. (합성)
 
-### 1. 서버에서 응답으로 받은 HTML 데이터를 파싱한다
+### 1. 서버에서 응답으로 받은 HTML 데이터를 파싱
 
 ```html
 <html>
@@ -53,7 +64,11 @@ nav_order: 2
 
 ![DOM Tree를 생성](https://d2.naver.com/content/images/2019/04/helloworld-201904-sangwoo-ko_3-02.png)
 
-웹 사이트는 일반적으로 이미지, CSS, JavaScript와 같은 외부 리소스를 사용한다. 이러한 파일은 네트워크나 캐시에서 로딩해야 한다. DOM을 구축하기 위해 파싱하는 동안 이런 리소스를 만날 때마다 메인 스레드가 하나하나 요청할 수도 있을 것이다. 하지만 속도를 높이기 위해 '프리로드(Preload) 스캐너'가 동시에 실행된다. HTML 문서에 `<img>` 또는 `<link>` 와 같은 태그가 있으면 프리로드 스캐너는 HTML 파서가 생성한 토큰을 확인하고 브라우저 프로세스의 네트워크 스레드에 요청을 보낸다. 자바스크립트는 파싱을 막을 수 있다. `<script>` 태그를 만나면 HTML 파서는 HTML 문서의 파싱을 일시 중지한 다음 자바스크립트 코드를 로딩하고 파싱해 실행해야 한다. 왜냐면 자바스크립트는 DOM 구조를 바꿀 수 있어 문서의 모양을 변경할 수 있기 때문이다. HTML 파싱을 재개하기 전에 HTML 파서는 자바스크립트의 실행이 끝나기를 기다려야 한다. 리소스가 어떻게 로딩하길 원하는지 브라우저에 힌트를 줄 수 있다. 예를 들면 script를 로딩할 때 async 속성이나 defer 속성이 있다.
+웹 사이트는 일반적으로 이미지, CSS, JavaScript와 같은 외부 리소스를 사용한다. 이러한 파일은 네트워크나 캐시에서 로딩해야 한다. DOM을 구축하기 위해 파싱하는 동안 이런 리소스를 만날 때마다 메인 스레드가 하나하나 요청할 수도 있을 것이다. 하지만 속도를 높이기 위해 '프리로드(Preload) 스캐너'가 동시에 실행된다. HTML 문서에 `<img>` 또는 `<link>` 와 같은 태그가 있으면 프리로드 스캐너는 HTML 파서가 생성한 토큰을 확인하고 브라우저 프로세스의 네트워크 스레드에 요청을 보낸다.
+
+자바스크립트는 파싱을 막을 수 있다. `<script>` 태그를 만나면 HTML 파서는 HTML 문서의 파싱을 일시 중지한 다음 자바스크립트 코드를 로딩하고 파싱해 실행해야 한다. 왜냐면 자바스크립트는 DOM 구조를 바꿀 수 있어 문서의 모양을 변경할 수 있기 때문이다. HTML 파싱을 재개하기 전에 HTML 파서는 자바스크립트의 실행이 끝나기를 기다려야 한다. 리소스가 어떻게 로딩하길 원하는지 브라우저에 힌트를 줄 수 있다. 예를 들면 script를 로딩할 때 async 속성이나 defer 속성이 있다.
+
+자바스크립트 처리는 [자바스크립트 엔진](/TIL/docs/javascript/javascript-1/how-does-javascript-work.html)이 한다. 렌더링 엔진의 HTML 파서가 DOM 생성 프로세스를 하던 중 스크립트 태그를 만나면, 자바스크립트 코드를 실행시키기 위해 자바스크립트 엔진에게 제어권한을 넘겨 주게 된다. DOM 트리가 다 형성되지 않았는데 자바스크립트에서 해당 DOM을 조작하려고 하면 문제가 발생하기 때문에 `<script>` 태그는 html의 body 태그 제일 아래에 놓는 것이 좋다.
 
 ![DOM Tree를 생성](https://post-phinf.pstatic.net/MjAxNzA3MDNfMTkw/MDAxNDk5MDkzMDA1NTk4.uXch89MWIheItGp06GiL9CpICJqaJ-o_cZldjWrtljwg.9qNsHS5oXG0Pj2QZS8C7xuP_DEmiZXUaFjMCaJd4J4Ig.PNG/full-process.png?type=w1200)
 
