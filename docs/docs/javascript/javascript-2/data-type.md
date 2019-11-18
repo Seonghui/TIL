@@ -8,8 +8,16 @@ nav_order: 2
 
 # 자료형
 
+{: .no_toc }
+{: .no_toc .text-delta }
+
+1. TOC
+{:toc}
+
+---
+
 * 자료형을 선언하지 않아도 됨. 그래도 자료형은 존재한다
-* 동적 자료형\(dynamically Typed\)과 약타입\(weakly type\)이 존재
+* 동적 자료형(dynamically Typed)과 약타입(weakly type)이 존재
 * 약한 자료형 언어는 한번 정해진 자료형을 또다른 자료형으로 바꾸는 것이 가능
 * typeof 연산자로 데이터 타입 확인 가능
 * 객체가 아니고 메소드도 가지지 않음
@@ -18,10 +26,10 @@ nav_order: 2
 
 ## 1. 동적 자료형과 정적 자료형
 
-* 정적 자료형은 아닌데 타입스크립트 사용해서 정적 자료형처럼 사용 가능 \(여기서 정적 자료형이란 자료형이 강제되고 쉽게 바꿀 수 없다는 것을 의미\)
+* 정적 자료형은 아닌데 타입스크립트 사용해서 정적 자료형처럼 사용 가능 (여기서 정적 자료형이란 자료형이 강제되고 쉽게 바꿀 수 없다는 것을 의미)
 * 동적 자료형은 런타임 시점에 변수의 자료형을 추론. 일단 코드가 실행되면 컴파일러나 인터프리터는 변수를 먼저 읽고 난 뒤 자료형을 결정함. 자료형이 강제되는 것은 같지만 자료형을 결정하는 시점이 다름. 다시 말해 자료형 결정은 자바스크립트 엔진이 함
 
-## 2. 기본 자료형 \(원시 타입\)
+## 2. 기본 자료형 (원시 타입)
 
 단 하나의 값만 나타낼 수 있고 불변이다.
 
@@ -29,7 +37,7 @@ nav_order: 2
 * Null - value가 없음
 * Undefined - 변수가 선언되었지만 아직 값할당이 안 됨
 * Number - int, float 등..
-* String - characters의 배열 \(예를 들면 단어\)
+* String - characters의 배열 (예를 들면 단어)
 * Symbol - 다른 값들과 같지 않은 유니크한 값
 
 ### 2-1. 숫자
@@ -61,19 +69,19 @@ const nam = NaN;
 * escape
 
 ```javascript
-const dialog1 = "He looked up and said \"don't do that!\" to Max.";
+const dialog1 = "He looked up and said 'don't do that!' to Max.";
 const dialog2 = 'He looked up and said "don\'t do that!" to Max.';
 const s = "In JavaScript, use \\ as an escape character in strings.";
 ```
 
-* template \(**es6**\)
+* template (**es6**)
 
 ```javascript
 let currentTemp = 19.5;
 const message = `The current temperature is ${currentTemp}\u00b0C`;
 ```
 
-* multiline \(**es6**\)
+* multiline (**es6**)
 
 ```javascript
 const multiline =
@@ -137,7 +145,7 @@ currentTemp = undefined;   // undefined. 할당된 값에 다시 undefined를 �
 * Set과 WeakSet
 * Number, String, Boolean
 
-### 3-1. 객체\(Object\) 자세히 알아보기
+### 3-1. 객체(Object) 자세히 알아보기
 
 빈 객체는 아래와 같다.
 
@@ -145,7 +153,7 @@ currentTemp = undefined;   // undefined. 할당된 값에 다시 undefined를 �
 const obj = {}
 ```
 
-객체의 콘텐츠는 프로퍼티 또는 멤버라고 부른다. 프로퍼티는 이름\(키\)과 값으로 구성된다. 프로퍼티 접근은 멤버 접근 연산자 `.`, `[]`를 사용하면 된다.
+객체의 콘텐츠는 프로퍼티 또는 멤버라고 부른다. 프로퍼티는 이름(키)과 값으로 구성된다. 프로퍼티 접근은 멤버 접근 연산자 `.`, `[]`를 사용하면 된다.
 
 ```javascript
 const sam3 = {
@@ -185,13 +193,65 @@ s.rating = 3; // 에러가 없다
 s.raiting; // 하지만 undefined
 ```
 
-이 예제는 마치 문자열 s에 프로퍼티를 할당하는 것처럼 보인다. 사실은 일시적인 String 객체에 프로퍼티를 할당한 것이다. 임시 객체는 즉시 파괴되므로 s.rating은 undefined이다. \(첨언하면, 기본 자료형은 메소드를 가지지 않는다고 했는데, 위 코드는 정상적으로 작동이 된다. 왜냐면 기본 자료형은 생성자 혹은 부모 객체를 가지고 있어서 기본 자료형의 객체를 만들기 위해 생성자를 사용한다. 자바스크립트는 문자열 객체에 있는 메소드에 접근하기 위해 기본 자료형을 문자열 객체로 형변환 시도, 그리고 필요한 작업이 끝나면 임시로 형변환된 객체는 가비지 컬렉터에 의해 제거된다\)
+이 예제는 마치 문자열 s에 프로퍼티를 할당하는 것처럼 보인다. 사실은 일시적인 String 객체에 프로퍼티를 할당한 것이다. 임시 객체는 즉시 파괴되므로 s.rating은 undefined이다. (첨언하면, 기본 자료형은 메소드를 가지지 않는다고 했는데, 위 코드는 정상적으로 작동이 된다. 왜냐면 기본 자료형은 생성자 혹은 부모 객체를 가지고 있어서 기본 자료형의 객체를 만들기 위해 생성자를 사용한다. 자바스크립트는 문자열 객체에 있는 메소드에 접근하기 위해 기본 자료형을 문자열 객체로 형변환 시도, 그리고 필요한 작업이 끝나면 임시로 형변환된 객체는 가비지 컬렉터에 의해 제거된다)
 
 ### 3-3. 배열
 
 * 배열 크기는 고정되지 않는다. 언제든 요소를 추가하거나 제거할 수 있다.
 * 요소의 데이터 타입을 가리지 않는다.
 * 배열 인덱스는 0으로 시작한다.
+
+#### 3-3-1. 전개 구문 (Spread syntax)
+
+ES6에 추가된 spread 연산자 기능을 이용하면 배열, 문자열 등을 분해해 개별 요소로 만들 수 있다.
+
+```js
+const arr = ['a', 'b', 'c']
+console.log(arr) // ['a', 'b', 'c']
+console.log(...arr) // 'a' 'b' 'c'
+
+// 배열 합치기
+const arr2 = [1, 2, 3]
+console.log([...arr, ...arr2]) // ['a', 'b', 'c', 1, 2, 3]
+
+// 배열 복사
+const copiedArr = [...arr]
+console.log(copiedArr) // ['a', 'b', 'c']
+```
+
+```js
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+// expected output: 6
+
+console.log(sum.apply(null, numbers));
+// expected output: 6
+```
+
+#### 3-3-2. 구조 분해 할당(Destructuring assignment)
+
+**구조 분해 할당**은 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 자바스크립트 표현식이다.
+
+```js
+var a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// expected output: 10
+
+console.log(b);
+// expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// expected output: [30,40,50]
+```
 
 ### 3-4. 날짜
 
@@ -228,4 +288,5 @@ NaN은 숫자형으로 정의되어있지만 숫자는 아니다. 그냥 스펙�
 
 * [https://codeburst.io/javascript-essentials-types-data-structures-3ac039f9877b](https://codeburst.io/javascript-essentials-types-data-structures-3ac039f9877b)
 * 러닝 자바스크립트
-
+* [MDN - 전개 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+* [MDN - 구조 분해 할당](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
