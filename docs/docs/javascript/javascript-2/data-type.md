@@ -1,12 +1,12 @@
 ---
 layout: default
 title: 자료형
-parent: 2. 변수, 상수, 데이터 타입
+parent: 2. 변수, 상수, 자료형
 grand_parent: javascript
 nav_order: 2
 ---
 
-# 자료형
+# 1. 변수, 상수, 자료형
 
 {: .no_toc }
 {: .no_toc .text-delta }
@@ -71,7 +71,7 @@ const ninf = -Infinity;
 const nam = NaN;
 ```
 
-* escape
+### escape
 
 ```javascript
 const dialog1 = "He looked up and said 'don't do that!' to Max.";
@@ -79,14 +79,14 @@ const dialog2 = 'He looked up and said "don\'t do that!" to Max.';
 const s = "In JavaScript, use \\ as an escape character in strings.";
 ```
 
-* template (**es6**)
+### template (ES6)
 
 ```javascript
 let currentTemp = 19.5;
 const message = `The current temperature is ${currentTemp}\u00b0C`;
 ```
 
-* multiline (**es6**)
+### Multiline (ES6)
 
 ```javascript
 const multiline =
@@ -96,7 +96,7 @@ line2
 `
 ```
 
-* String and Number
+### String and Number
 
 ```javascript
 const result1 = 3 + '30';    // '330'
@@ -162,8 +162,6 @@ let obj = {};
 
 참조 타입은 할당된 변수에 값을 직접 저장하지 않으므로, 이 예제에서 obj 변수에 저장된 값은 사실 객체 인스턴스가 아니라 **객체가 있는 메모리상의 위치를 가리키는 포인터(또는 참조)**이다. 이것이 바로 객체와 원시 값의 가장 큰 차이점인데, **원시 값은 변수에 직접 값 자체가 저장**된다.
 
-
-
 객체의 콘텐츠는 프로퍼티 또는 멤버라고 부른다. 프로퍼티는 이름(키)과 값으로 구성된다. 프로퍼티 접근은 멤버 접근 연산자 `.`, `[]`를 사용하면 된다.
 
 ```javascript
@@ -212,7 +210,7 @@ s.raiting; // 하지만 undefined
 * 요소의 데이터 타입을 가리지 않는다.
 * 배열 인덱스는 0으로 시작한다.
 
-#### 3-3-1. 전개 구문 (Spread syntax)
+### 3-3-1. 전개 구문 (Spread syntax)
 
 ES6에 추가된 spread 연산자 기능을 이용하면 배열, 문자열 등을 분해해 개별 요소로 만들 수 있다.
 
@@ -244,7 +242,7 @@ console.log(sum.apply(null, numbers));
 // expected output: 6
 ```
 
-#### 3-3-2. 구조 분해 할당(Destructuring assignment)
+### 3-3-2. 구조 분해 할당(Destructuring assignment)
 
 **구조 분해 할당**은 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 자바스크립트 표현식이다.
 
@@ -264,7 +262,7 @@ console.log(rest);
 // expected output: [30,40,50]
 ```
 
-### 3-4. 날짜
+## 3-4. 날짜
 
 자바스크립트의 날짜와 시간은 내장된 Date 객체에서 담당한다.
 
