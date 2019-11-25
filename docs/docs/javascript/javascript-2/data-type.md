@@ -6,7 +6,7 @@ grand_parent: javascript
 nav_order: 2
 ---
 
-# 1. 자바스크립트의 자료형
+# 자료형
 
 {: .no_toc }
 {: .no_toc .text-delta }
@@ -74,7 +74,7 @@ const nam = NaN;
 * escape
 
 ```javascript
-const dialog1 = "He looked up and said \"don't do that!\" to Max.";
+const dialog1 = "He looked up and said 'don't do that!' to Max.";
 const dialog2 = 'He looked up and said "don\'t do that!" to Max.';
 const s = "In JavaScript, use \\ as an escape character in strings.";
 ```
@@ -212,7 +212,59 @@ s.raiting; // 하지만 undefined
 * 요소의 데이터 타입을 가리지 않는다.
 * 배열 인덱스는 0으로 시작한다.
 
-## 3-4. 날짜
+#### 3-3-1. 전개 구문 (Spread syntax)
+
+ES6에 추가된 spread 연산자 기능을 이용하면 배열, 문자열 등을 분해해 개별 요소로 만들 수 있다.
+
+```js
+const arr = ['a', 'b', 'c']
+console.log(arr) // ['a', 'b', 'c']
+console.log(...arr) // 'a' 'b' 'c'
+
+// 배열 합치기
+const arr2 = [1, 2, 3]
+console.log([...arr, ...arr2]) // ['a', 'b', 'c', 1, 2, 3]
+
+// 배열 복사
+const copiedArr = [...arr]
+console.log(copiedArr) // ['a', 'b', 'c']
+```
+
+```js
+function sum(x, y, z) {
+  return x + y + z;
+}
+
+const numbers = [1, 2, 3];
+
+console.log(sum(...numbers));
+// expected output: 6
+
+console.log(sum.apply(null, numbers));
+// expected output: 6
+```
+
+#### 3-3-2. 구조 분해 할당(Destructuring assignment)
+
+**구조 분해 할당**은 배열이나 객체의 속성을 해체하여 그 값을 개별 변수에 담을 수 있게 하는 자바스크립트 표현식이다.
+
+```js
+var a, b, rest;
+[a, b] = [10, 20];
+
+console.log(a);
+// expected output: 10
+
+console.log(b);
+// expected output: 20
+
+[a, b, ...rest] = [10, 20, 30, 40, 50];
+
+console.log(rest);
+// expected output: [30,40,50]
+```
+
+### 3-4. 날짜
 
 자바스크립트의 날짜와 시간은 내장된 Date 객체에서 담당한다.
 
@@ -266,3 +318,5 @@ NaN은 숫자형으로 정의되어있지만 숫자는 아니다. 그냥 스펙�
 * [https://codeburst.io/javascript-essentials-types-data-structures-3ac039f9877b](https://codeburst.io/javascript-essentials-types-data-structures-3ac039f9877b)
 * 러닝 자바스크립트
 * 객체지향 자바스크립트의 원리
+* [MDN - 전개 구문](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
+* [MDN - 구조 분해 할당](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
